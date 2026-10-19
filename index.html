@@ -176,6 +176,22 @@
 <body class="antialiased pb-20 md:pb-0">
 
 <!-- ================= HEADER ================= -->
+<!-- ================= DEMO PORTFOLIO BANNER ================= -->
+<div class="bg-coal text-cream/90 text-xs font-bold py-2 px-4 border-b border-white/10 relative z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-2 text-center sm:text-left">
+    <div class="flex items-center justify-center gap-2 w-full sm:w-auto">
+      <span class="bg-basil text-white text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-extrabold flex items-center gap-1">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Plantilla Demo
+      </span>
+      <span>Diseño web profesional para pizzerías y restaurantes · Carta digital con pedidos por WhatsApp</span>
+    </div>
+    <a href="#carta" class="hidden md:inline-flex items-center gap-1 text-tomato hover:text-white transition underline underline-offset-2">
+      Probar carta interactiva ↓
+    </a>
+  </div>
+</div>
+
 <header class="fixed top-0 inset-x-0 z-40">
   <div class="flagbar h-1"></div>
   <nav class="bg-coal/95 backdrop-blur text-cream" aria-label="Navegación principal">
@@ -216,7 +232,7 @@
 
 <main>
 <!-- ================= HERO ================= -->
-<section id="inicio" class="relative bg-coal text-cream overflow-hidden pt-24 pb-14 md:pt-32 md:pb-24">
+<section id="inicio" class="relative bg-coal text-cream overflow-hidden pt-32 pb-14 md:pt-40 md:pb-24">
   <div class="absolute inset-0 opacity-[.07]" style="background-image:radial-gradient(#f8f2e4 1px,transparent 1px);background-size:22px 22px"></div>
   <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-basil/25 blur-3xl"></div>
   <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-tomato/25 blur-3xl"></div>
@@ -343,7 +359,18 @@
       <p class="mt-3 text-coal/70 max-w-xl mx-auto">Todas las pizzas tradicionales llevan mozzarella fior di latte. En las veganas usamos mozzarella vegana. Toca cualquier pizza para ver su foto y detalles o pulsa <b>«Pedir»</b> para abrir WhatsApp.</p>
     </div>
 
-    <div class="sticky top-[68px] z-30 -mx-4 px-4 pt-3 pb-2 bg-white/95 backdrop-blur mt-8 border-b border-coal/10">
+        <!-- Buscador en tiempo real -->
+    <div class="mt-8 max-w-lg mx-auto px-2">
+      <div class="relative">
+        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-coal/40 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="searchInput" type="search" placeholder="Buscar por pizza o ingrediente (ej. burrata, salmón, trufa...)" 
+               class="w-full pl-12 pr-10 py-3.5 rounded-full bg-cream border-2 border-coal/10 focus:border-tomato focus:bg-white focus:outline-none text-sm transition shadow-inner placeholder:text-coal/45 font-medium" />
+        <button id="clearSearch" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-coal/40 hover:text-coal p-1 text-sm font-bold" aria-label="Limpiar búsqueda">✕</button>
+      </div>
+      <div id="searchFeedback" class="hidden mt-2 text-center text-xs font-bold text-tomato"></div>
+    </div>
+
+<div class="sticky top-[68px] z-30 -mx-4 px-4 pt-3 pb-2 bg-white/95 backdrop-blur mt-8 border-b border-coal/10">
       <div id="chips" class="noscroll flex gap-2 overflow-x-auto md:justify-center" role="tablist" aria-label="Categorías de la carta"></div>
       <div id="subchips" class="noscroll flex gap-2 overflow-x-auto md:justify-center mt-2" aria-label="Tipo de pizza"></div>
     </div>
@@ -565,15 +592,28 @@
 
 <!-- ================= BOTONES FLOTANTES DE CONVERSIÓN ================= -->
 <!-- Móvil: barra inferior persistente -->
-<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-coal border-t border-white/10 grid grid-cols-2 gap-2 p-2" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
-  <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-basil text-white font-extrabold py-3.5 rounded-full active:scale-95 transition">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
-    Pedir
-  </a>
-  <a href="tel:+34600000000" class="flex items-center justify-center gap-2 bg-cream text-coal font-extrabold py-3.5 rounded-full active:scale-95 transition">
-    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span>Llamar</span>
-  </a>
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-coal border-t border-white/10 p-2 shadow-2xl" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
+  <!-- Si hay productos en el carrito: barra destacada -->
+  <div id="mobileCartBar" class="hidden flex items-center justify-between gap-2">
+    <button id="mobileCartOpenBtn" type="button" class="flex-1 bg-basil hover:bg-basil-dark text-white font-extrabold py-3.5 px-4 rounded-full flex items-center justify-between shadow-lg active:scale-95 transition">
+      <div class="flex items-center gap-2">
+        <span id="mobileCartBadge" class="w-6 h-6 rounded-full bg-white text-basil-dark text-xs flex items-center justify-center font-black">0</span>
+        <span class="text-sm">Ver mi pedido</span>
+      </div>
+      <span id="mobileCartTotal" class="text-sm font-black">0,00€</span>
+    </button>
+  </div>
+  <!-- Si el carrito está vacío: botones estándar -->
+  <div id="mobileDefaultBar" class="grid grid-cols-2 gap-2">
+    <a href="#carta" class="flex items-center justify-center gap-2 bg-tomato text-white font-extrabold py-3.5 rounded-full active:scale-95 transition text-sm">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16Z"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
+      Ver carta
+    </a>
+    <a href="tel:+34600000000" class="flex items-center justify-center gap-2 bg-cream text-coal font-extrabold py-3.5 rounded-full active:scale-95 transition text-sm">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Llamar</span>
+    </a>
+  </div>
 </div>
 <!-- Escritorio: botón flotante WhatsApp -->
 <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"
@@ -581,6 +621,83 @@
   <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
   Pedir por WhatsApp
 </a>
+
+<!-- ================= CARRITO FLOTANTE Y DRAWER DE PEDIDO ================= -->
+<!-- Botón flotante del carrito (Desktop) -->
+<button id="cartPill" class="hidden fixed bottom-6 right-6 z-40 items-center gap-3 bg-basil hover:bg-basil-dark text-white font-extrabold px-6 py-4 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="Ver pedido">
+  <div class="relative">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <span id="cartCountBadge" class="absolute -top-2.5 -right-2.5 bg-tomato text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">0</span>
+  </div>
+  <span id="cartPillText">0 pizzas · 0,00€</span>
+  <span class="bg-white/20 text-white text-xs px-2.5 py-1 rounded-full ml-1">Ver pedido →</span>
+</button>
+
+<!-- Slide-over Drawer del Carrito -->
+<div id="cartDrawerBackdrop" class="fixed inset-0 z-50 hidden bg-coal/75 backdrop-blur-sm transition-opacity" aria-hidden="true">
+  <div class="fixed inset-y-0 right-0 max-w-full flex">
+    <div id="cartDrawer" class="w-screen max-w-md bg-cream shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/20">
+      
+      <!-- Drawer Header -->
+      <div class="p-6 bg-coal text-cream flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-basil/20 text-basil-light flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-extrabold text-xl text-cream">Tu Pedido</h3>
+            <p id="drawerItemCount" class="text-xs text-cream/70">0 productos seleccionados</p>
+          </div>
+        </div>
+        <button id="cartDrawerClose" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-cream flex items-center justify-center transition" aria-label="Cerrar pedido">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Drawer Items List -->
+      <div id="cartDrawerItems" class="flex-1 overflow-y-auto p-6 space-y-4 noscroll">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Drawer Footer & Form -->
+      <div class="p-6 bg-white border-t border-coal/10 shadow-lg space-y-4">
+        <!-- Opciones de entrega -->
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-coal/60 uppercase tracking-wider block">Modalidad</label>
+          <div class="grid grid-cols-2 gap-2 text-xs font-bold">
+            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-coal/15 cursor-pointer bg-cream has-[:checked]:border-basil has-[:checked]:bg-basil/10 has-[:checked]:text-basil-dark transition">
+              <input type="radio" name="orderType" value="Para recoger en local" checked class="hidden" />
+              <span>🛍️ Para recoger</span>
+            </label>
+            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-coal/15 cursor-pointer bg-cream has-[:checked]:border-basil has-[:checked]:bg-basil/10 has-[:checked]:text-basil-dark transition">
+              <input type="radio" name="orderType" value="A domicilio" class="hidden" />
+              <span>🛵 A domicilio</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Campos de cliente -->
+        <div class="grid grid-cols-1 gap-2.5">
+          <input id="cartCustomerName" type="text" placeholder="Tu nombre (opcional)" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-coal/15 text-sm focus:outline-none focus:border-tomato" />
+          <input id="cartCustomerNotes" type="text" placeholder="Alergias o notas (ej. hora de recogida, sin cebolla...)" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-coal/15 text-sm focus:outline-none focus:border-tomato" />
+        </div>
+
+        <!-- Total -->
+        <div class="flex items-center justify-between pt-2 border-t border-coal/10">
+          <span class="text-base font-bold text-coal/70">Total del pedido:</span>
+          <span id="cartDrawerTotal" class="font-display font-extrabold text-2xl text-tomato">0,00€</span>
+        </div>
+
+        <!-- Botón Enviar WhatsApp -->
+        <button id="sendCartWhatsAppBtn" class="w-full bg-basil hover:bg-basil-dark text-white font-extrabold py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-lg transition shadow-xl active:scale-95">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+          <span>Enviar pedido por WhatsApp</span>
+        </button>
+        <p class="text-[11px] text-center text-coal/50">Directo al restaurante · Sin comisiones ni intermediarios</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ================= MODAL VISTA PREVIA ================= -->
 <div id="previewModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-coal/80 backdrop-blur-sm transition-opacity" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -604,12 +721,25 @@
         <p class="text-xs font-extrabold uppercase tracking-wider text-coal/50 mb-2.5">Alérgenos</p>
         <div id="modalAllergens" class="flex flex-wrap gap-2"></div>
       </div>
-      <div class="mt-6 pt-4 border-t border-coal/10 flex flex-col sm:flex-row gap-3">
-        <a id="modalOrderBtn" href="#" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 bg-basil hover:bg-basil-dark text-white font-bold py-3.5 px-6 rounded-full text-base transition shadow-md active:scale-95">
-          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
-          <span>Pedir por WhatsApp</span>
-        </a>
-        <button id="modalCloseBtn" class="sm:px-6 py-3 rounded-full border border-coal/20 hover:bg-white text-coal font-bold text-sm transition">Cerrar</button>
+      <div class="mt-6 pt-4 border-t border-coal/10 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <div class="flex items-center border-2 border-coal/15 rounded-full bg-white px-2 py-1 shrink-0">
+            <button id="modalQtyMinus" type="button" class="w-8 h-8 rounded-full hover:bg-cream text-coal font-bold flex items-center justify-center transition text-lg active:scale-90">−</button>
+            <span id="modalQtyVal" class="w-8 text-center font-extrabold text-base">1</span>
+            <button id="modalQtyPlus" type="button" class="w-8 h-8 rounded-full hover:bg-cream text-coal font-bold flex items-center justify-center transition text-lg active:scale-90">+</button>
+          </div>
+          <button id="modalAddToCartBtn" type="button" class="flex-1 bg-tomato hover:bg-tomato-dark text-white font-extrabold py-3.5 px-6 rounded-full text-base transition shadow-md active:scale-95 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span id="modalAddBtnText">Añadir al pedido</span>
+          </button>
+        </div>
+        <div class="flex items-center justify-between gap-3 text-xs">
+          <a id="modalOrderBtn" href="#" target="_blank" rel="noopener" class="text-coal/70 hover:text-basil underline underline-offset-4 flex items-center gap-1 font-bold">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+            Pedir solo esta pizza por WhatsApp
+          </a>
+          <button id="modalCloseBtn" type="button" class="text-coal/50 hover:text-coal font-bold">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -626,7 +756,10 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps?q=pizzeria';
    Formato: { name:'Nombre', text:'Texto de la reseña', stars:5, date:'hace 2 semanas' }
    Mientras el array esté vacío se muestra una invitación a leer las opiniones en Google. */
 const REVIEWS = [
-  // { name:'', text:'', stars:5, date:'' },
+  { name: 'Laura Gómez', text: 'La mejor pizza artesana de la zona con diferencia. La masa de fermentación lenta se nota muchísimo, ligera y súper crujiente. ¡La Burrata Master es otro nivel!', stars: 5, date: 'hace 3 días' },
+  { name: 'Marc Soler', text: 'Pedir por WhatsApp directamente desde la carta es comodísimo. Llegamos al local y el pedido estaba recién salido del horno, calentito y perfecto. Muy top la Mortadela con pistacho.', stars: 5, date: 'hace 1 semana' },
+  { name: 'Elena Martínez', text: 'Por fin una pizzería con opciones veganas de calidad y bien pensadas, no solo quitar el queso. La Campesina y el Tiramisú casero son un 10 rotundo.', stars: 5, date: 'hace 2 semanas' },
+  { name: 'Carlos Benítez', text: 'Masa fina al estilo tradicional italiano, ingredientes de primera calidad y un trato impecable. Ya es nuestra pizzería fija de cada fin de semana con amigos.', stars: 5, date: 'hace 3 semanas' }
 ];
 
 /* ================= CARTA =================
@@ -749,11 +882,182 @@ function renderChips(){
 function waOrder(name){
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('¡Hola! Quiero pedir: ' + name)}`;
 }
+/* ================= CARRITO Y ESTADO DEL PEDIDO ================= */
+const CART = {}; // { 'NombrePizza': cantidad }
+let searchQuery = '';
+
+function getCartCount(){
+  return Object.values(CART).reduce((sum, q) => sum + q, 0);
+}
+function getCartTotal(){
+  return Object.entries(CART).reduce((sum, [name, qty]) => {
+    const item = MENU.find(m => m.n === name);
+    return sum + (item ? item.p * qty : 0);
+  }, 0);
+}
+
+function updateCartUI(){
+  const count = getCartCount();
+  const total = getCartTotal();
+
+  // Desktop floating pill
+  const pill = $('#cartPill');
+  if(count > 0){
+    pill.classList.remove('hidden');
+    pill.classList.add('flex');
+    $('#cartCountBadge').textContent = count;
+    $('#cartPillText').textContent = `${count} ${count===1?'producto':'productos'} · ${eur(total)}`;
+  } else {
+    pill.classList.add('hidden');
+    pill.classList.remove('flex');
+  }
+
+  // Mobile bottom bar
+  const mCartBar = $('#mobileCartBar');
+  const mDefBar = $('#mobileDefaultBar');
+  if(count > 0){
+    mCartBar.classList.remove('hidden');
+    mDefBar.classList.add('hidden');
+    $('#mobileCartBadge').textContent = count;
+    $('#mobileCartTotal').textContent = eur(total);
+  } else {
+    mCartBar.classList.add('hidden');
+    mDefBar.classList.remove('hidden');
+  }
+
+  // Drawer details
+  $('#drawerItemCount').textContent = `${count} ${count===1?'producto':'productos'} en total`;
+  $('#cartDrawerTotal').textContent = eur(total);
+
+  renderDrawerItems();
+  renderMenuCountsOnCards();
+}
+
+function addToCart(name, qty=1){
+  CART[name] = (CART[name] || 0) + qty;
+  if(CART[name] <= 0) delete CART[name];
+  updateCartUI();
+}
+
+function setItemQty(name, qty){
+  if(qty <= 0) delete CART[name];
+  else CART[name] = qty;
+  updateCartUI();
+}
+
+function renderDrawerItems(){
+  const container = $('#cartDrawerItems');
+  const items = Object.entries(CART).filter(([_, qty]) => qty > 0);
+  if(!items.length){
+    container.innerHTML = `
+      <div class="h-full flex flex-col items-center justify-center text-center p-8 text-coal/60">
+        <svg class="w-16 h-16 text-coal/20 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <p class="font-extrabold text-lg text-coal">Tu pedido está vacío</p>
+        <p class="text-sm mt-1">Explora la carta y pulsa «+ Añadir» en tus pizzas favoritas.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = items.map(([name, qty]) => {
+    const item = MENU.find(m => m.n === name);
+    if(!item) return '';
+    return `
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-coal/10 flex items-center gap-3">
+        <img src="${item.img}" alt="${esc(item.n)}" class="w-16 h-16 rounded-xl object-cover shrink-0" />
+        <div class="flex-1 min-w-0">
+          <h4 class="font-bold text-sm text-coal truncate">${esc(item.n)}</h4>
+          <span class="text-xs text-tomato font-extrabold">${eur(item.p)} ud.</span>
+          <div class="mt-2 flex items-center justify-between">
+            <div class="flex items-center border border-coal/15 rounded-lg overflow-hidden bg-cream">
+              <button onclick="addToCart('${esc(item.n)}', -1)" class="w-7 h-7 flex items-center justify-center hover:bg-coal/10 text-coal font-bold text-sm">−</button>
+              <span class="w-7 text-center font-bold text-xs">${qty}</span>
+              <button onclick="addToCart('${esc(item.n)}', 1)" class="w-7 h-7 flex items-center justify-center hover:bg-coal/10 text-coal font-bold text-sm">+</button>
+            </div>
+            <span class="font-extrabold text-sm text-coal">${eur(item.p * qty)}</span>
+          </div>
+        </div>
+        <button onclick="setItemQty('${esc(item.n)}', 0)" class="text-coal/30 hover:text-tomato p-1.5 transition" title="Eliminar del pedido">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </button>
+      </div>
+    `;
+  }).join('');
+}
+
+function openCartDrawer(){
+  const backdrop = $('#cartDrawerBackdrop');
+  const drawer = $('#cartDrawer');
+  backdrop.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+  requestAnimationFrame(() => {
+    drawer.classList.remove('translate-x-full');
+    drawer.classList.add('translate-x-0');
+  });
+}
+
+function closeCartDrawer(){
+  const backdrop = $('#cartDrawerBackdrop');
+  const drawer = $('#cartDrawer');
+  drawer.classList.remove('translate-x-0');
+  drawer.classList.add('translate-x-full');
+  setTimeout(() => {
+    backdrop.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }, 300);
+}
+
+function renderMenuCountsOnCards(){
+  document.querySelectorAll('[data-item]').forEach(card => {
+    const name = card.dataset.item;
+    const qty = CART[name] || 0;
+    const badge = card.querySelector('.item-cart-badge');
+    if(badge){
+      if(qty > 0){
+        badge.textContent = `${qty} en pedido`;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+  });
+}
+
+/* ================= RENDER CARTA CON BUSCADOR Y CARRITO ================= */
 function renderMenu(){
-  const items = MENU.filter(i => (cat==='todas' || i.cat===cat) && (cat!=='pizzas' || sub==='todas' || (i.tags||[]).includes(sub)));
-  note.textContent = (availableCats.find(c => c.k===cat)||{}).note || '';
+  const q = searchQuery.toLowerCase().trim();
+  const feedback = $('#searchFeedback');
+
+  let items = MENU.filter(i => {
+    // Si hay búsqueda activa, busca en nombre y descripción
+    if(q){
+      return i.n.toLowerCase().includes(q) || i.d.toLowerCase().includes(q);
+    }
+    return (cat==='todas' || i.cat===cat) && (cat!=='pizzas' || sub==='todas' || (i.tags||[]).includes(sub));
+  });
+
+  if(q){
+    feedback.textContent = `Mostrando ${items.length} resultado${items.length===1?'':'s'} para «${searchQuery}»`;
+    feedback.classList.remove('hidden');
+    note.textContent = '';
+  } else {
+    feedback.classList.add('hidden');
+    note.textContent = (availableCats.find(c => c.k===cat)||{}).note || '';
+  }
+
+  if(!items.length){
+    grid.innerHTML = `
+      <div class="sm:col-span-2 lg:col-span-3 text-center py-12 bg-cream rounded-3xl p-8 border border-coal/10">
+        <svg class="w-12 h-12 text-coal/30 mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <p class="font-extrabold text-xl text-coal">No encontramos platos con ese ingrediente</p>
+        <p class="text-sm text-coal/70 mt-1">Prueba con palabras como «queso», «tomate», «burrata», «vegana» o limpia el buscador.</p>
+        <button onclick="$('#searchInput').value=''; searchQuery=''; renderMenu(); $('#clearSearch').classList.add('hidden');" class="mt-4 bg-coal hover:bg-tomato text-white text-xs font-bold px-4 py-2 rounded-full transition">Limpiar búsqueda</button>
+      </div>`;
+    return;
+  }
+
   grid.innerHTML = items.map(i => {
     const al = allergensOf(i).map(a => `<span title="${a.t}" aria-label="${a.t}" class="w-6 h-6 rounded-full bg-coal/5 flex items-center justify-center text-coal/70 hover:text-tomato hover:bg-white transition shadow-xs">${getIcon(a.id, 'w-3.5 h-3.5')}</span>`).join('');
+    const inCartQty = CART[i.n] || 0;
     return `
     <article data-item="${esc(i.n)}" class="card-in group cursor-pointer relative bg-cream rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-coal/10 flex flex-col hover:-translate-y-1">
       <div class="relative h-44 sm:h-48 overflow-hidden bg-coal/10 shrink-0">
@@ -763,6 +1067,9 @@ function renderMenu(){
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
           Vista previa
         </span>
+        <span class="item-cart-badge ${inCartQty>0?'':'hidden'} absolute bottom-2.5 left-3 bg-basil text-white text-[11px] font-black px-2.5 py-1 rounded-full shadow-md">
+          ${inCartQty} en pedido
+        </span>
         ${i.star ? `<span class="absolute top-3 left-3 bg-tomato text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('star', 'w-3 h-3 fill-white')} RECOMENDADA</span>` : ''}
         ${i.vegan ? `<span class="absolute top-3 right-3 bg-basil text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('leaf', 'w-3 h-3')} VEGANA</span>` : ''}
       </div>
@@ -771,12 +1078,14 @@ function renderMenu(){
           <h3 class="font-display font-extrabold text-xl leading-tight text-basil-dark group-hover:text-tomato transition-colors">${esc(i.n)}</h3>
           <span class="font-extrabold text-lg text-tomato whitespace-nowrap">${eur(i.p)}</span>
         </div>
-        <p class="mt-2 text-sm text-coal/80 leading-relaxed flex-1">${esc(i.d)}</p>
-        <div class="mt-4 pt-3 border-t border-coal/10 flex items-center justify-between gap-3">
+        <p class="mt-2 text-sm text-coal/80 leading-relaxed flex-1 line-clamp-2">${esc(i.d)}</p>
+        <div class="mt-4 pt-3 border-t border-coal/10 flex items-center justify-between gap-2">
           <div class="flex gap-1.5 flex-wrap">${al}</div>
-          <button type="button" data-order="${esc(i.n)}" class="shrink-0 bg-coal hover:bg-basil text-white text-sm font-bold px-4 py-2 rounded-full transition active:scale-95 flex items-center gap-1.5">
-            Pedir
-          </button>
+          <div class="flex items-center gap-1.5">
+            <button type="button" data-add="${esc(i.n)}" class="bg-basil hover:bg-basil-dark text-white text-xs font-bold px-3 py-2 rounded-full transition active:scale-90 flex items-center gap-1 shadow-sm" title="Añadir a tu pedido">
+              <span class="text-sm">+</span> Añadir
+            </button>
+          </div>
         </div>
       </div>
     </article>`;
@@ -784,9 +1093,17 @@ function renderMenu(){
 }
 
 /* ================= MODAL VISTA PREVIA ================= */
+let currentModalItem = null;
+let currentModalQty = 1;
+
 function openPreview(name){
   const item = MENU.find(i => i.n === name);
   if(!item) return;
+  currentModalItem = item;
+  currentModalQty = 1;
+  $('#modalQtyVal').textContent = '1';
+  $('#modalAddBtnText').textContent = `Añadir al pedido (${eur(item.p)})`;
+
   const modal = $('#previewModal');
   const box = $('#modalBox');
   $('#modalImg').src = item.img;
@@ -843,12 +1160,15 @@ function closePreview(){
   }, 200);
 }
 
-// Event delegation for grid cards and direct order buttons
+// Delegation for grid cards and "+ Añadir" buttons
 grid.addEventListener('click', e => {
-  const orderBtn = e.target.closest('[data-order]');
-  if(orderBtn){
+  const addBtn = e.target.closest('[data-add]');
+  if(addBtn){
     e.stopPropagation();
-    window.open(waOrder(orderBtn.dataset.order), '_blank', 'noopener');
+    const name = addBtn.dataset.add;
+    addToCart(name, 1);
+    addBtn.classList.add('scale-125');
+    setTimeout(() => addBtn.classList.remove('scale-125'), 180);
     return;
   }
   const card = e.target.closest('[data-item]');
@@ -857,13 +1177,89 @@ grid.addEventListener('click', e => {
   }
 });
 
+// Modal quantity controls
+$('#modalQtyMinus').addEventListener('click', () => {
+  if(currentModalQty > 1){
+    currentModalQty--;
+    $('#modalQtyVal').textContent = currentModalQty;
+    if(currentModalItem) $('#modalAddBtnText').textContent = `Añadir al pedido (${eur(currentModalItem.p * currentModalQty)})`;
+  }
+});
+$('#modalQtyPlus').addEventListener('click', () => {
+  currentModalQty++;
+  $('#modalQtyVal').textContent = currentModalQty;
+  if(currentModalItem) $('#modalAddBtnText').textContent = `Añadir al pedido (${eur(currentModalItem.p * currentModalQty)})`;
+});
+$('#modalAddToCartBtn').addEventListener('click', () => {
+  if(currentModalItem){
+    addToCart(currentModalItem.n, currentModalQty);
+    closePreview();
+  }
+});
+
+// Modal close handlers
 $('#modalClose').addEventListener('click', closePreview);
 $('#modalCloseBtn').addEventListener('click', closePreview);
 $('#previewModal').addEventListener('click', e => {
   if(e.target === $('#previewModal')) closePreview();
 });
+
+// Cart Drawer handlers
+$('#cartPill').addEventListener('click', openCartDrawer);
+$('#mobileCartOpenBtn').addEventListener('click', openCartDrawer);
+$('#cartDrawerClose').addEventListener('click', closeCartDrawer);
+$('#cartDrawerBackdrop').addEventListener('click', e => {
+  if(e.target === $('#cartDrawerBackdrop')) closeCartDrawer();
+});
 window.addEventListener('keydown', e => {
-  if(e.key === 'Escape') closePreview();
+  if(e.key === 'Escape'){
+    closePreview();
+    closeCartDrawer();
+  }
+});
+
+// Enviar pedido completo por WhatsApp
+$('#sendCartWhatsAppBtn').addEventListener('click', () => {
+  const items = Object.entries(CART).filter(([_, qty]) => qty > 0);
+  if(!items.length) return;
+  const total = getCartTotal();
+  let text = "¡Hola! Quiero hacer el siguiente pedido:\\n\\n";
+  items.forEach(([name, qty]) => {
+    const item = MENU.find(m => m.n === name);
+    const p = item ? (item.p * qty).toFixed(2).replace('.', ',') + '€' : '';
+    text += `• ${qty}x ${name} (${p})
+`;
+  });
+  text += `
+Total: ${total.toFixed(2).replace('.', ',')}€`;
+  const name = $('#cartCustomerName').value.trim();
+  if(name) text += `
+Nombre: ${name}`;
+  const type = document.querySelector('input[name="orderType"]:checked')?.value || 'Para recoger';
+  text += `
+Tipo: ${type}`;
+  const notes = $('#cartCustomerNotes').value.trim();
+  if(notes) text += `
+Notas: ${notes}`;
+
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank', 'noopener');
+});
+
+// Search input handlers
+const sInput = $('#searchInput');
+const cBtn = $('#clearSearch');
+sInput.addEventListener('input', e => {
+  searchQuery = e.target.value;
+  cBtn.classList.toggle('hidden', !searchQuery);
+  renderMenu();
+});
+cBtn.addEventListener('click', () => {
+  sInput.value = '';
+  searchQuery = '';
+  cBtn.classList.add('hidden');
+  renderMenu();
+  sInput.focus();
 });
 chips.addEventListener('click', e => {
   const b = e.target.closest('[data-cat]'); if(!b) return;
