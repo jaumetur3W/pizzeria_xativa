@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- ===== SEO BÁSICO ===== -->
+  <title>Pizzería en Xàtiva | La Margherita Pizza · Carta y pedidos</title>
+  <meta name="description" content="Pizzería en Xàtiva con pizza italiana artesana, mozzarella fior di latte y opciones veganas. Mira la carta y pide por WhatsApp o teléfono." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <!-- CAMBIAR: URL real de GitHub Pages / dominio -->
+  <link rel="canonical" href="https://TU-USUARIO.github.io/la-margherita/" />
+  <link rel="alternate" hreflang="es" href="https://TU-USUARIO.github.io/la-margherita/" />
+  <meta name="theme-color" content="#3a3935" />
+  <link rel="icon" href="logo.png" />
+
+  <!-- ===== GEO TAGS (Xàtiva / Valencia) ===== -->
+  <meta name="geo.region" content="ES-VC" />
+  <meta name="geo.placename" content="Xàtiva, Valencia" />
+  <!-- CAMBIAR: coordenadas exactas del local -->
+  <meta name="geo.position" content="38.9904;-0.5190" />
+  <meta name="ICBM" content="38.9904, -0.5190" />
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="La Margherita Pizza Xàtiva" />
+  <meta property="og:title" content="Pizzería en Xàtiva | La Margherita Pizza" />
+  <meta property="og:description" content="Pizza italiana artesana en Xàtiva. Mozzarella fior di latte, masa de larga fermentación y opciones veganas. Pide por WhatsApp." />
+  <meta property="og:url" content="https://TU-USUARIO.github.io/la-margherita/" />
+  <meta property="og:image" content="https://TU-USUARIO.github.io/la-margherita/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pizzería en Xàtiva | La Margherita Pizza" />
+  <meta name="twitter:description" content="Pizza italiana artesana en Xàtiva. Mira la carta y pide por WhatsApp." />
+  <meta name="twitter:image" content="https://TU-USUARIO.github.io/la-margherita/logo.png" />
+
+  <!-- ===== RENDIMIENTO ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="logo.png" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          coal:  { DEFAULT:'#3a3935', 800:'#2c2b28', 900:'#1f1e1c' },
+          basil: { DEFAULT:'#2f8f4e', dark:'#237040', light:'#e6f3ea' },
+          tomato:{ DEFAULT:'#d23f45', dark:'#b3303a', light:'#fbe9ea' },
+          cream: { DEFAULT:'#f8f2e4', dark:'#efe5cd' }
+        },
+        fontFamily: {
+          display:['"Playfair Display"','serif'],
+          body:['"Nunito Sans"','sans-serif'],
+          script:['Caveat','cursive']
+        }
+      }}
+    }
+  </script>
+  <style>
+    body{font-family:'Nunito Sans',sans-serif;background:#f8f2e4;color:#3a3935;-webkit-tap-highlight-color:transparent}
+    .gingham{height:20px;background-color:#fff;background-image:linear-gradient(90deg,rgba(210,63,69,.95) 50%,transparent 50%),linear-gradient(rgba(210,63,69,.95) 50%,transparent 50%);background-size:20px 20px}
+    .gingham-soft{background-color:#fff;background-image:linear-gradient(90deg,rgba(210,63,69,.09) 50%,transparent 50%),linear-gradient(rgba(210,63,69,.09) 50%,transparent 50%);background-size:28px 28px}
+    .flagbar{background:linear-gradient(90deg,#2f8f4e 0 33.33%,#fff 33.33% 66.66%,#d23f45 66.66% 100%)}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+    .noscroll::-webkit-scrollbar{display:none}.noscroll{scrollbar-width:none}
+    .card-in{animation:cardIn .3s ease both}
+    @keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .pulse-ring{animation:pulse 2.4s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,143,78,.5)}70%{box-shadow:0 0 0 14px rgba(47,143,78,0)}100%{box-shadow:0 0 0 0 rgba(47,143,78,0)}}
+    details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}
+    details[open] .chev{transform:rotate(180deg)}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+
+  <!-- ===== SCHEMA.ORG: Pizzeria + Menú completo ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Pizzeria", "Restaurant"],
+    "@id": "https://TU-USUARIO.github.io/la-margherita/#pizzeria",
+    "name": "La Margherita Pizza Xàtiva",
+    "description": "Pizzería artesana en Xàtiva: pizza italiana con mozzarella fior di latte, masa de larga fermentación y opciones veganas.",
+    "url": "https://TU-USUARIO.github.io/la-margherita/",
+    "image": "https://TU-USUARIO.github.io/la-margherita/logo.png",
+    "logo": "https://TU-USUARIO.github.io/la-margherita/logo.png",
+    "telephone": "+34600000000",
+    "priceRange": "€€",
+    "servesCuisine": ["Pizza", "Italiana"],
+    "currenciesAccepted": "EUR",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Ejemplo, 12",
+      "addressLocality": "Xàtiva",
+      "addressRegion": "Valencia",
+      "postalCode": "46800",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 38.9904, "longitude": -0.5190 },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=La+Margherita+Pizza+X%C3%A0tiva",
+    "areaServed": { "@type": "City", "name": "Xàtiva" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Sunday"], "opens": "13:00", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Sunday"], "opens": "20:00", "closes": "23:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:00", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "20:00", "closes": "23:59" }
+    ],
+    "sameAs": [
+      "https://instagram.com/lamargheritaxativa",
+      "https://facebook.com/lamargheritaxativa",
+      "https://tiktok.com/@lamargheritaxativa"
+    ],
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Carta de La Margherita Pizza Xàtiva",
+      "url": "https://TU-USUARIO.github.io/la-margherita/#carta",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Pizzas tradicionales (mozzarella fior di latte)",
+          "hasMenuItem": [
+            {"@type":"MenuItem","name":"Margherita","description":"Tomate, mozzarella, albahaca","offers":{"@type":"Offer","price":"8.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Barbecue","description":"Barbacoa, mozzarella, carne picada, bacon, pollo","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Prosciutto Cotto","description":"Tomate, mozzarella, jamón york","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Ragazzino","description":"Tomate, mozzarella, frankfurt, patatas","offers":{"@type":"Offer","price":"10.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Napoletana","description":"Tomate, mozzarella, anchoas, alcaparras","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Ibérica","description":"Tomate, mozzarella y jamón ibérico","offers":{"@type":"Offer","price":"15.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Carbonara","description":"Tomate, mozzarella, huevo, guanciale, grana, pimienta","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Boss","description":"Tomate, mozzarella, salchicha fresca, champiñón, careta","offers":{"@type":"Offer","price":"12.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Capricciosa","description":"Tomate, mozzarella, champiñón, jamón york, frankfurt, huevo","offers":{"@type":"Offer","price":"12.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Marinara","description":"Tomate, aceite virgen, ajo, orégano, rúcula, queso grana","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Calzone","description":"Tomate, mozzarella, champiñón, jamón york","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Campionessa Margherita","description":"Tomate, mozzarella, albahaca, queso de oveja","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Diavola","description":"Tomate, mozzarella, cebolla, salami, pimiento fresco, olivas negras","offers":{"@type":"Offer","price":"11.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Sarda","description":"Tomate, mozzarella, salchicha seca, queso de oveja","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Piemontese","description":"Tomate, mozzarella, gorgonzola, guanciale, grelos","offers":{"@type":"Offer","price":"13.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Tricolore","description":"Tomate, mozzarella, rúcula, grana, jamón serrano","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"4 Formaggi","description":"Tomate, mozzarella, gorgonzola, grana, queso de oveja","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Gorgonzola","description":"Gorgonzola, mozzarella, nueces","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"4 Stagioni","description":"Tomate, mozzarella, champiñón, jamón, aceitunas, alcachofa, frankfurt","offers":{"@type":"Offer","price":"12.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Pepperoni Little Italy","description":"Tomate, mozzarella, queso de oveja, pepperoni, nata","offers":{"@type":"Offer","price":"11.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Mortadela (Bologna)","description":"Tomate, mozzarella, mortadela (Bologna), albahaca, burrata, pistacho","offers":{"@type":"Offer","price":"13.50","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Trevisana","description":"Tomate, mozzarella, cerdo asado, aceite virgen, sal, pimienta, perfume de romero","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Simpson","description":"Tomate, mozzarella, mostaza, frankfurt, cebolla","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Burrata Master","description":"Tomate, burrata, salmón, rúcula, pimienta negra","offers":{"@type":"Offer","price":"15.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Marisco","description":"Tomate, mozzarella, gambas, mejillón, pulpo, aceite virgen","offers":{"@type":"Offer","price":"15.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Salmone","description":"Tomate, mozzarella, salmón, nata","offers":{"@type":"Offer","price":"14.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Tonno","description":"Tomate, mozzarella, atún, cebolla","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Puttanesca","description":"Doble tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras, aceite picante, orégano","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Cloti","description":"Tomate, mozzarella, espinacas, queso de cabra","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Salmón 2.0","description":"Base de nata, mozzarella, salmón ahumado, aguacate, tomate cherry, queso crema y AOVE","offers":{"@type":"Offer","price":"16.50","priceCurrency":"EUR"}}
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Pizzas veganas (mozzarella vegana a pedido)",
+          "hasMenuItem": [
+            {"@type":"MenuItem","name":"Campesina","description":"Tomate, mozzarella vegana, calabacín, pimiento, berenjena","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Popeye","description":"Tomate, mozzarella vegana, espinacas, cebollino, aceite de ajo","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Enova","description":"Tomate, mozzarella vegana, queso parmesano, tomate cherry, pesto genovese","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}}
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Postres",
+          "hasMenuItem": [
+            {"@type":"MenuItem","name":"Tiramisú","description":"Mascarpone, café, savoiardi","offers":{"@type":"Offer","price":"5.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Tarta de Quesos","description":"Queso fresco, queso de cabra","offers":{"@type":"Offer","price":"5.00","priceCurrency":"EUR"}},
+            {"@type":"MenuItem","name":"Nutella","description":"Nutella, avellanas tostadas","offers":{"@type":"Offer","price":"8.00","priceCurrency":"EUR"}}
+          ]
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body class="antialiased pb-20 md:pb-0">
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-40">
+  <div class="flagbar h-1"></div>
+  <nav class="bg-coal/95 backdrop-blur text-cream" aria-label="Navegación principal">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="La Margherita Pizza Xàtiva - Inicio">
+        <span class="w-10 h-10 rounded-full overflow-hidden bg-cream inline-block ring-2 ring-cream/80">
+          <img src="logo.png" width="40" height="40" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+        </span>
+        <span class="font-display font-extrabold text-lg leading-none">La Margherita<span class="block text-[10px] font-body font-bold tracking-[.3em] text-cream/70 mt-1">PIZZA · XÀTIVA</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+        <a href="#historia" class="hover:text-tomato transition">Nosotros</a>
+        <a href="#carta" class="hover:text-tomato transition">Carta</a>
+        <a href="#opiniones" class="hover:text-tomato transition">Opiniones</a>
+        <a href="#visitanos" class="hover:text-tomato transition">Horarios y ubicación</a>
+        <a href="https://wa.me/34600000000?text=Hola%20La%20Margherita%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="bg-basil hover:bg-basil-dark text-white px-5 py-2 rounded-full transition">Pedir por WhatsApp</a>
+      </div>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-coal">
+      <div class="px-4 py-2 flex flex-col text-base font-semibold">
+        <a href="#historia" class="py-3 border-b border-white/10">Nosotros</a>
+        <a href="#carta" class="py-3 border-b border-white/10">Carta</a>
+        <a href="#opiniones" class="py-3 border-b border-white/10">Opiniones</a>
+        <a href="#visitanos" class="py-3">Horarios y ubicación</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section id="inicio" class="relative bg-coal text-cream overflow-hidden pt-24 pb-14 md:pt-32 md:pb-24">
+  <div class="absolute inset-0 opacity-[.07]" style="background-image:radial-gradient(#f8f2e4 1px,transparent 1px);background-size:22px 22px"></div>
+  <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-basil/25 blur-3xl"></div>
+  <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-tomato/25 blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <div class="order-2 md:order-1 text-center md:text-left">
+      <p class="font-script text-2xl text-basil-light mb-2">Pizza italiana artesana</p>
+      <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+        Pizzería en <span class="text-tomato">Xàtiva</span> con alma italiana
+      </h1>
+      <p class="mt-5 text-cream/85 text-lg max-w-xl mx-auto md:mx-0">
+        Masa de larga fermentación, mozzarella fior di latte y recetas de siempre. Pizzas tradicionales, veganas y creaciones propias, horneadas al momento. Pide ya por WhatsApp.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+        <a href="https://wa.me/34600000000?text=Hola%20La%20Margherita%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"
+           class="pulse-ring inline-flex items-center justify-center gap-2 bg-basil hover:bg-basil-dark text-white font-bold px-7 py-4 rounded-full text-lg transition">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <a href="tel:+34600000000" class="inline-flex items-center justify-center gap-2 border-2 border-cream/40 hover:border-cream hover:bg-cream hover:text-coal font-bold px-7 py-4 rounded-full text-lg transition">📞 Llamar ahora</a>
+      </div>
+      <a href="#carta" class="inline-block mt-4 text-cream/70 hover:text-cream underline underline-offset-4 text-sm">Ver la carta completa ↓</a>
+      <ul class="mt-7 flex flex-wrap gap-2 justify-center md:justify-start text-xs font-bold tracking-wide">
+        <li class="bg-white/10 rounded-full px-3 py-1.5">🍅 Mozzarella fior di latte</li>
+        <li class="bg-white/10 rounded-full px-3 py-1.5">🔥 Horneada al momento</li>
+        <li class="bg-white/10 rounded-full px-3 py-1.5">🌱 Opciones veganas</li>
+      </ul>
+    </div>
+    <div class="order-1 md:order-2 flex justify-center">
+      <div class="relative">
+        <div class="relative w-52 h-52 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden ring-8 ring-cream/90 shadow-2xl bg-cream">
+          <img src="logo.png" width="384" height="384" fetchpriority="high" decoding="async" alt="Logo de La Margherita Pizza, pizzería en Xàtiva" class="w-full h-full object-cover"
+               onerror="this.replaceWith(document.getElementById('logoFallback').content.cloneNode(true))" />
+        </div>
+        <span class="absolute -bottom-3 -right-2 bg-tomato text-white font-script text-xl px-4 py-1 rounded-full -rotate-6 shadow-lg">¡desde 8,50€!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<template id="logoFallback">
+  <svg viewBox="0 0 200 200" class="w-full h-full" role="img" aria-label="La Margherita Pizza Xàtiva">
+    <defs><clipPath id="c"><circle cx="100" cy="100" r="100"/></clipPath></defs>
+    <g clip-path="url(#c)">
+      <rect width="67" height="200" fill="#2f8f4e"/><rect x="67" width="66" height="200" fill="#f8f2e4"/><rect x="133" width="67" height="200" fill="#d23f45"/>
+      <circle cx="100" cy="100" r="86" fill="#f8f2e4"/>
+      <path d="M45 160V95a55 55 0 01110 0v65z" fill="#3a3935"/>
+      <path d="M60 160V98a40 40 0 0180 0v62z" fill="#2c2b28"/>
+      <text x="100" y="92" text-anchor="middle" font-family="Playfair Display,serif" font-weight="900" font-size="10" fill="#f8f2e4" letter-spacing="2">LA</text>
+      <text x="100" y="112" text-anchor="middle" font-family="Playfair Display,serif" font-weight="900" font-size="17" fill="#f8f2e4">MARGHERITA</text>
+      <text x="100" y="128" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-weight="800" font-size="9" fill="#f8f2e4" letter-spacing="3">PIZZA</text>
+      <text x="100" y="146" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-weight="700" font-size="8" fill="#f8f2e4" letter-spacing="2">XÀTIVA</text>
+    </g>
+  </svg>
+</template>
+
+<div class="gingham" aria-hidden="true"></div>
+
+<!-- ================= HISTORIA ================= -->
+<section id="historia" class="py-16 md:py-24 gingham-soft">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="bg-cream rounded-3xl shadow-xl p-6 sm:p-10 md:p-14 grid md:grid-cols-5 gap-8 items-center reveal">
+      <div class="md:col-span-3">
+        <p class="font-script text-2xl text-tomato">Nuestra pizzería</p>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl mt-1 leading-tight">La pizza artesana de Xàtiva, hecha con calma</h2>
+        <p class="mt-5 text-lg leading-relaxed text-coal/85">
+          En La Margherita creemos que una buena pizza empieza mucho antes del horno: en una masa que reposa, un tomate con sabor y una mozzarella fior di latte de verdad.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-coal/85">
+          Somos una pizzería de barrio en Xàtiva. Cocinamos las recetas italianas de siempre (Margherita, Marinara, Napoletana) y creaciones con identidad propia como la Salmón 2.0 o la Mortadela con burrata y pistacho. También tenemos pizzas veganas, porque en cada mesa hay gente distinta.
+        </p>
+        <p class="mt-4 font-script text-2xl text-basil-dark">Hecha a mano. Horneada al momento. Pensada para compartir.</p>
+      </div>
+      <div class="md:col-span-2 grid grid-cols-2 gap-3 text-center">
+        <div class="bg-white rounded-2xl p-5 shadow"><div class="text-3xl" aria-hidden="true">🌾</div><p class="mt-2 font-extrabold">Masa artesana</p><p class="text-sm text-coal/70">Larga fermentación</p></div>
+        <div class="bg-white rounded-2xl p-5 shadow"><div class="text-3xl" aria-hidden="true">🧀</div><p class="mt-2 font-extrabold">Fior di latte</p><p class="text-sm text-coal/70">Mozzarella de calidad</p></div>
+        <div class="bg-white rounded-2xl p-5 shadow"><div class="text-3xl" aria-hidden="true">🔥</div><p class="mt-2 font-extrabold">Al momento</p><p class="text-sm text-coal/70">Directa del horno</p></div>
+        <div class="bg-white rounded-2xl p-5 shadow"><div class="text-3xl" aria-hidden="true">🏘️</div><p class="mt-2 font-extrabold">De barrio</p><p class="text-sm text-coal/70">Trato cercano</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARTA ================= -->
+<section id="carta" class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center reveal">
+      <p class="font-script text-2xl text-tomato">La carta</p>
+      <h2 class="font-display font-extrabold text-3xl md:text-5xl">Carta de pizzas en Xàtiva</h2>
+      <p class="mt-3 text-coal/70 max-w-xl mx-auto">Todas las pizzas tradicionales llevan mozzarella fior di latte. En las veganas usamos mozzarella vegana. Toca <b>«Pedir»</b> y te abrimos WhatsApp con el mensaje listo.</p>
+    </div>
+
+    <div class="sticky top-[68px] z-30 -mx-4 px-4 pt-3 pb-2 bg-white/95 backdrop-blur mt-8 border-b border-coal/10">
+      <div id="chips" class="noscroll flex gap-2 overflow-x-auto md:justify-center" role="tablist" aria-label="Categorías de la carta"></div>
+      <div id="subchips" class="noscroll flex gap-2 overflow-x-auto md:justify-center mt-2" aria-label="Tipo de pizza"></div>
+    </div>
+
+    <p id="catNote" class="mt-5 text-center text-sm text-coal/60 min-h-[1.25rem]"></p>
+    <div id="menuGrid" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <div class="mt-12 bg-cream rounded-2xl p-5 text-sm text-coal/80">
+      <p class="font-bold mb-2">Leyenda de alérgenos</p>
+      <div class="flex flex-wrap gap-x-5 gap-y-1.5">
+        <span>🌾 Gluten</span><span>🥛 Lácteos</span><span>🥚 Huevo</span><span>🐟 Pescado</span><span>🦐 Crustáceos y moluscos</span><span>🥜 Frutos secos</span><span>🌭 Mostaza (puede contener)</span>
+      </div>
+      <p class="mt-3 text-xs text-coal/60">Información orientativa deducida de los ingredientes. Puede haber trazas de otros alérgenos por la manipulación en cocina. Si tienes alergia o intolerancia, avísanos al pedir.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gingham" aria-hidden="true"></div>
+
+<!-- ================= EMBUDO DE RESEÑAS ================= -->
+<section id="opiniones" class="py-16 md:py-24 bg-tomato text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(#fff 1px,transparent 1px);background-size:22px 22px"></div>
+  <div class="relative max-w-5xl mx-auto px-4 text-center reveal">
+    <div class="text-4xl tracking-widest" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+    <h2 class="font-display font-extrabold text-3xl md:text-5xl mt-3 leading-tight">¿Te ha gustado la experiencia?<br class="hidden sm:block" /> Déjanos tu opinión en Google</h2>
+    <p class="mt-4 text-white/90 text-lg max-w-2xl mx-auto">Tu reseña ayuda a que más vecinos de Xàtiva descubran nuestra pizzería y a nosotros nos ayuda a mejorar cada día. Son solo 30 segundos y nos haces un favor enorme.</p>
+
+    <!-- CAMBIAR: sustituye PLACE_ID por el ID real de tu ficha de Google (Place ID Finder) -->
+    <a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener"
+       class="pulse-ring inline-flex items-center justify-center gap-3 mt-8 bg-white text-tomato-dark hover:bg-cream font-extrabold text-lg px-8 py-4 rounded-full shadow-xl transition active:scale-95">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg>
+      Escribir mi reseña en Google
+    </a>
+
+    <ol class="mt-10 grid sm:grid-cols-3 gap-4 text-left max-w-3xl mx-auto">
+      <li class="bg-white/10 rounded-2xl p-5"><span class="font-script text-3xl">1</span><p class="font-bold mt-1">Pulsa el botón</p><p class="text-sm text-white/85">Se abre nuestra ficha de Google.</p></li>
+      <li class="bg-white/10 rounded-2xl p-5"><span class="font-script text-3xl">2</span><p class="font-bold mt-1">Elige tus estrellas</p><p class="text-sm text-white/85">Puntúa con total sinceridad.</p></li>
+      <li class="bg-white/10 rounded-2xl p-5"><span class="font-script text-3xl">3</span><p class="font-bold mt-1">Cuéntanos qué pediste</p><p class="text-sm text-white/85">Tu pizza favorita nos encanta leerla.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section id="testimonios" class="py-16 md:py-20 gingham-soft">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-end justify-between gap-4 flex-wrap">
+      <div>
+        <p class="font-script text-2xl text-tomato">Lo que dicen de nosotros</p>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">Opiniones de clientes de Xàtiva</h2>
+      </div>
+      <div id="revNav" class="hidden gap-2">
+        <button id="revPrev" class="w-11 h-11 rounded-full bg-coal text-white font-bold hover:bg-tomato transition" aria-label="Opinión anterior">←</button>
+        <button id="revNext" class="w-11 h-11 rounded-full bg-coal text-white font-bold hover:bg-tomato transition" aria-label="Opinión siguiente">→</button>
+      </div>
+    </div>
+    <div id="revTrack" class="noscroll mt-8 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= HORARIOS Y UBICACIÓN ================= -->
+<section id="visitanos" class="py-16 md:py-24 bg-coal text-cream">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center reveal">
+      <p class="font-script text-2xl text-basil-light">Ven a vernos</p>
+      <h2 class="font-display font-extrabold text-3xl md:text-5xl">Horarios y ubicación en Xàtiva</h2>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 gap-6 reveal">
+      <div class="bg-coal-800 rounded-3xl p-6 sm:p-8 border border-white/10">
+        <div class="flex items-center justify-between gap-3 flex-wrap">
+          <h3 class="font-display font-bold text-2xl">Horario</h3>
+          <span id="openStatus" class="text-xs font-extrabold px-3 py-1.5 rounded-full bg-white/10">Comprobando…</span>
+        </div>
+        <!-- CAMBIAR: horarios reales (y el objeto SCHEMA del script, y el JSON-LD) -->
+        <ul id="hoursList" class="mt-5 divide-y divide-white/10">
+          <li data-day="1" class="flex justify-between py-3"><span>Lunes</span><span class="text-tomato font-bold">Cerrado</span></li>
+          <li data-day="2" class="flex justify-between py-3"><span>Martes</span><span>13:00–16:00 · 20:00–23:30</span></li>
+          <li data-day="3" class="flex justify-between py-3"><span>Miércoles</span><span>13:00–16:00 · 20:00–23:30</span></li>
+          <li data-day="4" class="flex justify-between py-3"><span>Jueves</span><span>13:00–16:00 · 20:00–23:30</span></li>
+          <li data-day="5" class="flex justify-between py-3"><span>Viernes</span><span>13:00–16:00 · 20:00–00:00</span></li>
+          <li data-day="6" class="flex justify-between py-3"><span>Sábado</span><span>13:00–16:00 · 20:00–00:00</span></li>
+          <li data-day="0" class="flex justify-between py-3"><span>Domingo</span><span>13:00–16:00 · 20:00–23:30</span></li>
+        </ul>
+        <address class="mt-6 not-italic space-y-2 text-cream/90">
+          <!-- CAMBIAR: dirección real -->
+          <p>📍 Calle Ejemplo, 12 · 46800 Xàtiva (Valencia)</p>
+          <p>📞 <a href="tel:+34600000000" class="underline underline-offset-4">600 00 00 00</a></p>
+        </address>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://www.google.com/maps/search/?api=1&query=La+Margherita+Pizza+X%C3%A0tiva" target="_blank" rel="noopener" class="flex-1 text-center bg-cream text-coal font-bold py-3 rounded-full hover:bg-white transition">📍 Cómo llegar (Google Maps)</a>
+          <a href="https://wa.me/34600000000?text=Hola%20La%20Margherita%2C%20quiero%20reservar%20mesa" target="_blank" rel="noopener" class="flex-1 text-center bg-basil text-white font-bold py-3 rounded-full hover:bg-basil-dark transition">Reservar por WhatsApp</a>
+        </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden border border-white/10 min-h-[340px] bg-coal-800">
+        <iframe title="Mapa de La Margherita Pizza en Xàtiva" class="w-full h-full min-h-[360px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=La+Margherita+Pizza+X%C3%A0tiva&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-16 md:py-20 bg-cream">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="font-display font-extrabold text-3xl md:text-4xl text-center">Preguntas frecuentes</h2>
+    <div class="mt-8 space-y-3">
+      <details class="bg-white rounded-2xl p-5 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 font-bold">¿Dónde puedo comer pizza artesana en Xàtiva?<span class="chev transition" aria-hidden="true">⌄</span></summary>
+        <p class="mt-3 text-coal/80">En La Margherita Pizza, nuestra pizzería de Xàtiva. Encuentras la dirección y el mapa en la sección de horarios y ubicación.</p>
+      </details>
+      <details class="bg-white rounded-2xl p-5 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 font-bold">¿Cómo hago un pedido?<span class="chev transition" aria-hidden="true">⌄</span></summary>
+        <p class="mt-3 text-coal/80">Escríbenos por WhatsApp con el botón «Pedir» de cada pizza o llámanos por teléfono. Indícanos tu nombre y cualquier alergia o intolerancia.</p>
+      </details>
+      <details class="bg-white rounded-2xl p-5 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 font-bold">¿Tenéis pizzas veganas?<span class="chev transition" aria-hidden="true">⌄</span></summary>
+        <p class="mt-3 text-coal/80">Sí: Campesina, Popeye y Enova, con mozzarella vegana. Aun así, avísanos al pedir para confirmar los ingredientes.</p>
+      </details>
+      <details class="bg-white rounded-2xl p-5 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 font-bold">¿Qué alérgenos contienen vuestras pizzas?<span class="chev transition" aria-hidden="true">⌄</span></summary>
+        <p class="mt-3 text-coal/80">Todas contienen gluten y, según la receta, lácteos, huevo, pescado, marisco, frutos secos o mostaza. Cada plato de la carta muestra sus alérgenos orientativos.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-coal-900 text-cream/80">
+  <div class="gingham" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8 text-center md:text-left">
+    <div>
+      <p class="font-display font-extrabold text-2xl text-cream">La Margherita</p>
+      <p class="text-xs tracking-[.3em] font-bold mt-1">PIZZA · XÀTIVA</p>
+      <p class="mt-4 text-sm">Pizzería artesana en Xàtiva (Valencia). Pizza italiana hecha con cariño en el barrio.</p>
+    </div>
+    <div>
+      <p class="font-bold text-cream mb-3">Síguenos</p>
+      <!-- CAMBIAR: URLs reales de redes -->
+      <div class="flex gap-3 justify-center md:justify-start">
+        <a href="https://instagram.com/lamargheritaxativa" target="_blank" rel="noopener me" aria-label="Instagram" class="w-11 h-11 rounded-full bg-white/10 hover:bg-tomato flex items-center justify-center transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://facebook.com/lamargheritaxativa" target="_blank" rel="noopener me" aria-label="Facebook" class="w-11 h-11 rounded-full bg-white/10 hover:bg-tomato flex items-center justify-center transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.3-1 1-1h2V2h-3c-3 0-4.5 1.8-4.5 4.4V8H7v3.5h2.5V22H14V11.5h2.8L17.5 8z"/></svg>
+        </a>
+        <a href="https://tiktok.com/@lamargheritaxativa" target="_blank" rel="noopener me" aria-label="TikTok" class="w-11 h-11 rounded-full bg-white/10 hover:bg-tomato flex items-center justify-center transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 2h-3v13.2a2.8 2.8 0 11-2.8-2.8c.3 0 .6 0 .8.1V9.4a6 6 0 105.5 6V8.6a7 7 0 004 1.3V6.8a4 4 0 01-4.5-4.8z"/></svg>
+        </a>
+        <a href="https://wa.me/34600000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-11 h-11 rounded-full bg-white/10 hover:bg-basil flex items-center justify-center transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="font-bold text-cream mb-3">Aviso de alérgenos</p>
+      <p class="text-sm leading-relaxed">Nuestras pizzas contienen gluten, lácteos y, según la receta, huevo, pescado, marisco, frutos secos y mostaza. Pregúntanos por cualquier alergia o intolerancia antes de pedir.</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-xs text-cream/60 px-4">
+    © <span id="year">2026</span> La Margherita Pizza Xàtiva · Todos los derechos reservados · Precios con IVA incluido
+  </div>
+</footer>
+
+<!-- ================= BOTONES FLOTANTES DE CONVERSIÓN ================= -->
+<!-- Móvil: barra inferior persistente -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-coal border-t border-white/10 grid grid-cols-2 gap-2 p-2" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
+  <a href="https://wa.me/34600000000?text=Hola%20La%20Margherita%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-basil text-white font-extrabold py-3.5 rounded-full active:scale-95 transition">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+    Pedir
+  </a>
+  <a href="tel:+34600000000" class="flex items-center justify-center gap-2 bg-cream text-coal font-extrabold py-3.5 rounded-full active:scale-95 transition">📞 Llamar</a>
+</div>
+<!-- Escritorio: botón flotante WhatsApp -->
+<a href="https://wa.me/34600000000?text=Hola%20La%20Margherita%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"
+   class="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 bg-basil hover:bg-basil-dark text-white font-extrabold px-6 py-4 rounded-full shadow-2xl transition">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+  Pedir por WhatsApp
+</a>
+
+<script>
+/* ================= CONFIG ================= */
+const WHATSAPP = '34600000000'; // CAMBIAR: número real con prefijo de país, sin +
+// CAMBIAR: enlace de tu ficha de Google para ver todas las opiniones
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/search/?api=1&query=La+Margherita+Pizza+X%C3%A0tiva';
+
+/* ================= RESEÑAS REALES =================
+   Pega aquí reseñas REALES de tu ficha de Google (con permiso del cliente).
+   Formato: { name:'Nombre', text:'Texto de la reseña', stars:5, date:'hace 2 semanas' }
+   Mientras el array esté vacío se muestra una invitación a leer las opiniones en Google. */
+const REVIEWS = [
+  // { name:'', text:'', stars:5, date:'' },
+];
+
+/* ================= CARTA =================
+   cat: pizzas | veganas | entrantes | bebidas | postres
+   tags (solo pizzas): clasicas | carne | quesos | mar
+   Para añadir entrantes o bebidas, agrega objetos con cat:'entrantes' o cat:'bebidas'. */
+const MENU = [
+  // — Pizzas tradicionales (mozzarella fior di latte) —
+  {n:'Margherita', p:8.5, d:'Tomate, mozzarella, albahaca', cat:'pizzas', tags:['clasicas'], star:true},
+  {n:'Barbecue', p:12, d:'Barbacoa, mozzarella, carne picada, bacon, pollo', cat:'pizzas', tags:['carne']},
+  {n:'Prosciutto Cotto', p:10, d:'Tomate, mozzarella, jamón york', cat:'pizzas', tags:['clasicas','carne']},
+  {n:'Ragazzino', p:10.5, d:'Tomate, mozzarella, frankfurt, patatas', cat:'pizzas', tags:['carne']},
+  {n:'Napoletana', p:10, d:'Tomate, mozzarella, anchoas, alcaparras', cat:'pizzas', tags:['clasicas','mar']},
+  {n:'Ibérica', p:15, d:'Tomate, mozzarella y jamón ibérico', cat:'pizzas', tags:['carne'], star:true},
+  {n:'Carbonara', p:12, d:'Tomate, mozzarella, huevo, guanciale, grana, pimienta', cat:'pizzas', tags:['carne']},
+  {n:'Boss', p:12.5, d:'Tomate, mozzarella, salchicha fresca, champiñón, careta', cat:'pizzas', tags:['carne']},
+  {n:'Capricciosa', p:12.5, d:'Tomate, mozzarella, champiñón, jamón york, frankfurt, huevo', cat:'pizzas', tags:['clasicas','carne']},
+  {n:'Marinara', p:10, d:'Tomate, aceite virgen, ajo, orégano, rúcula, queso grana', cat:'pizzas', tags:['clasicas']},
+  {n:'Calzone', p:12, d:'Tomate, mozzarella, champiñón, jamón york', cat:'pizzas', tags:['clasicas','carne']},
+  {n:'Campionessa Margherita', p:10, d:'Tomate, mozzarella, albahaca, queso de oveja', cat:'pizzas', tags:['clasicas','quesos']},
+  {n:'Diavola', p:11.5, d:'Tomate, mozzarella, cebolla, salami, pimiento fresco, olivas negras', cat:'pizzas', tags:['clasicas','carne']},
+  {n:'Sarda', p:11, d:'Tomate, mozzarella, salchicha seca, queso de oveja', cat:'pizzas', tags:['carne','quesos']},
+  {n:'Piemontese', p:13, d:'Tomate, mozzarella, gorgonzola, guanciale, grelos', cat:'pizzas', tags:['carne','quesos']},
+  {n:'Tricolore', p:12, d:'Tomate, mozzarella, rúcula, grana, jamón serrano', cat:'pizzas', tags:['carne']},
+  {n:'4 Formaggi', p:11, d:'Tomate, mozzarella, gorgonzola, grana, queso de oveja', cat:'pizzas', tags:['quesos']},
+  {n:'Gorgonzola', p:10, d:'Gorgonzola, mozzarella, nueces', cat:'pizzas', tags:['quesos']},
+  {n:'4 Stagioni', p:12.5, d:'Tomate, mozzarella, champiñón, jamón, aceitunas, alcachofa, frankfurt', cat:'pizzas', tags:['clasicas','carne']},
+  {n:'Pepperoni Little Italy', p:11.5, d:'Tomate, mozzarella, queso de oveja, pepperoni, nata', cat:'pizzas', tags:['carne']},
+  {n:'Mortadela (Bologna)', p:13.5, d:'Tomate, mozzarella, mortadela (Bologna), albahaca, burrata, pistacho', cat:'pizzas', tags:['carne','quesos'], star:true},
+  {n:'Trevisana', p:11, d:'Tomate, mozzarella, cerdo asado, aceite virgen, sal, pimienta, perfume de romero', cat:'pizzas', tags:['carne']},
+  {n:'Simpson', p:11, d:'Tomate, mozzarella, mostaza, frankfurt, cebolla', cat:'pizzas', tags:['carne']},
+  {n:'Burrata Master', p:15, d:'Tomate, burrata, salmón, rúcula, pimienta negra', cat:'pizzas', tags:['mar','quesos'], star:true},
+  {n:'Marisco', p:15, d:'Tomate, mozzarella, gambas, mejillón, pulpo, aceite virgen', cat:'pizzas', tags:['mar']},
+  {n:'Salmone', p:14, d:'Tomate, mozzarella, salmón, nata', cat:'pizzas', tags:['mar']},
+  {n:'Tonno', p:10, d:'Tomate, mozzarella, atún, cebolla', cat:'pizzas', tags:['clasicas','mar']},
+  {n:'Puttanesca', p:10, d:'Doble tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras, aceite picante, orégano', cat:'pizzas', tags:['clasicas','mar']},
+  {n:'Cloti', p:11, d:'Tomate, mozzarella, espinacas, queso de cabra', cat:'pizzas', tags:['quesos']},
+  {n:'Salmón 2.0', p:16.5, d:'Base de nata, mozzarella, salmón ahumado, aguacate, tomate cherry, queso crema y AOVE', cat:'pizzas', tags:['mar'], star:true},
+
+  // — Pizzas veganas (mozzarella vegana a pedido) —
+  {n:'Campesina', p:11, d:'Tomate, mozzarella vegana, calabacín, pimiento, berenjena', cat:'veganas', vegan:true},
+  {n:'Popeye', p:11, d:'Tomate, mozzarella vegana, espinacas, cebollino, aceite de ajo', cat:'veganas', vegan:true},
+  {n:'Enova', p:11, d:'Tomate, mozzarella vegana, queso parmesano, tomate cherry, pesto genovese', cat:'veganas', vegan:true},
+
+  // — Postres —
+  {n:'Tiramisú', p:5, d:'Mascarpone, café, savoiardi', cat:'postres'},
+  {n:'Tarta de Quesos', p:5, d:'Queso fresco, queso de cabra', cat:'postres'},
+  {n:'Nutella', p:8, d:'Nutella, avellanas tostadas', cat:'postres'}
+];
+
+const CATS = [
+  {k:'todas',     l:'Todo',          note:''},
+  {k:'pizzas',    l:'🍕 Pizzas',     note:'Pizzas tradicionales con mozzarella fior di latte.'},
+  {k:'veganas',   l:'🌱 Veganas',    note:'Con mozzarella vegana (se indica a pedido).'},
+  {k:'entrantes', l:'🥗 Entrantes',  note:''},
+  {k:'bebidas',   l:'🥤 Bebidas',    note:''},
+  {k:'postres',   l:'🍰 Postres',    note:'El final dulce.'}
+];
+const SUBS = [
+  {k:'todas',l:'Todas'},{k:'clasicas',l:'Clásicas'},{k:'carne',l:'Carne y embutidos'},{k:'quesos',l:'Quesos'},{k:'mar',l:'Del mar'}
+];
+
+/* ================= ALÉRGENOS (orientativos, deducidos de ingredientes) ================= */
+const ALLERGENS = [
+  {e:'🌾', t:'Gluten', always:true},
+  {e:'🥛', t:'Lácteos', re:/mozzarella|queso|grana|gorgonzola|burrata|nata|parmesano|mascarpone|crema/i},
+  {e:'🥚', t:'Huevo', re:/huevo|savoiardi/i},
+  {e:'🐟', t:'Pescado', re:/anchoa|atún|salm[oó]n|salmone/i},
+  {e:'🦐', t:'Crustáceos y moluscos', re:/gambas|mejill[oó]n|pulpo/i},
+  {e:'🥜', t:'Frutos secos', re:/nueces|pistacho|avellana|pesto/i},
+  {e:'🌭', t:'Mostaza (puede contener)', re:/mostaza|barbacoa/i}
+];
+function allergensOf(i){
+  let txt = i.d + ' ' + i.n;
+  if(i.vegan) txt = txt.replace(/mozzarella vegana/gi,'');
+  return ALLERGENS.filter(a => a.always || a.re.test(txt));
+}
+
+/* ================= UTILIDADES ================= */
+const $ = s => document.querySelector(s);
+const eur = v => v.toFixed(2).replace('.', ',') + '€';
+const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+/* ================= RENDER CARTA ================= */
+let cat = 'todas', sub = 'todas';
+const grid = $('#menuGrid'), chips = $('#chips'), subchips = $('#subchips'), note = $('#catNote');
+const availableCats = CATS.filter(c => c.k==='todas' || MENU.some(i => i.cat===c.k)); // oculta categorías vacías
+
+const chipClass = on => 'shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-sm font-bold border-2 transition ' +
+  (on ? 'bg-tomato border-tomato text-white shadow' : 'bg-white border-coal/15 text-coal hover:border-tomato');
+
+function renderChips(){
+  chips.innerHTML = availableCats.map(c => `<button role="tab" aria-selected="${c.k===cat}" data-cat="${c.k}" class="${chipClass(c.k===cat)}">${c.l}</button>`).join('');
+  if(cat==='pizzas'){
+    subchips.innerHTML = SUBS.map(s => `<button data-sub="${s.k}" class="${chipClass(s.k===sub).replace('px-4 py-2.5','px-3 py-1.5').replace('text-sm','text-xs')}">${s.l}</button>`).join('');
+    subchips.classList.remove('hidden');
+  } else { subchips.innerHTML=''; subchips.classList.add('hidden'); }
+}
+function waOrder(name){
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('¡Hola La Margherita! Quiero pedir: ' + name)}`;
+}
+function renderMenu(){
+  const items = MENU.filter(i => (cat==='todas' || i.cat===cat) && (cat!=='pizzas' || sub==='todas' || (i.tags||[]).includes(sub)));
+  note.textContent = (availableCats.find(c => c.k===cat)||{}).note || '';
+  grid.innerHTML = items.map(i => {
+    const al = allergensOf(i).map(a => `<span title="${a.t}" aria-label="${a.t}" class="text-base">${a.e}</span>`).join('');
+    return `
+    <article class="card-in relative bg-cream rounded-2xl p-5 shadow-sm hover:shadow-lg transition border border-coal/10 flex flex-col">
+      ${i.star ? '<span class="absolute -top-2 left-4 bg-tomato text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full">★ RECOMENDADA</span>' : ''}
+      ${i.vegan ? '<span class="absolute -top-2 right-4 bg-basil text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full">🌱 VEGANA</span>' : ''}
+      <div class="flex items-start justify-between gap-3 mt-1">
+        <h3 class="font-display font-extrabold text-xl leading-tight text-basil-dark">${esc(i.n)}</h3>
+        <span class="font-extrabold text-lg text-tomato whitespace-nowrap">${eur(i.p)}</span>
+      </div>
+      <p class="mt-2 text-sm text-coal/80 leading-relaxed flex-1">${esc(i.d)}</p>
+      <div class="mt-4 flex items-center justify-between gap-3">
+        <div class="flex gap-1.5 flex-wrap">${al}</div>
+        <a href="${waOrder(i.n)}" target="_blank" rel="noopener" class="shrink-0 bg-coal hover:bg-basil text-white text-sm font-bold px-4 py-2.5 rounded-full transition active:scale-95">Pedir</a>
+      </div>
+    </article>`;
+  }).join('');
+}
+chips.addEventListener('click', e => {
+  const b = e.target.closest('[data-cat]'); if(!b) return;
+  cat = b.dataset.cat; sub = 'todas'; renderChips(); renderMenu();
+  b.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
+});
+subchips.addEventListener('click', e => {
+  const b = e.target.closest('[data-sub]'); if(!b) return;
+  sub = b.dataset.sub; renderChips(); renderMenu();
+});
+
+/* ================= TESTIMONIOS ================= */
+function renderReviews(){
+  const track = $('#revTrack');
+  if(!REVIEWS.length){
+    track.innerHTML = `
+      <div class="snap-start w-full bg-cream rounded-3xl p-8 text-center shadow">
+        <div class="text-3xl" aria-hidden="true">⭐⭐⭐⭐⭐</div>
+        <p class="font-display font-extrabold text-2xl mt-2">Lee lo que opinan nuestros clientes</p>
+        <p class="mt-2 text-coal/70">Todas las opiniones, tal cual, en nuestra ficha de Google.</p>
+        <a href="${GOOGLE_REVIEWS_URL}" target="_blank" rel="noopener" class="inline-block mt-5 bg-coal hover:bg-tomato text-white font-bold px-6 py-3 rounded-full transition">Ver opiniones en Google</a>
+      </div>`;
+    return;
+  }
+  $('#revNav').classList.remove('hidden'); $('#revNav').classList.add('flex');
+  track.innerHTML = REVIEWS.map(r => `
+    <figure class="snap-start shrink-0 w-[85%] sm:w-[45%] lg:w-[31%] bg-cream rounded-3xl p-6 shadow">
+      <div class="text-tomato text-lg" aria-label="${r.stars||5} de 5 estrellas">${'★'.repeat(r.stars||5)}${'☆'.repeat(5-(r.stars||5))}</div>
+      <blockquote class="mt-3 text-coal/90 leading-relaxed">“${esc(r.text)}”</blockquote>
+      <figcaption class="mt-4 text-sm font-bold">${esc(r.name)} <span class="font-normal text-coal/60">· ${esc(r.date||'Google')}</span></figcaption>
+    </figure>`).join('');
+  const step = () => track.firstElementChild.getBoundingClientRect().width + 16;
+  $('#revPrev').onclick = () => track.scrollBy({left:-step(), behavior:'smooth'});
+  $('#revNext').onclick = () => track.scrollBy({left: step(), behavior:'smooth'});
+}
+
+/* ================= MENÚ MÓVIL ================= */
+const mBtn = $('#menuBtn'), mMenu = $('#mobileMenu');
+mBtn.addEventListener('click', () => { const hidden = mMenu.classList.toggle('hidden'); mBtn.setAttribute('aria-expanded', String(!hidden)); });
+mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mMenu.classList.add('hidden'); mBtn.setAttribute('aria-expanded','false'); }));
+
+/* ================= ABIERTO / CERRADO (hora de Madrid) ================= */
+function madridNow(){
+  const parts = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const g = t => parts.find(p => p.type===t).value;
+  const days = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  return {day:days[g('weekday')], mins:(parseInt(g('hour'),10)%24)*60 + parseInt(g('minute'),10)};
+}
+function initHours(){
+  const {day, mins} = madridNow();
+  const SCHEDULE = { // CAMBIAR junto con la lista visible y el JSON-LD (minutos desde 00:00)
+    0:[[780,960],[1200,1410]], 1:[], 2:[[780,960],[1200,1410]], 3:[[780,960],[1200,1410]],
+    4:[[780,960],[1200,1410]], 5:[[780,960],[1200,1440]], 6:[[780,960],[1200,1440]]
+  };
+  const open = SCHEDULE[day].some(([a,b]) => mins>=a && mins<b);
+  const s = $('#openStatus');
+  s.textContent = open ? '● Abierto ahora' : '● Cerrado ahora';
+  s.className = 'text-xs font-extrabold px-3 py-1.5 rounded-full ' + (open ? 'bg-basil text-white' : 'bg-tomato text-white');
+  const li = document.querySelector(`#hoursList [data-day="${day}"]`);
+  if(li) li.classList.add('bg-white/5','-mx-3','px-3','rounded-lg','font-bold');
+}
+
+/* ================= REVEAL ================= */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ================= INIT ================= */
+$('#year').textContent = new Date().getFullYear();
+renderChips(); renderMenu(); renderReviews(); initHours();
+</script>
+</body>
+</html>
