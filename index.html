@@ -580,6 +580,39 @@
   Pedir por WhatsApp
 </a>
 
+<!-- ================= MODAL VISTA PREVIA ================= -->
+<div id="previewModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-coal/80 backdrop-blur-sm transition-opacity" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div id="modalBox" class="relative w-full max-w-lg bg-cream rounded-3xl overflow-hidden shadow-2xl border border-white/20 transform transition-all duration-300 scale-95 opacity-0 flex flex-col max-h-[90vh]">
+    <button id="modalClose" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-coal/80 hover:bg-coal text-white flex items-center justify-center shadow-lg transition active:scale-90" aria-label="Cerrar vista previa">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="relative h-60 sm:h-72 w-full overflow-hidden bg-coal/10 shrink-0">
+      <img id="modalImg" src="" alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-coal/85 via-coal/20 to-transparent"></div>
+      <div id="modalBadges" class="absolute bottom-3 left-4 flex gap-2"></div>
+    </div>
+    <div class="p-6 overflow-y-auto noscroll flex-1 flex flex-col">
+      <div class="flex items-start justify-between gap-4">
+        <h3 id="modalTitle" class="font-display font-extrabold text-2xl sm:text-3xl text-basil-dark"></h3>
+        <span id="modalPrice" class="font-extrabold text-2xl text-tomato shrink-0"></span>
+      </div>
+      <p id="modalDesc" class="mt-3 text-base text-coal/85 leading-relaxed"></p>
+      <div id="modalTags" class="mt-4 flex flex-wrap gap-2 text-xs font-bold text-coal/70"></div>
+      <div class="mt-5 pt-4 border-t border-coal/10">
+        <p class="text-xs font-extrabold uppercase tracking-wider text-coal/50 mb-2.5">Alérgenos</p>
+        <div id="modalAllergens" class="flex flex-wrap gap-2"></div>
+      </div>
+      <div class="mt-6 pt-4 border-t border-coal/10 flex flex-col sm:flex-row gap-3">
+        <a id="modalOrderBtn" href="#" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 bg-basil hover:bg-basil-dark text-white font-bold py-3.5 px-6 rounded-full text-base transition shadow-md active:scale-95">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+          <span>Pedir por WhatsApp</span>
+        </a>
+        <button id="modalCloseBtn" class="sm:px-6 py-3 rounded-full border border-coal/20 hover:bg-white text-coal font-bold text-sm transition">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ================= CONFIG ================= */
 const WHATSAPP = '34600000000'; // CAMBIAR: número real con prefijo de país, sin +
@@ -600,46 +633,46 @@ const REVIEWS = [
    Para añadir entrantes o bebidas, agrega objetos con cat:'entrantes' o cat:'bebidas'. */
 const MENU = [
   // — Pizzas tradicionales (mozzarella fior di latte) —
-  {n:'Margherita', p:8.5, d:'Tomate, mozzarella, albahaca', cat:'pizzas', tags:['clasicas'], star:true},
-  {n:'Barbecue', p:12, d:'Barbacoa, mozzarella, carne picada, bacon, pollo', cat:'pizzas', tags:['carne']},
-  {n:'Prosciutto Cotto', p:10, d:'Tomate, mozzarella, jamón york', cat:'pizzas', tags:['clasicas','carne']},
-  {n:'Ragazzino', p:10.5, d:'Tomate, mozzarella, frankfurt, patatas', cat:'pizzas', tags:['carne']},
-  {n:'Napoletana', p:10, d:'Tomate, mozzarella, anchoas, alcaparras', cat:'pizzas', tags:['clasicas','mar']},
-  {n:'Ibérica', p:15, d:'Tomate, mozzarella y jamón ibérico', cat:'pizzas', tags:['carne'], star:true},
-  {n:'Carbonara', p:12, d:'Tomate, mozzarella, huevo, guanciale, grana, pimienta', cat:'pizzas', tags:['carne']},
-  {n:'Boss', p:12.5, d:'Tomate, mozzarella, salchicha fresca, champiñón, careta', cat:'pizzas', tags:['carne']},
-  {n:'Capricciosa', p:12.5, d:'Tomate, mozzarella, champiñón, jamón york, frankfurt, huevo', cat:'pizzas', tags:['clasicas','carne']},
-  {n:'Marinara', p:10, d:'Tomate, aceite virgen, ajo, orégano, rúcula, queso grana', cat:'pizzas', tags:['clasicas']},
-  {n:'Calzone', p:12, d:'Tomate, mozzarella, champiñón, jamón york', cat:'pizzas', tags:['clasicas','carne']},
-  {n:'Campionessa Margherita', p:10, d:'Tomate, mozzarella, albahaca, queso de oveja', cat:'pizzas', tags:['clasicas','quesos']},
-  {n:'Diavola', p:11.5, d:'Tomate, mozzarella, cebolla, salami, pimiento fresco, olivas negras', cat:'pizzas', tags:['clasicas','carne']},
-  {n:'Sarda', p:11, d:'Tomate, mozzarella, salchicha seca, queso de oveja', cat:'pizzas', tags:['carne','quesos']},
-  {n:'Piemontese', p:13, d:'Tomate, mozzarella, gorgonzola, guanciale, grelos', cat:'pizzas', tags:['carne','quesos']},
-  {n:'Tricolore', p:12, d:'Tomate, mozzarella, rúcula, grana, jamón serrano', cat:'pizzas', tags:['carne']},
-  {n:'4 Formaggi', p:11, d:'Tomate, mozzarella, gorgonzola, grana, queso de oveja', cat:'pizzas', tags:['quesos']},
-  {n:'Gorgonzola', p:10, d:'Gorgonzola, mozzarella, nueces', cat:'pizzas', tags:['quesos']},
-  {n:'4 Stagioni', p:12.5, d:'Tomate, mozzarella, champiñón, jamón, aceitunas, alcachofa, frankfurt', cat:'pizzas', tags:['clasicas','carne']},
-  {n:'Pepperoni Little Italy', p:11.5, d:'Tomate, mozzarella, queso de oveja, pepperoni, nata', cat:'pizzas', tags:['carne']},
-  {n:'Mortadela (Bologna)', p:13.5, d:'Tomate, mozzarella, mortadela (Bologna), albahaca, burrata, pistacho', cat:'pizzas', tags:['carne','quesos'], star:true},
-  {n:'Trevisana', p:11, d:'Tomate, mozzarella, cerdo asado, aceite virgen, sal, pimienta, perfume de romero', cat:'pizzas', tags:['carne']},
-  {n:'Simpson', p:11, d:'Tomate, mozzarella, mostaza, frankfurt, cebolla', cat:'pizzas', tags:['carne']},
-  {n:'Burrata Master', p:15, d:'Tomate, burrata, salmón, rúcula, pimienta negra', cat:'pizzas', tags:['mar','quesos'], star:true},
-  {n:'Marisco', p:15, d:'Tomate, mozzarella, gambas, mejillón, pulpo, aceite virgen', cat:'pizzas', tags:['mar']},
-  {n:'Salmone', p:14, d:'Tomate, mozzarella, salmón, nata', cat:'pizzas', tags:['mar']},
-  {n:'Tonno', p:10, d:'Tomate, mozzarella, atún, cebolla', cat:'pizzas', tags:['clasicas','mar']},
-  {n:'Puttanesca', p:10, d:'Doble tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras, aceite picante, orégano', cat:'pizzas', tags:['clasicas','mar']},
-  {n:'Cloti', p:11, d:'Tomate, mozzarella, espinacas, queso de cabra', cat:'pizzas', tags:['quesos']},
-  {n:'Salmón 2.0', p:16.5, d:'Base de nata, mozzarella, salmón ahumado, aguacate, tomate cherry, queso crema y AOVE', cat:'pizzas', tags:['mar'], star:true},
+  {n:'Margherita', p:8.5, d:'Tomate, mozzarella, albahaca', cat:'pizzas', tags:['clasicas'], star:true, img:'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80'},
+  {n:'Barbecue', p:12, d:'Barbacoa, mozzarella, carne picada, bacon, pollo', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80'},
+  {n:'Prosciutto Cotto', p:10, d:'Tomate, mozzarella, jamón york', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=80'},
+  {n:'Ragazzino', p:10.5, d:'Tomate, mozzarella, frankfurt, patatas', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80'},
+  {n:'Napoletana', p:10, d:'Tomate, mozzarella, anchoas, alcaparras', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80'},
+  {n:'Ibérica', p:15, d:'Tomate, mozzarella y jamón ibérico', cat:'pizzas', tags:['carne'], star:true, img:'https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Carbonara', p:12, d:'Tomate, mozzarella, huevo, guanciale, grana, pimienta', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80'},
+  {n:'Boss', p:12.5, d:'Tomate, mozzarella, salchicha fresca, champiñón, careta', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Capricciosa', p:12.5, d:'Tomate, mozzarella, champiñón, jamón york, frankfurt, huevo', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=80'},
+  {n:'Marinara', p:10, d:'Tomate, aceite virgen, ajo, orégano, rúcula, queso grana', cat:'pizzas', tags:['clasicas'], img:'https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=800&q=80'},
+  {n:'Calzone', p:12, d:'Tomate, mozzarella, champiñón, jamón york', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80'},
+  {n:'Campionessa Margherita', p:10, d:'Tomate, mozzarella, albahaca, queso de oveja', cat:'pizzas', tags:['clasicas','quesos'], img:'https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80'},
+  {n:'Diavola', p:11.5, d:'Tomate, mozzarella, cebolla, salami, pimiento fresco, olivas negras', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80'},
+  {n:'Sarda', p:11, d:'Tomate, mozzarella, salchicha seca, queso de oveja', cat:'pizzas', tags:['carne','quesos'], img:'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80'},
+  {n:'Piemontese', p:13, d:'Tomate, mozzarella, gorgonzola, guanciale, grelos', cat:'pizzas', tags:['carne','quesos'], img:'https://images.unsplash.com/photo-1564936281291-294551497d81?auto=format&fit=crop&w=800&q=80'},
+  {n:'Tricolore', p:12, d:'Tomate, mozzarella, rúcula, grana, jamón serrano', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?auto=format&fit=crop&w=800&q=80'},
+  {n:'4 Formaggi', p:11, d:'Tomate, mozzarella, gorgonzola, grana, queso de oveja', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?auto=format&fit=crop&w=800&q=80'},
+  {n:'Gorgonzola', p:10, d:'Gorgonzola, mozzarella, nueces', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1598023696416-0193a0bcd302?auto=format&fit=crop&w=800&q=80'},
+  {n:'4 Stagioni', p:12.5, d:'Tomate, mozzarella, champiñón, jamón, aceitunas, alcachofa, frankfurt', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=800&q=80'},
+  {n:'Pepperoni Little Italy', p:11.5, d:'Tomate, mozzarella, queso de oveja, pepperoni, nata', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80'},
+  {n:'Mortadela (Bologna)', p:13.5, d:'Tomate, mozzarella, mortadela (Bologna), albahaca, burrata, pistacho', cat:'pizzas', tags:['carne','quesos'], star:true, img:'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&w=800&q=80'},
+  {n:'Trevisana', p:11, d:'Tomate, mozzarella, cerdo asado, aceite virgen, sal, pimienta, perfume de romero', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80'},
+  {n:'Simpson', p:11, d:'Tomate, mozzarella, mostaza, frankfurt, cebolla', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80'},
+  {n:'Burrata Master', p:15, d:'Tomate, burrata, salmón, rúcula, pimienta negra', cat:'pizzas', tags:['mar','quesos'], star:true, img:'https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?auto=format&fit=crop&w=800&q=80'},
+  {n:'Marisco', p:15, d:'Tomate, mozzarella, gambas, mejillón, pulpo, aceite virgen', cat:'pizzas', tags:['mar'], img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'},
+  {n:'Salmone', p:14, d:'Tomate, mozzarella, salmón, nata', cat:'pizzas', tags:['mar'], img:'https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Tonno', p:10, d:'Tomate, mozzarella, atún, cebolla', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80'},
+  {n:'Puttanesca', p:10, d:'Doble tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras, aceite picante, orégano', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Cloti', p:11, d:'Tomate, mozzarella, espinacas, queso de cabra', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Salmón 2.0', p:16.5, d:'Base de nata, mozzarella, salmón ahumado, aguacate, tomate cherry, queso crema y AOVE', cat:'pizzas', tags:['mar'], star:true, img:'https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?auto=format&fit=crop&w=800&q=80'},
 
   // — Pizzas veganas (mozzarella vegana a pedido) —
-  {n:'Campesina', p:11, d:'Tomate, mozzarella vegana, calabacín, pimiento, berenjena', cat:'veganas', vegan:true},
-  {n:'Popeye', p:11, d:'Tomate, mozzarella vegana, espinacas, cebollino, aceite de ajo', cat:'veganas', vegan:true},
-  {n:'Enova', p:11, d:'Tomate, mozzarella vegana, queso parmesano, tomate cherry, pesto genovese', cat:'veganas', vegan:true},
+  {n:'Campesina', p:11, d:'Tomate, mozzarella vegana, calabacín, pimiento, berenjena', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80'},
+  {n:'Popeye', p:11, d:'Tomate, mozzarella vegana, espinacas, cebollino, aceite de ajo', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&w=800&q=80'},
+  {n:'Enova', p:11, d:'Tomate, mozzarella vegana, queso parmesano, tomate cherry, pesto genovese', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=80'},
 
   // — Postres —
-  {n:'Tiramisú', p:5, d:'Mascarpone, café, savoiardi', cat:'postres'},
-  {n:'Tarta de Quesos', p:5, d:'Queso fresco, queso de cabra', cat:'postres'},
-  {n:'Nutella', p:8, d:'Nutella, avellanas tostadas', cat:'postres'}
+  {n:'Tiramisú', p:5, d:'Mascarpone, café, savoiardi', cat:'postres', img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80'},
+  {n:'Tarta de Quesos', p:5, d:'Queso fresco, queso de cabra', cat:'postres', img:'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80'},
+  {n:'Nutella', p:8, d:'Nutella, avellanas tostadas', cat:'postres', img:'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80'}
 ];
 
 /* ================= ICONOS NORMALIZADOS (SVG) ================= */
@@ -720,21 +753,116 @@ function renderMenu(){
   grid.innerHTML = items.map(i => {
     const al = allergensOf(i).map(a => `<span title="${a.t}" aria-label="${a.t}" class="w-6 h-6 rounded-full bg-coal/5 flex items-center justify-center text-coal/70 hover:text-tomato hover:bg-white transition shadow-xs">${getIcon(a.id, 'w-3.5 h-3.5')}</span>`).join('');
     return `
-    <article class="card-in relative bg-cream rounded-2xl p-5 shadow-sm hover:shadow-lg transition border border-coal/10 flex flex-col">
-      ${i.star ? `<span class="absolute -top-2 left-4 bg-tomato text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1">${getIcon('star', 'w-3 h-3 fill-white')} RECOMENDADA</span>` : ''}
-      ${i.vegan ? `<span class="absolute -top-2 right-4 bg-basil text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1">${getIcon('leaf', 'w-3 h-3')} VEGANA</span>` : ''}
-      <div class="flex items-start justify-between gap-3 mt-1">
-        <h3 class="font-display font-extrabold text-xl leading-tight text-basil-dark">${esc(i.n)}</h3>
-        <span class="font-extrabold text-lg text-tomato whitespace-nowrap">${eur(i.p)}</span>
+    <article data-item="${esc(i.n)}" class="card-in group cursor-pointer relative bg-cream rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-coal/10 flex flex-col hover:-translate-y-1">
+      <div class="relative h-44 sm:h-48 overflow-hidden bg-coal/10 shrink-0">
+        <img src="${i.img}" alt="${esc(i.n)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-coal/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+        <span class="absolute bottom-2.5 right-3 bg-coal/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity shadow">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          Vista previa
+        </span>
+        ${i.star ? `<span class="absolute top-3 left-3 bg-tomato text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('star', 'w-3 h-3 fill-white')} RECOMENDADA</span>` : ''}
+        ${i.vegan ? `<span class="absolute top-3 right-3 bg-basil text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('leaf', 'w-3 h-3')} VEGANA</span>` : ''}
       </div>
-      <p class="mt-2 text-sm text-coal/80 leading-relaxed flex-1">${esc(i.d)}</p>
-      <div class="mt-4 flex items-center justify-between gap-3">
-        <div class="flex gap-1.5 flex-wrap">${al}</div>
-        <a href="${waOrder(i.n)}" target="_blank" rel="noopener" class="shrink-0 bg-coal hover:bg-basil text-white text-sm font-bold px-4 py-2.5 rounded-full transition active:scale-95">Pedir</a>
+      <div class="p-5 flex flex-col flex-1">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-display font-extrabold text-xl leading-tight text-basil-dark group-hover:text-tomato transition-colors">${esc(i.n)}</h3>
+          <span class="font-extrabold text-lg text-tomato whitespace-nowrap">${eur(i.p)}</span>
+        </div>
+        <p class="mt-2 text-sm text-coal/80 leading-relaxed flex-1">${esc(i.d)}</p>
+        <div class="mt-4 pt-3 border-t border-coal/10 flex items-center justify-between gap-3">
+          <div class="flex gap-1.5 flex-wrap">${al}</div>
+          <button type="button" data-order="${esc(i.n)}" class="shrink-0 bg-coal hover:bg-basil text-white text-sm font-bold px-4 py-2 rounded-full transition active:scale-95 flex items-center gap-1.5">
+            Pedir
+          </button>
+        </div>
       </div>
     </article>`;
   }).join('');
 }
+
+/* ================= MODAL VISTA PREVIA ================= */
+function openPreview(name){
+  const item = MENU.find(i => i.n === name);
+  if(!item) return;
+  const modal = $('#previewModal');
+  const box = $('#modalBox');
+  $('#modalImg').src = item.img;
+  $('#modalImg').alt = item.n;
+  $('#modalTitle').textContent = item.n;
+  $('#modalPrice').textContent = eur(item.p);
+  $('#modalDesc').textContent = item.d;
+  $('#modalOrderBtn').href = waOrder(item.n);
+
+  let badgesHtml = '';
+  if(item.star) badgesHtml += `<span class="bg-tomato text-white text-[11px] font-extrabold px-3 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('star', 'w-3 h-3 fill-white')} RECOMENDADA</span>`;
+  if(item.vegan) badgesHtml += `<span class="bg-basil text-white text-[11px] font-extrabold px-3 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('leaf', 'w-3 h-3')} VEGANA</span>`;
+  $('#modalBadges').innerHTML = badgesHtml;
+
+  const catObj = CATS.find(c => c.k === item.cat);
+  let tagsHtml = `<span class="bg-coal/10 px-3 py-1 rounded-full">${catObj ? catObj.l : 'Plato'}</span>`;
+  if(item.tags){
+    item.tags.forEach(t => {
+      const subObj = SUBS.find(s => s.k === t);
+      if(subObj && subObj.k !== 'todas') tagsHtml += `<span class="bg-coal/10 px-3 py-1 rounded-full">${subObj.l}</span>`;
+    });
+  }
+  $('#modalTags').innerHTML = tagsHtml;
+
+  const itemAllergens = allergensOf(item);
+  if(itemAllergens.length){
+    $('#modalAllergens').innerHTML = itemAllergens.map(a => `
+      <span class="inline-flex items-center gap-1.5 bg-white border border-coal/15 px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-xs">
+        ${getIcon(a.id, 'w-4 h-4 text-tomato')}
+        <span>${a.t}</span>
+      </span>
+    `).join('');
+  } else {
+    $('#modalAllergens').innerHTML = '<span class="text-xs text-coal/60">Sin alérgenos comunes declarados.</span>';
+  }
+
+  modal.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+  requestAnimationFrame(() => {
+    box.classList.remove('scale-95', 'opacity-0');
+    box.classList.add('scale-100', 'opacity-100');
+  });
+}
+
+function closePreview(){
+  const modal = $('#previewModal');
+  const box = $('#modalBox');
+  if(!modal || modal.classList.contains('hidden')) return;
+  box.classList.remove('scale-100', 'opacity-100');
+  box.classList.add('scale-95', 'opacity-0');
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }, 200);
+}
+
+// Event delegation for grid cards and direct order buttons
+grid.addEventListener('click', e => {
+  const orderBtn = e.target.closest('[data-order]');
+  if(orderBtn){
+    e.stopPropagation();
+    window.open(waOrder(orderBtn.dataset.order), '_blank', 'noopener');
+    return;
+  }
+  const card = e.target.closest('[data-item]');
+  if(card){
+    openPreview(card.dataset.item);
+  }
+});
+
+$('#modalClose').addEventListener('click', closePreview);
+$('#modalCloseBtn').addEventListener('click', closePreview);
+$('#previewModal').addEventListener('click', e => {
+  if(e.target === $('#previewModal')) closePreview();
+});
+window.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closePreview();
+});
 chips.addEventListener('click', e => {
   const b = e.target.closest('[data-cat]'); if(!b) return;
   cat = b.dataset.cat; sub = 'todas'; renderChips(); renderMenu();
