@@ -69,6 +69,25 @@
     details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}
     details[open] .chev{transform:rotate(180deg)}
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  
+  @media print {
+    body * { visibility: hidden !important; }
+    #printableTableCard, #printableTableCard * { visibility: visible !important; }
+    #printableTableCard {
+      position: fixed !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      display: block !important;
+      width: 130mm !important;
+      padding: 15mm !important;
+      border: 2px dashed #141211 !important;
+      background: #ffffff !important;
+      box-shadow: none !important;
+      text-align: center !important;
+    }
+  }
+
   </style>
 
   <!-- ===== SCHEMA.ORG: Pizzeria + Menú completo ===== -->
@@ -163,6 +182,42 @@
     "name": "Carta de Pizzas Artesanas (Demo)",
     "url": "https://jautur.github.io/margherita_xativa/#carta",
     "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Entrantes artesanales",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Focaccia al Romero & Flor de Sal",
+            "description": "Masa de pizza artesana crujiente con aceite de oliva virgen extra, romero fresco y sal en escamas",
+            "offers": {
+              "@type": "Offer",
+              "price": "4.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Burrata Pugliese con Pomodorini",
+            "description": "Queso burrata fresco cremoso (125g), tomates cherry confitados, pesto genovés y virgen extra",
+            "offers": {
+              "@type": "Offer",
+              "price": "8.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Tabla de Quesos Italianos D.O.P.",
+            "description": "Selección de quesos italianos: Gorgonzola dulce, lascas de Grana Padano, Pecorino sardo y nueces",
+            "offers": {
+              "@type": "Offer",
+              "price": "9.50",
+              "priceCurrency": "EUR"
+            }
+          }
+        ]
+      },
       {
         "@type": "MenuSection",
         "name": "Pizzas tradicionales",
@@ -503,6 +558,62 @@
             "offers": {
               "@type": "Offer",
               "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Bebidas y vinos italianos",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Cerveza Italiana Moretti (33cl)",
+            "description": "Cerveza rubia tradicional italiana, suave, dorada y refrescante",
+            "offers": {
+              "@type": "Offer",
+              "price": "3.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Cerveza Artesana Doble Malta (33cl)",
+            "description": "Cerveza artesana de mayor cuerpo con notas tostadas y aroma a malta",
+            "offers": {
+              "@type": "Offer",
+              "price": "3.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Vino Chianti D.O.C.G. (Copa / Botella)",
+            "description": "Vino tinto italiano de la Toscana, equilibrado y aromático, ideal para acompañar pizzas",
+            "offers": {
+              "@type": "Offer",
+              "price": "3.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Refresco (Coca-Cola / Fanta / Nestea)",
+            "description": "Lata de 33cl bien fría servida con vaso y rodaja de limón o naranja",
+            "offers": {
+              "@type": "Offer",
+              "price": "2.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Agua Mineral Natural / Con Gas (50cl)",
+            "description": "Agua mineral fresca de manantial o agua con gas San Pellegrino",
+            "offers": {
+              "@type": "Offer",
+              "price": "2.00",
               "priceCurrency": "EUR"
             }
           }
@@ -1585,6 +1696,11 @@ const REVIEWS = [
    tags (solo pizzas): clasicas | carne | quesos | mar
    Para añadir entrantes o bebidas, agrega objetos con cat:'entrantes' o cat:'bebidas'. */
 const MENU = [
+  // — Entrantes artesanales —
+  {n:'Focaccia al Romero & Flor de Sal', p:4.5, d:'Masa de pizza artesana crujiente con aceite de oliva virgen extra, romero fresco y sal en escamas', cat:'entrantes', img:'https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Burrata Pugliese con Pomodorini', p:8.5, d:'Queso burrata fresco cremoso (125g), tomates cherry confitados, pesto genovés y virgen extra', cat:'entrantes', star:true, img:'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80'},
+  {n:'Tabla de Quesos Italianos D.O.P.', p:9.5, d:'Selección de quesos italianos: Gorgonzola dulce, lascas de Grana Padano, Pecorino sardo y nueces', cat:'entrantes', img:'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80'},
+
   // — Pizzas tradicionales (mozzarella fior di latte) —
   {n:'Margherita Tradizionale', p:8.5, d:'Tomate San Marzano, mozzarella fior di latte, albahaca fresca y virgen extra', cat:'pizzas', tags:['clasicas'], star:true, img:'https://images.unsplash.com/photo-1723132266833-252c909bc7c4?auto=format&fit=crop&w=800&q=80'},
   {n:'BBQ Smokehouse', p:12, d:'Salsa barbacoa ahumada, mozzarella, carne especiada, bacon crujiente y pollo asado', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80'},
@@ -1621,6 +1737,13 @@ const MENU = [
   {n:'Ortolana Vegana', p:11, d:'Tomate San Marzano, mozzarella vegetal bio, calabacín, pimiento asado y berenjena a la parrilla', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80'},
   {n:'Spinaci & Aglio Vegan', p:11, d:'Tomate, mozzarella vegetal bio, espinacas tiernas, cebollino fresco y emulsión de aceite de ajo', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&w=800&q=80'},
   {n:'Pesto Verde & Pomodorini Vegan', p:11, d:'Tomate, mozzarella vegetal bio, queso vegetal curado, tomates cherry confitados y pesto genovés de albahaca fresca', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=80'},
+
+  // — Bebidas y vinos italianos —
+  {n:'Cerveza Italiana Moretti (33cl)', p:3, d:'Cerveza rubia tradicional italiana, suave, dorada y refrescante', cat:'bebidas', img:'https://images.unsplash.com/photo-1518176258769-f227c798150e?auto=format&fit=crop&w=800&q=80'},
+  {n:'Cerveza Artesana Doble Malta (33cl)', p:3.5, d:'Cerveza artesana de mayor cuerpo con notas tostadas y aroma a malta', cat:'bebidas', img:'https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=800&q=80'},
+  {n:'Vino Chianti D.O.C.G. (Copa / Botella)', p:3.5, d:'Vino tinto italiano de la Toscana, equilibrado y aromático, ideal para acompañar pizzas', cat:'bebidas', img:'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80'},
+  {n:'Refresco (Coca-Cola / Fanta / Nestea)', p:2.5, d:'Lata de 33cl bien fría servida con vaso y rodaja de limón o naranja', cat:'bebidas', img:'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80'},
+  {n:'Agua Mineral Natural / Con Gas (50cl)', p:2, d:'Agua mineral fresca de manantial o agua con gas San Pellegrino', cat:'bebidas', img:'https://images.unsplash.com/photo-1560023907-5f339617ea30?auto=format&fit=crop&w=800&q=80'},
 
   // — Postres —
   {n:'Tiramisú Tradizionale', p:5, d:'Crema artesana de mascarpone, café espresso italiano, bizcochos savoiardi y cacao puro', cat:'postres', img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80'},
@@ -1672,9 +1795,14 @@ const ALLERGENS = [
   {id:'mostaza', t:'Mostaza (puede contener)', re:/mostaza|barbacoa/i}
 ];
 function allergensOf(i){
+  if(i.cat === 'bebidas'){
+    const list = [];
+    if(/cerveza|malta/i.test(i.n + ' ' + i.d)) list.push(ALLERGENS.find(a => a.id === 'gluten'));
+    return list.filter(Boolean);
+  }
   let txt = i.d + ' ' + i.n;
   if(i.vegan) txt = txt.replace(/mozzarella vegana/gi,'');
-  return ALLERGENS.filter(a => a.always || a.re.test(txt));
+  return ALLERGENS.filter(a => (i.cat !== 'bebidas' && a.id === 'gluten') || (a.re && a.re.test(txt)));
 }
 
 /* ================= UTILIDADES ================= */
@@ -2290,6 +2418,52 @@ walletButtons.forEach(btn => {
 /* ================= INIT ================= */
 $('#year').textContent = new Date().getFullYear();
 renderChips(); renderMenu(); renderReviews(); initHours();
+
+// ================= QR MODAL HANDLERS =================
+function openQrModal(){
+  const modal = $('#qrModal');
+  if(modal) modal.classList.remove('hidden');
+}
+function closeQrModal(){
+  const modal = $('#qrModal');
+  if(modal) modal.classList.add('hidden');
+}
+
+const openTopBtn = $('#openTableQrTopBtn');
+if(openTopBtn) openTopBtn.addEventListener('click', openQrModal);
+
+const openCardBtn = $('#openTableQrCardBtn');
+if(openCardBtn) openCardBtn.addEventListener('click', openQrModal);
+
+const qrCloseBtn = $('#qrModalClose');
+if(qrCloseBtn) qrCloseBtn.addEventListener('click', closeQrModal);
+
+const qrModalEl = $('#qrModal');
+if(qrModalEl) qrModalEl.addEventListener('click', e => {
+  if(e.target === qrModalEl) closeQrModal();
+});
+
+const printBtn = $('#printQrBtn');
+if(printBtn) printBtn.addEventListener('click', () => {
+  window.print();
+});
+
+const downloadSvgBtn = $('#downloadQrSvgBtn');
+if(downloadSvgBtn) downloadSvgBtn.addEventListener('click', () => {
+  const svgEl = document.querySelector('#tableQrSvgContainer svg');
+  if(!svgEl) return;
+  const svgData = new XMLSerializer().serializeToString(svgEl);
+  const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'carta-qr-taules.svg';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
 </script>
 </body>
 </html>
