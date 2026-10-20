@@ -73,103 +73,480 @@
 
   <!-- ===== SCHEMA.ORG: Pizzeria + Menú completo ===== -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["Pizzeria", "Restaurant"],
-    "@id": "https://jautur.github.io/margherita_xativa/#pizzeria",
-    "name": "La Pizzería (Plantilla Demo)",
-    "description": "Plantilla para pizzerías y restaurantes con masa artesana, mozzarella fior di latte y opciones veganas.",
-    "url": "https://jautur.github.io/margherita_xativa/",
-    "image": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=1200&q=80",
-    "logo": "https://jautur.github.io/margherita_xativa/logo.svg",
-    "telephone": "+34600000000",
-    "priceRange": "€€",
-    "servesCuisine": ["Pizza", "Italiana"],
-    "currenciesAccepted": "EUR",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Calle Ejemplo, 12",
-      "addressLocality": "Tu Ciudad",
-      "addressRegion": "Provincia",
-      "postalCode": "00000",
-      "addressCountry": "ES"
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Pizzeria",
+    "Restaurant"
+  ],
+  "@id": "https://jautur.github.io/margherita_xativa/#pizzeria",
+  "name": "La Pizzería (Plantilla Demo)",
+  "description": "Plantilla para pizzerías y restaurantes con masa artesana, mozzarella fior di latte y opciones veganas.",
+  "url": "https://jautur.github.io/margherita_xativa/",
+  "image": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=1200&q=80",
+  "logo": "https://jautur.github.io/margherita_xativa/logo.svg",
+  "telephone": "+34600000000",
+  "servesCuisine": [
+    "Italiana",
+    "Pizza"
+  ],
+  "priceRange": "€€",
+  "paymentAccepted": "Cash, Credit Card, Bizum",
+  "currenciesAccepted": "EUR",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ejemplo, 12",
+    "addressLocality": "Tu Ciudad",
+    "addressRegion": "Provincia",
+    "postalCode": "00000",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.4168,
+    "longitude": -3.7038
+  },
+  "hasMap": "https://www.google.com/maps?q=pizzeria",
+  "areaServed": {
+    "@type": "City",
+    "name": "Tu Ciudad"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Sunday"
+      ],
+      "opens": "13:00",
+      "closes": "16:00"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 40.4168, "longitude": -3.7038 },
-    "hasMap": "https://www.google.com/maps?q=pizzeria",
-    "areaServed": { "@type": "City", "name": "Tu Ciudad" },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Sunday"], "opens": "13:00", "closes": "16:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Sunday"], "opens": "20:00", "closes": "23:30" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:00", "closes": "16:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "20:00", "closes": "23:59" }
-    ],
-    "sameAs": [
-      "https://instagram.com",
-      "https://facebook.com",
-      "https://tiktok.com"
-    ],
-    "hasMenu": {
-      "@type": "Menu",
-      "name": "Carta de Pizzas Artesanas (Demo)",
-      "url": "https://jautur.github.io/margherita_xativa/#carta",
-      "hasMenuSection": [
-        {
-          "@type": "MenuSection",
-          "name": "Pizzas tradicionales (mozzarella fior di latte)",
-          "hasMenuItem": [
-            {"@type":"MenuItem","name":"Margherita","description":"Tomate, mozzarella, albahaca","offers":{"@type":"Offer","price":"8.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Barbecue","description":"Barbacoa, mozzarella, carne picada, bacon, pollo","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Prosciutto Cotto","description":"Tomate, mozzarella, jamón york","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Ragazzino","description":"Tomate, mozzarella, frankfurt, patatas","offers":{"@type":"Offer","price":"10.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Napoletana","description":"Tomate, mozzarella, anchoas, alcaparras","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Ibérica","description":"Tomate, mozzarella y jamón ibérico","offers":{"@type":"Offer","price":"15.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Carbonara","description":"Tomate, mozzarella, huevo, guanciale, grana, pimienta","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Boss","description":"Tomate, mozzarella, salchicha fresca, champiñón, careta","offers":{"@type":"Offer","price":"12.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Capricciosa","description":"Tomate, mozzarella, champiñón, jamón york, frankfurt, huevo","offers":{"@type":"Offer","price":"12.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Marinara","description":"Tomate, aceite virgen, ajo, orégano, rúcula, queso grana","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Calzone","description":"Tomate, mozzarella, champiñón, jamón york","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Campionessa Margherita","description":"Tomate, mozzarella, albahaca, queso de oveja","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Diavola","description":"Tomate, mozzarella, cebolla, salami, pimiento fresco, olivas negras","offers":{"@type":"Offer","price":"11.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Sarda","description":"Tomate, mozzarella, salchicha seca, queso de oveja","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Piemontese","description":"Tomate, mozzarella, gorgonzola, guanciale, grelos","offers":{"@type":"Offer","price":"13.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Tricolore","description":"Tomate, mozzarella, rúcula, grana, jamón serrano","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"4 Formaggi","description":"Tomate, mozzarella, gorgonzola, grana, queso de oveja","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Gorgonzola","description":"Gorgonzola, mozzarella, nueces","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"4 Stagioni","description":"Tomate, mozzarella, champiñón, jamón, aceitunas, alcachofa, frankfurt","offers":{"@type":"Offer","price":"12.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Pepperoni Little Italy","description":"Tomate, mozzarella, queso de oveja, pepperoni, nata","offers":{"@type":"Offer","price":"11.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Mortadela (Bologna)","description":"Tomate, mozzarella, mortadela (Bologna), albahaca, burrata, pistacho","offers":{"@type":"Offer","price":"13.50","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Trevisana","description":"Tomate, mozzarella, cerdo asado, aceite virgen, sal, pimienta, perfume de romero","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Simpson","description":"Tomate, mozzarella, mostaza, frankfurt, cebolla","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Burrata Master","description":"Tomate, burrata, salmón, rúcula, pimienta negra","offers":{"@type":"Offer","price":"15.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Marisco","description":"Tomate, mozzarella, gambas, mejillón, pulpo, aceite virgen","offers":{"@type":"Offer","price":"15.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Salmone","description":"Tomate, mozzarella, salmón, nata","offers":{"@type":"Offer","price":"14.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Tonno","description":"Tomate, mozzarella, atún, cebolla","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Puttanesca","description":"Doble tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras, aceite picante, orégano","offers":{"@type":"Offer","price":"10.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Cloti","description":"Tomate, mozzarella, espinacas, queso de cabra","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Salmón 2.0","description":"Base de nata, mozzarella, salmón ahumado, aguacate, tomate cherry, queso crema y AOVE","offers":{"@type":"Offer","price":"16.50","priceCurrency":"EUR"}}
-          ]
-        },
-        {
-          "@type": "MenuSection",
-          "name": "Pizzas veganas (mozzarella vegana a pedido)",
-          "hasMenuItem": [
-            {"@type":"MenuItem","name":"Campesina","description":"Tomate, mozzarella vegana, calabacín, pimiento, berenjena","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Popeye","description":"Tomate, mozzarella vegana, espinacas, cebollino, aceite de ajo","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Enova","description":"Tomate, mozzarella vegana, queso parmesano, tomate cherry, pesto genovese","offers":{"@type":"Offer","price":"11.00","priceCurrency":"EUR"}}
-          ]
-        },
-        {
-          "@type": "MenuSection",
-          "name": "Postres",
-          "hasMenuItem": [
-            {"@type":"MenuItem","name":"Tiramisú","description":"Mascarpone, café, savoiardi","offers":{"@type":"Offer","price":"5.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Tarta de Quesos","description":"Queso fresco, queso de cabra","offers":{"@type":"Offer","price":"5.00","priceCurrency":"EUR"}},
-            {"@type":"MenuItem","name":"Nutella","description":"Nutella, avellanas tostadas","offers":{"@type":"Offer","price":"8.00","priceCurrency":"EUR"}}
-          ]
-        }
-      ]
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Sunday"
+      ],
+      "opens": "20:00",
+      "closes": "23:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "13:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "20:00",
+      "closes": "23:59"
     }
+  ],
+  "sameAs": [
+    "https://instagram.com",
+    "https://facebook.com",
+    "https://tiktok.com"
+  ],
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "Carta de Pizzas Artesanas (Demo)",
+    "url": "https://jautur.github.io/margherita_xativa/#carta",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Pizzas tradicionales",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Margherita Tradizionale",
+            "description": "Tomate San Marzano, mozzarella fior di latte, albahaca fresca y virgen extra",
+            "offers": {
+              "@type": "Offer",
+              "price": "8.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "BBQ Smokehouse",
+            "description": "Salsa barbacoa ahumada, mozzarella, carne especiada, bacon crujiente y pollo asado",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Prosciutto Rustico",
+            "description": "Tomate San Marzano, mozzarella fior di latte y jamón cocido seleccionado",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Bambini Especial",
+            "description": "Tomate, mozzarella fior di latte, salchicha frankfurt artesana y patatas horneadas",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Romana Tradizionale",
+            "description": "Tomate San Marzano, mozzarella, anchoas del Cantábrico, alcaparras y orégano silvestre",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Ibérica de Bellota",
+            "description": "Tomate San Marzano, mozzarella fior di latte, lascas de jamón ibérico y un toque de AOVE",
+            "offers": {
+              "@type": "Offer",
+              "price": "15.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Carbonara Auténtica",
+            "description": "Crema suave, mozzarella, guanciale crujiente, pecorino grana y pimienta negra molida",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Boscaiola Casera",
+            "description": "Tomate San Marzano, mozzarella, salchicha italiana fresca, champiñones y panceta curada",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Capricciosa Especial",
+            "description": "Tomate, mozzarella, champiñones frescos, jamón cocido braseado, alcachofas y huevo",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Marinara Gourmet",
+            "description": "Tomate San Marzano, virgen extra, ajo tierno laminado, orégano, rúcula fresca y queso grana",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Calzone Napolitano",
+            "description": "Masa doblada y crujiente rellena de tomate, mozzarella fior di latte, champiñones y jamón cocido",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Regina Margherita D.O.P.",
+            "description": "Tomate San Marzano, mozzarella fior di latte, albahaca fresca y lascas de pecorino de oveja",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Diavola Piccante",
+            "description": "Tomate, mozzarella, salame piccante italiano, pimiento asado, cebolla morada y aceitunas negras",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Calabrese Tradizionale",
+            "description": "Tomate, mozzarella, salchicha curada artesana, queso de oveja y pimienta",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Gorgonzola & Guanciale",
+            "description": "Tomate, mozzarella, queso gorgonzola fundido, guanciale crujiente y grelos salteados",
+            "offers": {
+              "@type": "Offer",
+              "price": "13.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Parma Tricolore",
+            "description": "Tomate, mozzarella, rúcula fresca, láminas de grana padano y jamón serrano bodega",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Quattro Formaggi D.O.P.",
+            "description": "Tomate, mozzarella fior di latte, gorgonzola fundido, grana padano y queso curado de oveja",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Gorgonzola Dolce & Noci",
+            "description": "Crema suave, mozzarella fundida, queso gorgonzola dulce y nueces crujientes",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Quattro Stagioni Classica",
+            "description": "Tomate, mozzarella, champiñón, jamón cocido, aceitunas negras y corazones de alcachofa",
+            "offers": {
+              "@type": "Offer",
+              "price": "12.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Pepperoni New York Style",
+            "description": "Tomate San Marzano, mozzarella fior di latte, abundante pepperoni especiado y crema suave",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Mortadella & Burrata al Pistacchio",
+            "description": "Tomate, mozzarella, mortadela de Bolonia IGP, albahaca fresca, corazón de burrata y pistacho picado",
+            "offers": {
+              "@type": "Offer",
+              "price": "13.50",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Porchetta & Romero Toscano",
+            "description": "Tomate, mozzarella, asado de cerdo crujiente a las finas hierbas, virgen extra, sal y perfume de romero",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Americana Deluxe",
+            "description": "Tomate, mozzarella, suave toque de mostaza artesana, salchicha ahumada y cebolla dorada",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Gran Burrata & Salmone",
+            "description": "Tomate San Marzano, burrata fresca entera, láminas de salmón ahumado, rúcula y pimienta negra",
+            "offers": {
+              "@type": "Offer",
+              "price": "15.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Frutti di Mare del Golfo",
+            "description": "Tomate San Marzano, mozzarella, gambas seleccionadas, mejillón de roca, dados de pulpo y virgen extra",
+            "offers": {
+              "@type": "Offer",
+              "price": "15.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Salmone Tradizionale",
+            "description": "Tomate San Marzano, mozzarella fior di latte, salmón jugoso y crema ligera",
+            "offers": {
+              "@type": "Offer",
+              "price": "14.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Tonno & Cipolla Rossa",
+            "description": "Tomate San Marzano, mozzarella fior di latte, atún claro seleccionado y cebolla morada fina",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Puttanesca Tradizionale",
+            "description": "Doble reducción de tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras y orégano",
+            "offers": {
+              "@type": "Offer",
+              "price": "10.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Florentina de Cabra",
+            "description": "Tomate San Marzano, mozzarella, espinacas frescas salteadas y medallones de queso de cabra artesano",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Salmone & Avocado Gourmet",
+            "description": "Base de crema fina, mozzarella, salmón ahumado premium, dados de aguacate, cherry confitado y queso crema con AOVE",
+            "offers": {
+              "@type": "Offer",
+              "price": "16.50",
+              "priceCurrency": "EUR"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Pizzas veganas",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Ortolana Vegana",
+            "description": "Tomate San Marzano, mozzarella vegetal bio, calabacín, pimiento asado y berenjena a la parrilla",
+            "suitableForDiet": "https://schema.org/VeganDiet",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Spinaci & Aglio Vegan",
+            "description": "Tomate, mozzarella vegetal bio, espinacas tiernas, cebollino fresco y emulsión de aceite de ajo",
+            "suitableForDiet": "https://schema.org/VeganDiet",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Pesto Verde & Pomodorini Vegan",
+            "description": "Tomate, mozzarella vegetal bio, queso vegetal curado, tomates cherry confitados y pesto genovés de albahaca fresca",
+            "suitableForDiet": "https://schema.org/VeganDiet",
+            "offers": {
+              "@type": "Offer",
+              "price": "11.00",
+              "priceCurrency": "EUR"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Postres",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Tiramisú Tradizionale",
+            "description": "Crema artesana de mascarpone, café espresso italiano, bizcochos savoiardi y cacao puro",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Tarta Cremosa al Forno",
+            "description": "Tarta artesana de queso horneada lentamente con queso fresco y suave toque de queso de cabra",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.00",
+              "priceCurrency": "EUR"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Pizza Dolce Nutella & Nocciole",
+            "description": "Masa fina al horno de leña cubierta de auténtica Nutella caliente y avellanas tostadas picadas",
+            "offers": {
+              "@type": "Offer",
+              "price": "8.00",
+              "priceCurrency": "EUR"
+            }
+          }
+        ]
+      }
+    ]
   }
+}
   </script>
 </head>
 
@@ -302,7 +679,7 @@
           En nuestra pizzería creemos que una buena pizza empieza mucho antes del horno: en una masa que reposa, un tomate con sabor y una mozzarella fior di latte de verdad.
         </p>
         <p class="mt-4 text-lg leading-relaxed text-coal/85">
-          Somos una pizzería de barrio. Cocinamos las recetas italianas de siempre (Margherita, Marinara, Napoletana) y creaciones con identidad propia como la Salmón 2.0 o la Mortadela con burrata y pistacho. También tenemos pizzas veganas, porque en cada mesa hay gente distinta.
+          Somos una pizzería artesana de barrio. Cocinamos las recetas italianas más emblemáticas (Margherita Tradizionale, Marinara Gourmet, Diavola Piccante) y creaciones de autor como nuestra Salmone & Avocado Gourmet o la Mortadella & Burrata al Pistacchio. Además, contamos con opciones veganas completas, porque en cada mesa hay gustos distintos.
         </p>
         <p class="mt-4 font-script text-2xl text-basil-dark">Hecha a mano. Horneada al momento. Pensada para compartir.</p>
       </div>
@@ -473,7 +850,7 @@
               </span>
               <span class="font-extrabold tracking-wider uppercase text-emerald-400">Geofencing & Proximidad Inteligente</span>
             </div>
-            <span class="text-cream/50 text-[11px] font-mono">XÀTIVA</span>
+            <span class="text-cream/50 text-[11px] font-mono">ZONA CENTRO</span>
           </div>
 
           <!-- Mockup visual de la notificación en pantalla de bloqueo iOS / Android -->
@@ -496,7 +873,7 @@
                 </div>
                 <h4 class="font-extrabold text-sm sm:text-base text-white mt-1 leading-snug">¿Huele a pizza recién horneada? 🍕</h4>
                 <p class="text-xs sm:text-sm text-cream/80 mt-1 leading-relaxed">
-                  Estás pasando cerca de nuestra pizzería en Xàtiva. Entra a por tu porción artesana y suma un sello hoy. <strong class="text-amber-300 font-bold">¡Solo te faltan 3 para tu pizza gratis!</strong>
+                  Estás pasando cerca de nuestra pizzería artesana. Entra a por tu porción artesana y suma un sello hoy. <strong class="text-amber-300 font-bold">¡Solo te faltan 3 para tu pizza gratis!</strong>
                 </p>
                 <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px]">
                   <span class="text-cream/60">Aviso automático en pantalla de bloqueo</span>
@@ -973,7 +1350,7 @@
       </details>
       <details class="bg-white rounded-2xl p-5 shadow-sm">
         <summary class="flex items-center justify-between gap-3 font-bold">¿Tenéis pizzas veganas?<svg class="chev w-5 h-5 shrink-0 text-coal/60 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <p class="mt-3 text-coal/80">Sí: Campesina, Popeye y Enova, con mozzarella vegana. Aun así, avísanos al pedir para confirmar los ingredientes.</p>
+        <p class="mt-3 text-coal/80">Sí: Ortolana Vegana, Spinaci & Aglio Vegan y Pesto Verde & Pomodorini Vegan, elaboradas con mozzarella vegetal bio. Aun así, puedes indicarnos cualquier preferencia al hacer tu pedido.</p>
       </details>
       <details class="bg-white rounded-2xl p-5 shadow-sm">
         <summary class="flex items-center justify-between gap-3 font-bold">¿Qué alérgenos contienen vuestras pizzas?<svg class="chev w-5 h-5 shrink-0 text-coal/60 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
@@ -1197,9 +1574,9 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps?q=pizzeria';
    Formato: { name:'Nombre', text:'Texto de la reseña', stars:5, date:'hace 2 semanas' }
    Mientras el array esté vacío se muestra una invitación a leer las opiniones en Google. */
 const REVIEWS = [
-  { name: 'Laura Gómez', text: 'La mejor pizza artesana de la zona con diferencia. La masa de fermentación lenta se nota muchísimo, ligera y súper crujiente. ¡La Burrata Master es otro nivel!', stars: 5, date: 'hace 3 días' },
-  { name: 'Marc Soler', text: 'Pedir por WhatsApp directamente desde la carta es comodísimo. Llegamos al local y el pedido estaba recién salido del horno, calentito y perfecto. Muy top la Mortadela con pistacho.', stars: 5, date: 'hace 1 semana' },
-  { name: 'Elena Martínez', text: 'Por fin una pizzería con opciones veganas de calidad y bien pensadas, no solo quitar el queso. La Campesina y el Tiramisú casero son un 10 rotundo.', stars: 5, date: 'hace 2 semanas' },
+  { name: 'Laura Gómez', text: 'La mejor pizza artesana de la zona con diferencia. La masa de fermentación lenta se nota muchísimo, ligera y súper crujiente. ¡La Gran Burrata & Salmone es otro nivel!', stars: 5, date: 'hace 3 días' },
+  { name: 'Marc Soler', text: 'Pedir por WhatsApp directamente desde la carta es comodísimo. Llegamos al local y el pedido estaba recién salido del horno, calentito y perfecto. Muy top la Mortadella con burrata y pistacho.', stars: 5, date: 'hace 1 semana' },
+  { name: 'Elena Martínez', text: 'Por fin una pizzería con opciones veganas de calidad y bien pensadas, no solo quitar el queso. La Ortolana Vegana y el Tiramisú son un 10 rotundo.', stars: 5, date: 'hace 2 semanas' },
   { name: 'Carlos Benítez', text: 'Masa fina al estilo tradicional italiano, ingredientes de primera calidad y un trato impecable. Ya es nuestra pizzería fija de cada fin de semana con amigos.', stars: 5, date: 'hace 3 semanas' }
 ];
 
@@ -1209,46 +1586,46 @@ const REVIEWS = [
    Para añadir entrantes o bebidas, agrega objetos con cat:'entrantes' o cat:'bebidas'. */
 const MENU = [
   // — Pizzas tradicionales (mozzarella fior di latte) —
-  {n:'Margherita', p:8.5, d:'Tomate, mozzarella, albahaca', cat:'pizzas', tags:['clasicas'], star:true, img:'https://images.unsplash.com/photo-1723132266833-252c909bc7c4?auto=format&fit=crop&w=800&q=80'},
-  {n:'Barbecue', p:12, d:'Barbacoa, mozzarella, carne picada, bacon, pollo', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80'},
-  {n:'Prosciutto Cotto', p:10, d:'Tomate, mozzarella, jamón york', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1590083745251-4fdb0b285c6a?auto=format&fit=crop&w=800&q=80'},
-  {n:'Ragazzino', p:10.5, d:'Tomate, mozzarella, frankfurt, patatas', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80'},
-  {n:'Napoletana', p:10, d:'Tomate, mozzarella, anchoas, alcaparras', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80'},
-  {n:'Ibérica', p:15, d:'Tomate, mozzarella y jamón ibérico', cat:'pizzas', tags:['carne'], star:true, img:'https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=800&q=80'},
-  {n:'Carbonara', p:12, d:'Tomate, mozzarella, huevo, guanciale, grana, pimienta', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80'},
-  {n:'Boss', p:12.5, d:'Tomate, mozzarella, salchicha fresca, champiñón, careta', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=800&q=80'},
-  {n:'Capricciosa', p:12.5, d:'Tomate, mozzarella, champiñón, jamón york, frankfurt, huevo', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=80'},
-  {n:'Marinara', p:10, d:'Tomate, aceite virgen, ajo, orégano, rúcula, queso grana', cat:'pizzas', tags:['clasicas'], img:'https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=800&q=80'},
-  {n:'Calzone', p:12, d:'Tomate, mozzarella, champiñón, jamón york', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1566740933469-b99ddb112248?auto=format&fit=crop&w=800&q=80'},
-  {n:'Campionessa Margherita', p:10, d:'Tomate, mozzarella, albahaca, queso de oveja', cat:'pizzas', tags:['clasicas','quesos'], img:'https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80'},
-  {n:'Diavola', p:11.5, d:'Tomate, mozzarella, cebolla, salami, pimiento fresco, olivas negras', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80'},
-  {n:'Sarda', p:11, d:'Tomate, mozzarella, salchicha seca, queso de oveja', cat:'pizzas', tags:['carne','quesos'], img:'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80'},
-  {n:'Piemontese', p:13, d:'Tomate, mozzarella, gorgonzola, guanciale, grelos', cat:'pizzas', tags:['carne','quesos'], img:'https://images.unsplash.com/photo-1564936281291-294551497d81?auto=format&fit=crop&w=800&q=80'},
-  {n:'Tricolore', p:12, d:'Tomate, mozzarella, rúcula, grana, jamón serrano', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?auto=format&fit=crop&w=800&q=80'},
-  {n:'4 Formaggi', p:11, d:'Tomate, mozzarella, gorgonzola, grana, queso de oveja', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1775812413755-a3c7200c7830?auto=format&fit=crop&w=800&q=80'},
-  {n:'Gorgonzola', p:10, d:'Gorgonzola, mozzarella, nueces', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1598023696416-0193a0bcd302?auto=format&fit=crop&w=800&q=80'},
-  {n:'4 Stagioni', p:12.5, d:'Tomate, mozzarella, champiñón, jamón, aceitunas, alcachofa, frankfurt', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=800&q=80'},
-  {n:'Pepperoni Little Italy', p:11.5, d:'Tomate, mozzarella, queso de oveja, pepperoni, nata', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1716237388573-f33de65d8d0f?auto=format&fit=crop&w=800&q=80'},
-  {n:'Mortadela (Bologna)', p:13.5, d:'Tomate, mozzarella, mortadela (Bologna), albahaca, burrata, pistacho', cat:'pizzas', tags:['carne','quesos'], star:true, img:'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&w=800&q=80'},
-  {n:'Trevisana', p:11, d:'Tomate, mozzarella, cerdo asado, aceite virgen, sal, pimienta, perfume de romero', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1750127060930-ea1cdc1e59a5?auto=format&fit=crop&w=800&q=80'},
-  {n:'Simpson', p:11, d:'Tomate, mozzarella, mostaza, frankfurt, cebolla', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1776810250102-7459c4e0edc9?auto=format&fit=crop&w=800&q=80'},
-  {n:'Burrata Master', p:15, d:'Tomate, burrata, salmón, rúcula, pimienta negra', cat:'pizzas', tags:['mar','quesos'], star:true, img:'https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?auto=format&fit=crop&w=800&q=80'},
-  {n:'Marisco', p:15, d:'Tomate, mozzarella, gambas, mejillón, pulpo, aceite virgen', cat:'pizzas', tags:['mar'], img:'https://images.unsplash.com/photo-1706953450298-a628053ab0ae?auto=format&fit=crop&w=800&q=80'},
-  {n:'Salmone', p:14, d:'Tomate, mozzarella, salmón, nata', cat:'pizzas', tags:['mar'], img:'https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=800&q=80'},
-  {n:'Tonno', p:10, d:'Tomate, mozzarella, atún, cebolla', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1576458087875-4d52fc51e013?auto=format&fit=crop&w=800&q=80'},
-  {n:'Puttanesca', p:10, d:'Doble tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras, aceite picante, orégano', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=800&q=80'},
-  {n:'Cloti', p:11, d:'Tomate, mozzarella, espinacas, queso de cabra', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1474600056930-615c3d706456?auto=format&fit=crop&w=800&q=80'},
-  {n:'Salmón 2.0', p:16.5, d:'Base de nata, mozzarella, salmón ahumado, aguacate, tomate cherry, queso crema y AOVE', cat:'pizzas', tags:['mar'], star:true, img:'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=80'},
+  {n:'Margherita Tradizionale', p:8.5, d:'Tomate San Marzano, mozzarella fior di latte, albahaca fresca y virgen extra', cat:'pizzas', tags:['clasicas'], star:true, img:'https://images.unsplash.com/photo-1723132266833-252c909bc7c4?auto=format&fit=crop&w=800&q=80'},
+  {n:'BBQ Smokehouse', p:12, d:'Salsa barbacoa ahumada, mozzarella, carne especiada, bacon crujiente y pollo asado', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80'},
+  {n:'Prosciutto Rustico', p:10, d:'Tomate San Marzano, mozzarella fior di latte y jamón cocido seleccionado', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1590083745251-4fdb0b285c6a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Bambini Especial', p:10.5, d:'Tomate, mozzarella fior di latte, salchicha frankfurt artesana y patatas horneadas', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80'},
+  {n:'Romana Tradizionale', p:10, d:'Tomate San Marzano, mozzarella, anchoas del Cantábrico, alcaparras y orégano silvestre', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80'},
+  {n:'Ibérica de Bellota', p:15, d:'Tomate San Marzano, mozzarella fior di latte, lascas de jamón ibérico y un toque de AOVE', cat:'pizzas', tags:['carne'], star:true, img:'https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Carbonara Auténtica', p:12, d:'Crema suave, mozzarella, guanciale crujiente, pecorino grana y pimienta negra molida', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80'},
+  {n:'Boscaiola Casera', p:12.5, d:'Tomate San Marzano, mozzarella, salchicha italiana fresca, champiñones y panceta curada', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Capricciosa Especial', p:12.5, d:'Tomate, mozzarella, champiñones frescos, jamón cocido braseado, alcachofas y huevo', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=80'},
+  {n:'Marinara Gourmet', p:10, d:'Tomate San Marzano, virgen extra, ajo tierno laminado, orégano, rúcula fresca y queso grana', cat:'pizzas', tags:['clasicas'], img:'https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=800&q=80'},
+  {n:'Calzone Napolitano', p:12, d:'Masa doblada y crujiente rellena de tomate, mozzarella fior di latte, champiñones y jamón cocido', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1566740933469-b99ddb112248?auto=format&fit=crop&w=800&q=80'},
+  {n:'Regina Margherita D.O.P.', p:10, d:'Tomate San Marzano, mozzarella fior di latte, albahaca fresca y lascas de pecorino de oveja', cat:'pizzas', tags:['clasicas','quesos'], img:'https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80'},
+  {n:'Diavola Piccante', p:11.5, d:'Tomate, mozzarella, salame piccante italiano, pimiento asado, cebolla morada y aceitunas negras', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80'},
+  {n:'Calabrese Tradizionale', p:11, d:'Tomate, mozzarella, salchicha curada artesana, queso de oveja y pimienta', cat:'pizzas', tags:['carne','quesos'], img:'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80'},
+  {n:'Gorgonzola & Guanciale', p:13, d:'Tomate, mozzarella, queso gorgonzola fundido, guanciale crujiente y grelos salteados', cat:'pizzas', tags:['carne','quesos'], img:'https://images.unsplash.com/photo-1564936281291-294551497d81?auto=format&fit=crop&w=800&q=80'},
+  {n:'Parma Tricolore', p:12, d:'Tomate, mozzarella, rúcula fresca, láminas de grana padano y jamón serrano bodega', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?auto=format&fit=crop&w=800&q=80'},
+  {n:'Quattro Formaggi D.O.P.', p:11, d:'Tomate, mozzarella fior di latte, gorgonzola fundido, grana padano y queso curado de oveja', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1775812413755-a3c7200c7830?auto=format&fit=crop&w=800&q=80'},
+  {n:'Gorgonzola Dolce & Noci', p:10, d:'Crema suave, mozzarella fundida, queso gorgonzola dulce y nueces crujientes', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1598023696416-0193a0bcd302?auto=format&fit=crop&w=800&q=80'},
+  {n:'Quattro Stagioni Classica', p:12.5, d:'Tomate, mozzarella, champiñón, jamón cocido, aceitunas negras y corazones de alcachofa', cat:'pizzas', tags:['clasicas','carne'], img:'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=800&q=80'},
+  {n:'Pepperoni New York Style', p:11.5, d:'Tomate San Marzano, mozzarella fior di latte, abundante pepperoni especiado y crema suave', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1716237388573-f33de65d8d0f?auto=format&fit=crop&w=800&q=80'},
+  {n:'Mortadella & Burrata al Pistacchio', p:13.5, d:'Tomate, mozzarella, mortadela de Bolonia IGP, albahaca fresca, corazón de burrata y pistacho picado', cat:'pizzas', tags:['carne','quesos'], star:true, img:'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&w=800&q=80'},
+  {n:'Porchetta & Romero Toscano', p:11, d:'Tomate, mozzarella, asado de cerdo crujiente a las finas hierbas, virgen extra, sal y perfume de romero', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1750127060930-ea1cdc1e59a5?auto=format&fit=crop&w=800&q=80'},
+  {n:'Americana Deluxe', p:11, d:'Tomate, mozzarella, suave toque de mostaza artesana, salchicha ahumada y cebolla dorada', cat:'pizzas', tags:['carne'], img:'https://images.unsplash.com/photo-1776810250102-7459c4e0edc9?auto=format&fit=crop&w=800&q=80'},
+  {n:'Gran Burrata & Salmone', p:15, d:'Tomate San Marzano, burrata fresca entera, láminas de salmón ahumado, rúcula y pimienta negra', cat:'pizzas', tags:['mar','quesos'], star:true, img:'https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?auto=format&fit=crop&w=800&q=80'},
+  {n:'Frutti di Mare del Golfo', p:15, d:'Tomate San Marzano, mozzarella, gambas seleccionadas, mejillón de roca, dados de pulpo y virgen extra', cat:'pizzas', tags:['mar'], img:'https://images.unsplash.com/photo-1706953450298-a628053ab0ae?auto=format&fit=crop&w=800&q=80'},
+  {n:'Salmone Tradizionale', p:14, d:'Tomate San Marzano, mozzarella fior di latte, salmón jugoso y crema ligera', cat:'pizzas', tags:['mar'], img:'https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Tonno & Cipolla Rossa', p:10, d:'Tomate San Marzano, mozzarella fior di latte, atún claro seleccionado y cebolla morada fina', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&w=800&q=80'},
+  {n:'Puttanesca Tradizionale', p:10, d:'Doble reducción de tomate, mozzarella, aceitunas negras, anchoas, aceite de ajo, alcaparras y orégano', cat:'pizzas', tags:['clasicas','mar'], img:'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=800&q=80'},
+  {n:'Florentina de Cabra', p:11, d:'Tomate San Marzano, mozzarella, espinacas frescas salteadas y medallones de queso de cabra artesano', cat:'pizzas', tags:['quesos'], img:'https://images.unsplash.com/photo-1474600056930-615c3d706456?auto=format&fit=crop&w=800&q=80'},
+  {n:'Salmone & Avocado Gourmet', p:16.5, d:'Base de crema fina, mozzarella, salmón ahumado premium, dados de aguacate, cherry confitado y queso crema con AOVE', cat:'pizzas', tags:['mar'], star:true, img:'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=80'},
 
   // — Pizzas veganas (mozzarella vegana a pedido) —
-  {n:'Campesina', p:11, d:'Tomate, mozzarella vegana, calabacín, pimiento, berenjena', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80'},
-  {n:'Popeye', p:11, d:'Tomate, mozzarella vegana, espinacas, cebollino, aceite de ajo', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&w=800&q=80'},
-  {n:'Enova', p:11, d:'Tomate, mozzarella vegana, queso parmesano, tomate cherry, pesto genovese', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=80'},
+  {n:'Ortolana Vegana', p:11, d:'Tomate San Marzano, mozzarella vegetal bio, calabacín, pimiento asado y berenjena a la parrilla', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80'},
+  {n:'Spinaci & Aglio Vegan', p:11, d:'Tomate, mozzarella vegetal bio, espinacas tiernas, cebollino fresco y emulsión de aceite de ajo', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&w=800&q=80'},
+  {n:'Pesto Verde & Pomodorini Vegan', p:11, d:'Tomate, mozzarella vegetal bio, queso vegetal curado, tomates cherry confitados y pesto genovés de albahaca fresca', cat:'veganas', vegan:true, img:'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=80'},
 
   // — Postres —
-  {n:'Tiramisú', p:5, d:'Mascarpone, café, savoiardi', cat:'postres', img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80'},
-  {n:'Tarta de Quesos', p:5, d:'Queso fresco, queso de cabra', cat:'postres', img:'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80'},
-  {n:'Nutella', p:8, d:'Nutella, avellanas tostadas', cat:'postres', img:'https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=800&q=80'}
+  {n:'Tiramisú Tradizionale', p:5, d:'Crema artesana de mascarpone, café espresso italiano, bizcochos savoiardi y cacao puro', cat:'postres', img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80'},
+  {n:'Tarta Cremosa al Forno', p:5, d:'Tarta artesana de queso horneada lentamente con queso fresco y suave toque de queso de cabra', cat:'postres', img:'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80'},
+  {n:'Pizza Dolce Nutella & Nocciole', p:8, d:'Masa fina al horno de leña cubierta de auténtica Nutella caliente y avellanas tostadas picadas', cat:'postres', img:'https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=800&q=80'}
 ];
 
 /* ================= ICONOS NORMALIZADOS (SVG) ================= */
