@@ -10,7 +10,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <!-- CAMBIAR: URL real de GitHub Pages / dominio -->
   <link rel="canonical" href="https://jaumetur3w.github.io/pizzeria_xativa/" />
-  <meta name="theme-color" content="#3a3935" />
+  <meta name="theme-color" content="#28251F" />
   <link rel="icon" href="logo.svg" type="image/svg+xml" />
 
   <!-- ===== GEO TAGS ===== -->
@@ -30,68 +30,123 @@
   <meta name="twitter:description" content="Estructura web profesional para pizzerías y restaurantes: carta con fotos, vista previa interactiva y pedidos directos por WhatsApp." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=1200&q=80" />
 
-  <!-- ===== RENDIMIENTO ===== -->
+  <!-- ===== TIPOGRAFÍAS EDITORIALES GASTRONÓMICAS ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="logo.svg" fetchpriority="high" />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Cinzel:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: { extend: {
         colors: {
-          coal:  { DEFAULT:'#3a3935', 800:'#2c2b28', 900:'#1f1e1c' },
-          basil: { DEFAULT:'#2f8f4e', dark:'#237040', light:'#e6f3ea' },
-          tomato:{ DEFAULT:'#d23f45', dark:'#b3303a', light:'#fbe9ea' },
-          cream: { DEFAULT:'#f8f2e4', dark:'#efe5cd' }
+          flour: '#F5F0E6',
+          'flour-warm': '#FFFCF6',
+          terracotta: { DEFAULT:'#963B30', dark:'#7F2F26', light:'#FBF3F1' },
+          olive: { DEFAULT:'#60684A', dark:'#4B5238', light:'#F2F4EC' },
+          charcoal: { DEFAULT:'#28251F', 800:'#1F1D18', 900:'#171512' },
+          parchment: { DEFAULT:'#E6DCCB', light:'#F9F5EE', dark:'#D8CBB6' },
+          // compat aliases
+          coal:  { DEFAULT:'#28251F', 800:'#1F1D18', 900:'#171512' },
+          basil: { DEFAULT:'#60684A', dark:'#4B5238', light:'#F2F4EC' },
+          tomato:{ DEFAULT:'#963B30', dark:'#7F2F26', light:'#FBF3F1' },
+          cream: { DEFAULT:'#F5F0E6', dark:'#E6DCCB' }
         },
         fontFamily: {
-          display:['"Playfair Display"','serif'],
-          body:['"Nunito Sans"','sans-serif'],
-          script:['Caveat','cursive']
+          serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          sans: ['"DM Sans"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Playfair Display"', 'Georgia', 'serif'],
+          body: ['"DM Sans"', 'sans-serif'],
+          script: ['Caveat', 'cursive']
         }
       }}
     }
   </script>
   <style>
-    body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f2e4;color:#3a3935;-webkit-tap-highlight-color:transparent}
-    .gingham{height:20px;background-color:#fff;background-image:linear-gradient(90deg,rgba(210,63,69,.95) 50%,transparent 50%),linear-gradient(rgba(210,63,69,.95) 50%,transparent 50%);background-size:20px 20px}
-    .gingham-soft{background-color:#fff;background-image:linear-gradient(90deg,rgba(210,63,69,.09) 50%,transparent 50%),linear-gradient(rgba(210,63,69,.09) 50%,transparent 50%);background-size:28px 28px}
-    .flagbar{background:linear-gradient(90deg,#2f8f4e 0 33.33%,#fff 33.33% 66.66%,#d23f45 66.66% 100%)}
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.show{opacity:1;transform:none}
-    .noscroll::-webkit-scrollbar{display:none}.noscroll{scrollbar-width:none}
-    .card-in{animation:cardIn .3s ease both}
-    @keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .pulse-ring{animation:pulse 2.4s infinite}
-    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,143,78,.5)}70%{box-shadow:0 0 0 14px rgba(47,143,78,0)}100%{box-shadow:0 0 0 0 rgba(47,143,78,0)}}
-    details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}
-    details[open] .chev{transform:rotate(180deg)}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-  
-  @media print {
-    body * { visibility: hidden !important; }
-    #pizzeriaTableCard, #pizzeriaTableCard *, #printableTableCard, #printableTableCard * { visibility: visible !important; }
-    #printableTableCard {
-      position: fixed !important;
-      left: 50% !important;
-      top: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      display: block !important;
-      width: 130mm !important;
-      padding: 15mm !important;
-      border: 2px dashed #141211 !important;
-      background: #ffffff !important;
-      box-shadow: none !important;
-      text-align: center !important;
+    :root {
+      --color-flour: #F5F0E6;
+      --color-warm-white: #FFFCF6;
+      --color-terracotta: #963B30;
+      --color-terracotta-dark: #7F2F26;
+      --color-olive: #60684A;
+      --color-olive-dark: #4B5238;
+      --color-charcoal: #28251F;
+      --color-parchment: #E6DCCB;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'DM Sans', 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-script: 'Caveat', cursive;
     }
-  }
 
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-flour);
+      color: var(--color-charcoal);
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.6;
+    }
+
+    /* Regla editorial delicada inspirada en cartas tipográficas */
+    .editorial-border-b {
+      border-bottom: 1px solid rgba(40, 37, 31, 0.12);
+    }
+    .editorial-border-t {
+      border-top: 1px solid rgba(40, 37, 31, 0.12);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    .noscroll::-webkit-scrollbar { display: none; }
+    .noscroll { scrollbar-width: none; }
+
+    .card-in { animation: cardIn 0.35s ease both; }
+    @keyframes cardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .pulse-ring { animation: subtlePulse 3s infinite; }
+    @keyframes subtlePulse {
+      0% { box-shadow: 0 0 0 0 rgba(150, 59, 48, 0.35); }
+      70% { box-shadow: 0 0 0 12px rgba(150, 59, 48, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(150, 59, 48, 0); }
+    }
+
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      body * { visibility: hidden !important; }
+      #pizzeriaTableCard, #pizzeriaTableCard *, #printableTableCard, #printableTableCard * { visibility: visible !important; }
+      #printableTableCard {
+        position: fixed !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        display: block !important;
+        width: 130mm !important;
+        padding: 15mm !important;
+        border: 2px dashed #141211 !important;
+        background: #ffffff !important;
+        box-shadow: none !important;
+        text-align: center !important;
+      }
+    }
   </style>
 
   <!-- ===== SCHEMA.ORG: Pizzeria + Menú completo ===== -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": [
@@ -659,256 +714,338 @@
   }
 }
   </script>
+
 </head>
 
 <body class="antialiased pb-20 md:pb-0">
 
-<!-- ================= HEADER ================= -->
 <!-- ================= DEMO PORTFOLIO BANNER ================= -->
-<div class="bg-coal text-cream/90 text-xs font-bold py-2 px-4 border-b border-white/10 relative z-50">
+<div class="bg-charcoal-900 text-parchment-light/80 text-xs py-2 px-4 border-b border-stone-800 relative z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-2 text-center sm:text-left">
     <div class="flex items-center justify-center gap-2 w-full sm:w-auto">
-      <span class="bg-basil text-white text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-extrabold flex items-center gap-1">
+      <span class="bg-olive text-white text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold flex items-center gap-1 font-sans">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         Plantilla Demo
       </span>
-      <span>Diseño web profesional para pizzerías y restaurantes · Carta digital con pedidos por WhatsApp</span>
+      <span class="font-light">Diseño web profesional para pizzerías y restaurantes · Carta digital con pedidos por WhatsApp</span>
     </div>
-    <a href="#carta" class="hidden md:inline-flex items-center gap-1 text-tomato hover:text-white transition underline underline-offset-2">
+    <a href="#carta" class="hidden md:inline-flex items-center gap-1 text-terracotta hover:text-white transition underline underline-offset-4 text-xs font-medium">
       Probar carta interactiva ↓
     </a>
   </div>
 </div>
 
-<header class="fixed top-0 inset-x-0 z-40">
-  <div class="flagbar h-1"></div>
-  <nav class="bg-coal/95 backdrop-blur text-cream" aria-label="Navegación principal">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#inicio" class="flex items-center gap-3" aria-label="La Pizzería Demo - Inicio">
-        <span class="w-11 h-11 rounded-full overflow-hidden bg-cream flex items-center justify-center ring-2 ring-cream/80 p-1">
-          <img src="logo.svg" width="44" height="44" alt="Logo de La Pizzería" class="w-full h-full object-contain" />
-        </span>
-        <div>
-          <span class="font-display font-extrabold text-lg leading-none flex items-center gap-2">
-            La Pizzería
-            <span class="bg-amber-400/20 text-amber-300 text-[9px] uppercase tracking-wider font-extrabold px-1.5 py-0.5 rounded border border-amber-400/30">Demo</span>
-          </span>
-          <span class="block text-[10px] font-body font-bold tracking-[.25em] text-cream/70 mt-1">PIZZA ARTESANA</span>
+<!-- ================= HEADER & NAVEGACIÓN ================= -->
+<header class="sticky top-0 inset-x-0 z-40 bg-[#FFFCF6]/95 backdrop-blur-md border-b border-stone-200/80 transition-colors duration-300">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between" aria-label="Navegación principal">
+    <a href="#inicio" class="flex items-center gap-3.5 group" aria-label="La Pizzería Demo - Inicio">
+      <span class="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center ring-1 ring-stone-300 p-1 shadow-xs group-hover:scale-105 transition-transform">
+        <img src="logo.svg" width="44" height="44" alt="Logo de La Pizzería" class="w-full h-full object-contain" />
+      </span>
+      <div class="leading-none">
+        <div class="flex items-center gap-2">
+          <span class="font-serif font-bold text-xl tracking-tight text-charcoal">La Pizzería</span>
+          <span class="bg-stone-100 text-stone-600 text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border border-stone-200">Demo</span>
         </div>
+        <span class="block text-[10px] font-sans font-semibold tracking-[0.22em] text-stone-500 mt-1 uppercase">Pizza Artesana</span>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 text-sm font-sans font-medium text-stone-700">
+      <a href="#historia" class="hover:text-terracotta transition py-1">Nosotros</a>
+      <a href="#carta" class="hover:text-terracotta transition py-1">Carta</a>
+      <a href="#qr-taula" class="hover:text-terracotta transition flex items-center gap-1.5 py-1 text-stone-700">
+        <svg class="w-4 h-4 text-olive" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm15 0h3v3h-3zm-5 0h3v3h-3zm2 5h3v3h-3zm3 0h3v3h-3z"/></svg>
+        <span>QR Taules</span>
       </a>
-      <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
-        <a href="#historia" class="hover:text-tomato transition">Nosotros</a>
-        <a href="#carta" class="hover:text-tomato transition">Carta</a>
-        <a href="#qr-taula" class="hover:text-tomato transition flex items-center gap-1.5 text-amber-300 font-bold"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm15 0h3v3h-3zm-5 0h3v3h-3zm2 5h3v3h-3zm3 0h3v3h-3z"/></svg><span>QR Taules</span></a>
-        <a href="#fidelidad" class="hover:text-tomato transition flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tomato animate-pulse"></span>Pizza Pass</a>
-        <a href="#opiniones" class="hover:text-tomato transition">Opiniones</a>
-        <a href="#visitanos" class="hover:text-tomato transition">Horarios y ubicación</a>
-        <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="bg-basil hover:bg-basil-dark text-white px-5 py-2 rounded-full transition">Pedir por WhatsApp</a>
-      </div>
-      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
+      <a href="#fidelidad" class="hover:text-terracotta transition flex items-center gap-1.5 py-1">
+        <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+        <span>Pizza Pass</span>
+      </a>
+      <a href="#opiniones" class="hover:text-terracotta transition py-1">Opiniones</a>
+      <a href="#visitanos" class="hover:text-terracotta transition py-1">Horarios y ubicación</a>
+      <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="bg-terracotta hover:bg-terracotta-dark text-white px-5 py-2.5 rounded-full transition shadow-xs font-semibold text-xs tracking-wide uppercase font-sans">
+        Pedir por WhatsApp
+      </a>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-coal">
-      <div class="px-4 py-2 flex flex-col text-base font-semibold">
-        <a href="#historia" class="py-3 border-b border-white/10">Nosotros</a>
-        <a href="#carta" class="py-3 border-b border-white/10">Carta</a>
-        <a href="#qr-taula" class="py-3 border-b border-white/10 flex items-center justify-between text-amber-300"><span>Codi QR per a Taules</span><span class="text-[10px] font-extrabold bg-amber-400 text-coal px-2 py-0.5 rounded-full uppercase">Imprimible</span></a>
-        <a href="#fidelidad" class="py-3 border-b border-white/10 flex items-center justify-between"><span>Pizza Pass (Wallet)</span><span class="text-xs font-extrabold bg-tomato text-white px-2.5 py-0.5 rounded-full">Club VIP</span></a>
-        <a href="#opiniones" class="py-3 border-b border-white/10">Opiniones</a>
-        <a href="#visitanos" class="py-3">Horarios y ubicación</a>
-      </div>
-    </div>
+
+    <button id="menuBtn" class="md:hidden p-2 -mr-2 text-charcoal" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </nav>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200 bg-[#FFFCF6]">
+    <div class="px-5 py-3 flex flex-col text-sm font-sans font-medium text-charcoal">
+      <a href="#historia" class="py-3 border-b border-stone-200/60">Nosotros</a>
+      <a href="#carta" class="py-3 border-b border-stone-200/60">Carta</a>
+      <a href="#qr-taula" class="py-3 border-b border-stone-200/60 flex items-center justify-between text-charcoal">
+        <span>Codi QR per a Taules</span>
+        <span class="text-[10px] font-bold bg-olive-light text-olive px-2 py-0.5 rounded-full uppercase">Imprimible</span>
+      </a>
+      <a href="#fidelidad" class="py-3 border-b border-stone-200/60 flex items-center justify-between">
+        <span>Pizza Pass (Wallet)</span>
+        <span class="text-[10px] font-bold bg-terracotta-light text-terracotta px-2.5 py-0.5 rounded-full uppercase">Club VIP</span>
+      </a>
+      <a href="#opiniones" class="py-3 border-b border-stone-200/60">Opiniones</a>
+      <a href="#visitanos" class="py-3">Horarios y ubicación</a>
+    </div>
+  </div>
 </header>
 
 <main>
 <!-- ================= HERO ================= -->
-<section id="inicio" class="relative bg-coal text-cream overflow-hidden pt-32 pb-14 md:pt-40 md:pb-24">
-  <div class="absolute inset-0 opacity-[.07]" style="background-image:radial-gradient(#f8f2e4 1px,transparent 1px);background-size:22px 22px"></div>
-  <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-basil/25 blur-3xl"></div>
-  <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-tomato/25 blur-3xl"></div>
-
-  <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-    <div class="order-2 md:order-1 text-center md:text-left">
-      <p class="font-script text-2xl sm:text-3xl text-basil-light -rotate-2 origin-left inline-block mb-3 drop-shadow-xs">🍕 L'autèntica pizza napoletana a foc de llenya</p>
-      <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
-        Pizzería <span class="font-serif italic font-normal text-amber-200">artesana</span> con <span class="text-tomato font-serif italic font-black">alma italiana</span>
-      </h1>
-      <p class="mt-5 text-cream/85 text-lg max-w-xl mx-auto md:mx-0">
-        Masa de larga fermentación, mozzarella fior di latte y recetas de siempre. Pizzas tradicionales, veganas y creaciones propias, horneadas al momento. Pide ya por WhatsApp.
-      </p>
-      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-        <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"
-           class="pulse-ring inline-flex items-center justify-center gap-2 bg-basil hover:bg-basil-dark text-white font-bold px-7 py-4 rounded-full text-lg transition">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
-          Pedir por WhatsApp
-        </a>
-        <a href="tel:+34600000000" class="inline-flex items-center justify-center gap-2.5 border-2 border-cream/40 hover:border-cream hover:bg-cream hover:text-coal font-bold px-7 py-4 rounded-full text-lg transition">
-          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Llamar ahora</span>
-        </a>
-      </div>
-      <a href="#carta" class="inline-flex items-center gap-1.5 mt-4 text-cream/70 hover:text-cream underline underline-offset-4 text-sm transition">
-        <span>Ver la carta completa</span>
-        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="7 10 12 15 17 10"/></svg>
-      </a>
-      <ul class="mt-7 flex flex-wrap gap-2 justify-center md:justify-start text-xs font-bold tracking-wide">
-        <li class="bg-white/10 rounded-full px-3 py-1.5 inline-flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-tomato shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 0 .9.3 1.1.7l.6 1.6c1.6-.2 2.7.2 3.1.5.4.3.4.9.1 1.3l-1.3 1.3c2.9 1.9 4.5 5 4.5 8.6 0 4.4-3.6 8-8 8s-8-3.6-8-8c0-3.6 1.6-6.7 4.5-8.6L5.2 6.1c-.3-.4-.3-1 .1-1.3.4-.3 1.5-.7 3.1-.5l.6-1.6c.2-.4.6-.7 1.1-.7h1.9z"/></svg>
-          <span>Mozzarella fior di latte</span>
-        </li>
-        <li class="bg-white/10 rounded-full px-3 py-1.5 inline-flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-          <span>Horneada al momento</span>
-        </li>
-        <li class="bg-white/10 rounded-full px-3 py-1.5 inline-flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-basil shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-          <span>Opciones veganas</span>
-        </li>
-      </ul>
+<section id="inicio" class="relative bg-flour text-charcoal overflow-hidden pt-12 pb-16 md:pt-20 md:pb-28 border-b border-stone-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    
+    <!-- Meta editorial superior -->
+    <div class="flex items-center justify-between border-b border-stone-300/80 pb-4 mb-8 text-xs font-sans tracking-widest uppercase text-stone-500">
+      <span>Trattoria & Forno a Legna · Est. Tradizionale</span>
+      <span class="hidden sm:inline">Fermentación Lenta · 48H</span>
+      <span>Xàtiva</span>
     </div>
-    <div class="order-1 md:order-2 flex justify-center">
-      <div class="relative">
-        <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full flex items-center justify-center p-6 sm:p-8 lg:p-10 ring-8 ring-cream/90 shadow-2xl bg-cream">
-          <img src="logo.svg" width="384" height="384" fetchpriority="high" decoding="async" alt="Logo oficial de La Pizzería" class="w-full h-full object-contain filter drop-shadow-md" />
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      
+      <!-- Columna Texto y Tipografía Protagónica -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left">
+        <p class="font-script text-2xl sm:text-3xl text-olive mb-3">🍕 L'autèntica pizza napoletana a foc de llenya</p>
+        
+        <h1 class="font-serif font-normal text-4xl sm:text-5xl lg:text-6xl text-charcoal leading-[1.08] tracking-tight">
+          Pizzería <span class="italic font-normal text-stone-700">artesana</span> con <span class="italic font-bold text-terracotta">alma italiana</span>
+        </h1>
+        
+        <p class="mt-6 text-stone-700 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+          Masa de larga fermentación, mozzarella fior di latte y recetas de siempre. Pizzas tradicionales, veganas y creaciones propias, horneadas al momento. Pide ya por WhatsApp.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto">
+          <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"
+             class="pulse-ring inline-flex items-center justify-center gap-2.5 bg-terracotta hover:bg-terracotta-dark text-white font-sans font-semibold px-7 py-4 rounded-full text-sm uppercase tracking-wider transition shadow-sm">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+            <span>Pedir por WhatsApp</span>
+          </a>
+          <a href="tel:+34600000000" class="inline-flex items-center justify-center gap-2 border border-stone-400/80 hover:border-charcoal hover:bg-white text-charcoal font-sans font-semibold px-6 py-4 rounded-full text-sm uppercase tracking-wider transition">
+            <svg class="w-4 h-4 shrink-0 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Llamar ahora</span>
+          </a>
         </div>
-        <span class="absolute -bottom-3 -right-2 bg-tomato text-white font-script text-xl px-4 py-1 rounded-full -rotate-6 shadow-lg">¡desde 8,50€!</span>
+
+        <a href="#carta" class="inline-flex items-center gap-1.5 mt-5 text-stone-600 hover:text-terracotta text-xs font-sans uppercase tracking-widest transition">
+          <span>Ver la carta completa</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="7 10 12 15 17 10"/></svg>
+        </a>
+
+        <!-- Lista de atributos auténticos con acabado editorial -->
+        <ul class="mt-8 pt-6 border-t border-stone-300/80 flex flex-wrap gap-2.5 text-xs font-sans text-stone-700">
+          <li class="bg-parchment-light border border-stone-300/80 rounded-full px-3.5 py-1.5 inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-terracotta shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 0 .9.3 1.1.7l.6 1.6c1.6-.2 2.7.2 3.1.5.4.3.4.9.1 1.3l-1.3 1.3c2.9 1.9 4.5 5 4.5 8.6 0 4.4-3.6 8-8 8s-8-3.6-8-8c0-3.6 1.6-6.7 4.5-8.6L5.2 6.1c-.3-.4-.3-1 .1-1.3.4-.3 1.5-.7 3.1-.5l.6-1.6c.2-.4.6-.7 1.1-.7h1.9z"/></svg>
+            <span>Mozzarella fior di latte</span>
+          </li>
+          <li class="bg-parchment-light border border-stone-300/80 rounded-full px-3.5 py-1.5 inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-amber-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span>Horneada al momento</span>
+          </li>
+          <li class="bg-parchment-light border border-stone-300/80 rounded-full px-3.5 py-1.5 inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-olive shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            <span>Opciones veganas</span>
+          </li>
+        </ul>
       </div>
+
+      <!-- Columna Fotografía Asimétrica de Gran Formato con Sello Editorial -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-md">
+          <!-- Marco fotográfico editorial con sombra profunda y textura de papel -->
+          <div class="relative rounded-2xl overflow-hidden bg-white p-3 sm:p-4 shadow-xl border border-stone-200">
+            <div class="relative aspect-square rounded-xl overflow-hidden bg-stone-100">
+              <img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=1000&q=85" 
+                   alt="Pizza artesana recién horneada con masa crujiente y mozzarella fior di latte"
+                   class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                   fetchpriority="high" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              
+              <!-- Emblema de calidad oficial integrado -->
+              <div class="absolute top-4 left-4 bg-[#FFFCF6]/95 backdrop-blur-md rounded-full px-3.5 py-1 border border-stone-300 shadow-sm flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full overflow-hidden flex items-center justify-center p-0.5 bg-white">
+                  <img src="logo.svg" alt="Sello de La Pizzería" class="w-full h-full object-contain" />
+                </span>
+                <span class="text-[10px] font-sans font-bold tracking-widest uppercase text-charcoal">Fatto a Mano</span>
+              </div>
+            </div>
+
+            <!-- Anotación de precio manuscrita integrada con el sello -->
+            <div class="mt-3.5 flex items-center justify-between px-1">
+              <span class="text-xs font-sans font-medium text-stone-500 uppercase tracking-wider">Carta Temporada 2026</span>
+              <span class="font-script text-2xl text-terracotta -rotate-2">¡desde 8,50€!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<div class="gingham" aria-hidden="true"></div>
-
-<!-- ================= HISTORIA ================= -->
-<section id="historia" class="py-16 md:py-24 gingham-soft">
-  <div class="max-w-5xl mx-auto px-4">
-    <div class="bg-cream rounded-3xl shadow-xl p-6 sm:p-10 md:p-14 grid md:grid-cols-5 gap-8 items-center reveal">
-      <div class="md:col-span-3">
-        <p class="font-script text-2xl text-tomato">Nuestra pizzería</p>
-        <h2 class="font-display font-black text-3xl md:text-4xl mt-1 leading-tight tracking-tight">Masa fermentada 48h, <span class="font-serif italic font-normal text-tomato">ingredientes de Italia</span></h2>
-        <p class="mt-5 text-lg leading-relaxed text-coal/85">
+<!-- ================= HISTORIA / ARTESANÍA ================= -->
+<section id="historia" class="py-16 md:py-24 bg-flour-warm border-b border-stone-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center reveal">
+      
+      <!-- Bloque Textual Editorial -->
+      <div class="lg:col-span-7">
+        <span class="font-sans text-xs font-bold uppercase tracking-[0.25em] text-terracotta block mb-2">Nuestra pizzería</span>
+        <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-charcoal leading-tight tracking-tight">
+          Masa fermentada 48h, <span class="italic font-normal text-terracotta">ingredientes de Italia</span>
+        </h2>
+        
+        <p class="mt-6 text-base sm:text-lg leading-relaxed text-stone-700 font-light">
           En nuestra pizzería creemos que una buena pizza empieza mucho antes del horno: en una masa que reposa, un tomate con sabor y una mozzarella fior di latte de verdad.
         </p>
-        <p class="mt-4 text-lg leading-relaxed text-coal/85">
+        
+        <p class="mt-4 text-base sm:text-lg leading-relaxed text-stone-700 font-light">
           Somos una pizzería artesana de barrio. Cocinamos las recetas italianas más emblemáticas (Margherita Tradizionale, Marinara Gourmet, Diavola Piccante) y creaciones de autor como nuestra Salmone & Avocado Gourmet o la Mortadella & Burrata al Pistacchio. Además, contamos con opciones veganas completas, porque en cada mesa hay gustos distintos.
         </p>
-        <p class="mt-4 font-script text-2xl text-basil-dark">Hecha a mano. Horneada al momento. Pensada para compartir.</p>
+        
+        <p class="mt-6 font-serif italic text-xl text-olive-dark">
+          Hecha a mano. Horneada al momento. Pensada para compartir.
+        </p>
       </div>
-      <div class="md:col-span-2 grid grid-cols-2 gap-3 text-center">
-        <div class="bg-white rounded-2xl p-5 shadow flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-1">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+      <!-- Cuadrícula Asimétrica de Pilares de Oficio -->
+      <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-5 border border-stone-200/90 shadow-2xs flex flex-col justify-between">
+          <div class="w-10 h-10 rounded-lg bg-flour text-stone-700 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/>
             </svg>
           </div>
-          <p class="font-extrabold text-coal">Masa artesana</p>
-          <p class="text-sm text-coal/70">Larga fermentación</p>
+          <div>
+            <p class="font-serif font-bold text-base text-charcoal">Masa artesana</p>
+            <p class="text-xs text-stone-500 mt-0.5 font-sans">Larga fermentación</p>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-1">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+        <div class="bg-white rounded-xl p-5 border border-stone-200/90 shadow-2xs flex flex-col justify-between">
+          <div class="w-10 h-10 rounded-lg bg-flour text-stone-700 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-olive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 11.5c0-4.5 4-8.5 9-8.5 5.5 0 9 4.5 9 8.5 0 4.7-4 8.5-9 8.5-4.5 0-9-3.8-9-8.5z"/>
               <circle cx="8" cy="11" r="1.5" fill="currentColor"/>
               <circle cx="14" cy="9.5" r="1.5" fill="currentColor"/>
               <circle cx="12" cy="14.5" r="1.5" fill="currentColor"/>
             </svg>
           </div>
-          <p class="font-extrabold text-coal">Fior di latte</p>
-          <p class="text-sm text-coal/70">Mozzarella de calidad</p>
+          <div>
+            <p class="font-serif font-bold text-base text-charcoal">Fior di latte</p>
+            <p class="text-xs text-stone-500 mt-0.5 font-sans">Mozzarella de calidad</p>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-orange-50 text-tomato flex items-center justify-center mb-1">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+        <div class="bg-white rounded-xl p-5 border border-stone-200/90 shadow-2xs flex flex-col justify-between">
+          <div class="w-10 h-10 rounded-lg bg-flour text-stone-700 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
             </svg>
           </div>
-          <p class="font-extrabold text-coal">Al momento</p>
-          <p class="text-sm text-coal/70">Directa del horno</p>
+          <div>
+            <p class="font-serif font-bold text-base text-charcoal">Al momento</p>
+            <p class="text-xs text-stone-500 mt-0.5 font-sans">Directa del horno</p>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-basil flex items-center justify-center mb-1">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+        <div class="bg-white rounded-xl p-5 border border-stone-200/90 shadow-2xs flex flex-col justify-between">
+          <div class="w-10 h-10 rounded-lg bg-flour text-stone-700 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-stone-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
               <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </div>
-          <p class="font-extrabold text-coal">De barrio</p>
-          <p class="text-sm text-coal/70">Trato cercano</p>
+          <div>
+            <p class="font-serif font-bold text-base text-charcoal">De barrio</p>
+            <p class="text-xs text-stone-500 mt-0.5 font-sans">Trato cercano</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ================= CARTA ================= -->
-<section id="carta" class="py-16 md:py-24 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center reveal">
-      <p class="font-script text-2xl text-tomato">La carta</p>
-      <h2 class="font-display font-black text-3xl md:text-5xl tracking-tight">Carta de <span class="font-serif italic font-normal text-tomato">pizzes artesanes</span></h2>
-      <p class="mt-3 text-coal/70 max-w-xl mx-auto">Todas las pizzas tradicionales llevan mozzarella fior di latte. En las veganas usamos mozzarella vegana. Toca cualquier pizza para ver su foto y detalles o pulsa <b>«Pedir»</b> para abrir WhatsApp.</p>
+<section id="carta" class="py-16 md:py-24 bg-white border-b border-stone-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    
+    <div class="text-center reveal max-w-2xl mx-auto">
+      <span class="font-sans text-xs font-bold uppercase tracking-[0.25em] text-terracotta block mb-2">La carta</span>
+      <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-charcoal tracking-tight">
+        Carta de <span class="italic font-normal text-terracotta">pizzes artesanes</span>
+      </h2>
+      <p class="mt-3.5 text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+        Todas las pizzas tradicionales llevan mozzarella fior di latte. En las veganas usamos mozzarella vegana. Toca cualquier pizza para ver su foto y detalles o pulsa <b>«Pedir»</b> para abrir WhatsApp.
+      </p>
     </div>
 
-        <!-- Buscador en tiempo real -->
-    <div class="mt-8 max-w-lg mx-auto px-2">
+    <!-- Buscador en tiempo real -->
+    <div class="mt-8 max-w-md mx-auto px-2">
       <div class="relative">
-        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-coal/40 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <input id="searchInput" type="search" placeholder="Buscar por pizza o ingrediente (ej. burrata, salmón, trufa...)" 
-               class="w-full pl-12 pr-10 py-3.5 rounded-full bg-cream border-2 border-coal/10 focus:border-tomato focus:bg-white focus:outline-none text-sm transition shadow-inner placeholder:text-coal/45 font-medium" />
-        <button id="clearSearch" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-coal/40 hover:text-coal p-1 text-sm font-bold" aria-label="Limpiar búsqueda">✕</button>
+               class="w-full pl-11 pr-10 py-3 rounded-full bg-parchment-light border border-stone-300 focus:border-terracotta focus:bg-white focus:outline-none text-xs sm:text-sm transition font-sans placeholder:text-stone-400 font-normal" />
+        <button id="clearSearch" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-charcoal p-1 text-sm font-bold" aria-label="Limpiar búsqueda">✕</button>
       </div>
-      <div id="searchFeedback" class="hidden mt-2 text-center text-xs font-bold text-tomato"></div>
+      <div id="searchFeedback" class="hidden mt-2 text-center text-xs font-sans font-semibold text-terracotta"></div>
     </div>
 
-<div class="sticky top-[68px] z-30 -mx-4 px-4 pt-3 pb-2 bg-white/95 backdrop-blur mt-8 border-b border-coal/10">
+    <!-- Categorías Sticky con estilo editorial sobrio -->
+    <div class="sticky top-[80px] z-30 -mx-4 px-4 pt-4 pb-3 bg-white/95 backdrop-blur-md mt-6 border-b border-stone-200">
       <div id="chips" class="noscroll flex gap-2 overflow-x-auto md:justify-center" role="tablist" aria-label="Categorías de la carta"></div>
       <div id="subchips" class="noscroll flex gap-2 overflow-x-auto md:justify-center mt-2" aria-label="Tipo de pizza"></div>
     </div>
 
-    <p id="catNote" class="mt-5 text-center text-sm text-coal/60 min-h-[1.25rem]"></p>
-    <div id="menuGrid" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    <p id="catNote" class="mt-5 text-center text-xs sm:text-sm text-stone-500 min-h-[1.25rem] font-sans italic"></p>
+    
+    <!-- Cuadrícula Editorial de Platos -->
+    <div id="menuGrid" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
-    <div class="mt-12 bg-cream rounded-2xl p-6 text-sm text-coal/80">
-      <p class="font-bold mb-3 text-coal">Leyenda de alérgenos</p>
-      <div class="flex flex-wrap gap-2.5">
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-amber-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/></svg>
+    <!-- Leyenda de alérgenos -->
+    <div class="mt-14 bg-parchment-light rounded-xl p-6 sm:p-7 border border-stone-200/80 text-sm text-stone-700">
+      <p class="font-serif font-bold text-base text-charcoal mb-3">Leyenda de alérgenos</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-amber-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/></svg>
           Gluten
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-blue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8v4H8z"/><path d="M6 6h12l2 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10l2-4z"/><line x1="6" y1="13" x2="18" y2="13"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-blue-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8v4H8z"/><path d="M6 6h12l2 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10l2-4z"/><line x1="6" y1="13" x2="18" y2="13"/></svg>
           Lácteos
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9 0-5.5-4.03-11-9-11S3 7.5 3 13c0 4.97 4.03 9 9 9z"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-amber-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9 0-5.5-4.03-11-9-11S3 7.5 3 13c0 4.97 4.03 9 9 9z"/></svg>
           Huevo
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.46-3.44 6-7 6s-7.56-2.54-8.5-6Z"/><path d="M18 10v.01"/><path d="M2 16l4.5-4L2 8"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-cyan-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.46-3.44 6-7 6s-7.56-2.54-8.5-6Z"/><path d="M18 10v.01"/><path d="M2 16l4.5-4L2 8"/></svg>
           Pescado
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-rose-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a6 6 0 0 0-6 6c0 3 2 5 6 5s6-2 6-5a6 6 0 0 0-6-6Z"/><path d="M8 8V4"/><path d="M16 8V4"/><path d="M4 14H2"/><path d="M22 14h-2"/><path d="M5 19l-2 2"/><path d="M19 19l2 2"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-rose-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a6 6 0 0 0-6 6c0 3 2 5 6 5s6-2 6-5a6 6 0 0 0-6-6Z"/><path d="M8 8V4"/><path d="M16 8V4"/><path d="M4 14H2"/><path d="M22 14h-2"/><path d="M5 19l-2 2"/><path d="M19 19l2 2"/></svg>
           Crustáceos y moluscos
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-amber-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M18 9c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 12 0Z"/><path d="M6.3 8.3a6 6 0 0 1 11.4 0"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-amber-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M18 9c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 12 0Z"/><path d="M6.3 8.3a6 6 0 0 1 11.4 0"/></svg>
           Frutos secos
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-bold text-coal/85 shadow-sm border border-coal/5">
-          <svg class="w-4 h-4 text-yellow-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3h-4z"/><path d="M8 5h8l1 4v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9l1-4z"/><circle cx="12" cy="14" r="2"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-sans font-medium text-stone-700 shadow-2xs border border-stone-200/80">
+          <svg class="w-3.5 h-3.5 text-yellow-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3h-4z"/><path d="M8 5h8l1 4v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9l1-4z"/><circle cx="12" cy="14" r="2"/></svg>
           Mostaza (puede contener)
         </span>
       </div>
-      <p class="mt-3 text-xs text-coal/60">Información orientativa deducida de los ingredientes. Puede haber trazas de otros alérgenos por la manipulación en cocina. Si tienes alergia o intolerancia, avísanos al pedir.</p>
+      <p class="mt-3.5 text-xs text-stone-500 font-light leading-relaxed">Información orientativa deducida de los ingredientes. Puede haber trazas de otros alérgenos por la manipulación en cocina. Si tienes alergia o intolerancia, avísanos al pedir.</p>
     </div>
   </div>
 </section>
 
 <!-- ================= SECCIÓ CODI QR PER A TAULES / CARTA DIGITAL ================= -->
-<section id="qr-taula" class="py-20 md:py-28 bg-[#181615] text-cream relative overflow-hidden border-t border-white/10">
+<section id="qr-taula" class="py-20 md:py-28 bg-charcoal text-cream relative overflow-hidden border-t border-stone-800">
   <!-- Fons decoratiu ambiental -->
   <div class="absolute -top-32 right-10 w-96 h-96 bg-tomato/15 rounded-full blur-[100px] pointer-events-none"></div>
   <div class="absolute -bottom-32 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -919,33 +1056,33 @@
       
       <!-- Columna Esquerra: Explicació comercial i valor afegit -->
       <div class="lg:col-span-7 text-center lg:text-left reveal">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tomato/20 border border-tomato/40 text-tomato text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terracotta/20 border border-terracotta/40 text-cream text-[11px] font-sans font-bold uppercase tracking-[0.2em] mb-4 shadow-sm">
           <svg class="w-4 h-4 text-tomato animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
           <span>Codi QR de Taula Integrat · Hostaleria 4.0</span>
         </div>
         
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-cream leading-[1.15] tracking-tight">
+        <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-parchment leading-[1.12] tracking-tight">
           La teua carta a les mans del client.<br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-tomato via-amber-400 to-amber-200">Sense PDFs feixucs ni esperes.</span>
+          <span class="font-serif italic font-normal text-amber-200">Sense PDFs feixucs ni esperes.</span>
         </h2>
         
-        <p class="mt-5 text-cream/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+        <p class="mt-5 text-stone-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
           Elimina per sempre els menús en PDF de 15 MB que mai s'obrin amb mala cobertura. Amb este <strong>codi QR vectorial amb temàtica de pizzeria</strong> col·locat a les taules, estovalles o a l'aparador, els teus clients accedixen a la carta en menys de 0,5 segons, veuen fotos reals de cada plat i demanen directament per WhatsApp sense intermediaris ni comissions del 30%.
         </p>
 
         <!-- Punts clau -->
         <div class="mt-8 grid sm:grid-cols-3 gap-4 text-left">
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur">
+          <div class="bg-stone-900/60 border border-stone-700/60 rounded-xl p-5 backdrop-blur">
             <span class="w-8 h-8 rounded-full bg-tomato/20 text-tomato flex items-center justify-center font-black text-sm mb-2.5">⚡</span>
             <p class="font-extrabold text-white text-sm">Càrrega &lt; 0,5s</p>
             <p class="text-xs text-cream/70 mt-1">Sense descàrregues pesades ni bloquejos amb poca cobertura mòbil.</p>
           </div>
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur">
+          <div class="bg-stone-900/60 border border-stone-700/60 rounded-xl p-5 backdrop-blur">
             <span class="w-8 h-8 rounded-full bg-basil/20 text-basil-light flex items-center justify-center font-black text-sm mb-2.5">0%</span>
             <p class="font-extrabold text-white text-sm">Sense Comissions</p>
             <p class="text-xs text-cream/70 mt-1">Comandes directes al teu WhatsApp sense pagar el 30% a apps terceres.</p>
           </div>
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur">
+          <div class="bg-stone-900/60 border border-stone-700/60 rounded-xl p-5 backdrop-blur">
             <span class="w-8 h-8 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center font-black text-sm mb-2.5">🖨️</span>
             <p class="font-extrabold text-white text-sm">100% Vectorial</p>
             <p class="text-xs text-cream/70 mt-1">Llest per a imprimir en cavallets de taula, estovalles o aparadors.</p>
@@ -954,11 +1091,11 @@
 
         <!-- Botons d'acció interactius -->
         <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
-          <button id="sectionPrintQrBtn" type="button" class="inline-flex items-center gap-2 bg-tomato hover:bg-tomato-dark text-white font-extrabold px-6 py-3.5 rounded-full transition shadow-lg shadow-tomato/30 active:scale-95 text-sm">
+          <button id="sectionPrintQrBtn" type="button" class="inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-sans font-semibold px-6 py-3.5 rounded-full transition shadow-md active:scale-95 text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
             <span>Imprimir Cavallet de Taula</span>
           </button>
-          <a href="qr-pizzeria.svg" download="carta-qr-pizzeria.svg" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-cream font-bold px-5 py-3.5 rounded-full transition text-sm">
+          <a href="qr-pizzeria.svg" download="carta-qr-pizzeria.svg" class="inline-flex items-center gap-2 bg-stone-800/80 hover:bg-stone-700 border border-stone-600 text-parchment font-sans font-medium px-5 py-3.5 rounded-full transition text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Descarregar SVG Vectorial</span>
           </a>
@@ -975,7 +1112,7 @@
           <div class="absolute -inset-1.5 bg-gradient-to-r from-tomato via-amber-500 to-basil rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-700"></div>
 
           <!-- Targeta de Cavallet Físic -->
-          <div id="pizzeriaTableCard" class="relative bg-[#201d1b] border-2 border-white/15 rounded-[2rem] p-6 sm:p-7 shadow-2xl text-center overflow-hidden">
+          <div id="pizzeriaTableCard" class="relative bg-stone-900 border border-stone-700/70 rounded-2xl p-6 sm:p-8 shadow-2xl text-center overflow-hidden">
             <!-- Barra superior tricolor italiana -->
             <div class="flex h-1.5 w-full rounded-full overflow-hidden mb-5">
               <span class="w-1/3 bg-basil"></span>
@@ -988,7 +1125,7 @@
               <span class="w-8 h-8 rounded-full overflow-hidden bg-white flex items-center justify-center p-1 shadow-xs ring-1 ring-white/20">
                 <img src="logo.svg" alt="Logo La Pizzería" class="w-full h-full object-contain" />
               </span>
-              <span class="font-display font-black text-xl text-cream tracking-tight">La Pizzería</span>
+              <span class="font-serif font-bold text-2xl text-parchment tracking-tight">La Pizzería</span>
             </div>
             <p class="text-[11px] font-black uppercase tracking-[.2em] text-amber-300">CARTA DIGITAL & DEMANAR EN TAULA</p>
 
@@ -1050,7 +1187,7 @@
             </div>
 
             <!-- Text d'instrucció clara -->
-            <div class="mt-4 flex items-center justify-center gap-2 text-xs font-extrabold text-amber-300">
+            <div class="mt-4 flex items-center justify-center gap-2 text-xs font-sans font-semibold text-amber-200 tracking-wide">
               <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0l-4-4m4 4l4-4"/></svg>
               <span>Apunta amb la càmera del mòbil per a provar</span>
             </div>
@@ -1069,7 +1206,10 @@
 
 
 <!-- ================= CLUB FIDELIDAD: PIZZA PASS (APPLE & GOOGLE WALLET) ================= -->
-<section id="fidelidad" class="py-20 md:py-28 bg-[#141211] text-cream relative overflow-hidden border-t border-white/10">
+
+
+<!-- ================= CLUB FIDELIDAD: PIZZA PASS (APPLE & GOOGLE WALLET) ================= -->
+<section id="fidelidad" class="py-20 md:py-28 bg-charcoal text-cream relative overflow-hidden border-t border-stone-800">
   <!-- Fondos decorativos y resplandores ambientales -->
   <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-tomato/15 rounded-full blur-[120px] pointer-events-none"></div>
   <div class="absolute -bottom-40 right-[-100px] w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -1078,29 +1218,29 @@
   <div class="max-w-6xl mx-auto px-4 relative z-10">
     <!-- Encabezado de Sección -->
     <div class="text-center max-w-3xl mx-auto reveal">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tomato/15 border border-tomato/30 text-tomato text-xs font-extrabold uppercase tracking-widest mb-4 shadow-sm">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terracotta/20 border border-terracotta/40 text-cream text-[11px] font-sans font-bold uppercase tracking-[0.2em] mb-4 shadow-sm">
         <svg class="w-3.5 h-3.5 text-tomato animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <span>Club de Fidelización del Barrio</span>
       </div>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-cream leading-[1.15] tracking-tight">
+      <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-parchment leading-[1.12] tracking-tight">
         Tu Pizza Pass en el móvil.<br class="hidden sm:inline" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-tomato via-amber-400 to-amber-200">En Apple Wallet y Google Wallet.</span>
+        <span class="font-serif italic font-normal text-amber-200">En Apple Wallet y Google Wallet.</span>
       </h2>
-      <p class="mt-4 text-cream/80 text-base sm:text-lg leading-relaxed">
+      <p class="mt-4 text-stone-300 text-base sm:text-lg leading-relaxed font-light">
         El club exclusivo para premiar tu pasión por la pizza artesana. Sin descargar apps pesadas ni guardar tarjetas de papel que se rompen o se pierden. Cada pizza suma 1 sello digital y <strong class="text-white font-bold">la 10ª corre por nuestra cuenta</strong>.
       </p>
 
       <!-- Micro-beneficios destacados -->
       <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-semibold text-cream/90">
-        <span class="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 bg-stone-900/80 border border-stone-700/60 px-4 py-1.5 rounded-full text-stone-200">
           <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           Sin apps que instalar (100% nativo)
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 bg-stone-900/80 border border-stone-700/60 px-4 py-1.5 rounded-full text-stone-200">
           <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16Z"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
           1 Pizza = 1 Sello digital
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 bg-stone-900/80 border border-stone-700/60 px-4 py-1.5 rounded-full text-stone-200">
           <svg class="w-4 h-4 text-tomato shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           10ª Pizza Gratis
         </span>
@@ -1114,7 +1254,7 @@
       <div class="lg:col-span-7 flex flex-col gap-8 reveal">
         
         <!-- Bloque 1: Geolocalización Inteligente (Geofencing) con Notificación de Pantalla Bloqueada -->
-        <div class="relative bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-md border border-white/15 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden group">
+        <div class="relative bg-gradient-to-br from-stone-900/80 to-stone-900/40 backdrop-blur-md border border-stone-700/70 rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden group">
           <div class="flex items-center justify-between pb-3.5 mb-4 border-b border-white/10 text-xs">
             <div class="flex items-center gap-2">
               <span class="relative flex h-2.5 w-2.5">
@@ -1169,7 +1309,7 @@
           <h3 class="text-xs font-extrabold uppercase tracking-wider text-cream/60 mb-3.5">¿Cómo funciona? En solo 3 pasos</h3>
           <div class="grid sm:grid-cols-3 gap-3.5">
             <!-- Paso 1 -->
-            <div class="bg-white/[0.05] border border-white/10 hover:border-white/20 rounded-2xl p-4 transition flex flex-col justify-between">
+            <div class="bg-stone-900/70 border border-stone-700/60 hover:border-amber-400/30 rounded-xl p-5 transition flex flex-col justify-between">
               <div>
                 <div class="w-8 h-8 rounded-xl bg-tomato/20 border border-tomato/40 text-tomato font-black text-sm flex items-center justify-center mb-3">1</div>
                 <h4 class="font-extrabold text-sm text-white">Guárdala en 5 seg</h4>
@@ -1179,7 +1319,7 @@
             </div>
 
             <!-- Paso 2 -->
-            <div class="bg-white/[0.05] border border-white/10 hover:border-white/20 rounded-2xl p-4 transition flex flex-col justify-between">
+            <div class="bg-stone-900/70 border border-stone-700/60 hover:border-amber-400/30 rounded-xl p-5 transition flex flex-col justify-between">
               <div>
                 <div class="w-8 h-8 rounded-xl bg-amber-400/20 border border-amber-400/40 text-amber-300 font-black text-sm flex items-center justify-center mb-3">2</div>
                 <h4 class="font-extrabold text-sm text-white">Enseña tu QR al pagar</h4>
@@ -1189,7 +1329,7 @@
             </div>
 
             <!-- Paso 3 -->
-            <div class="bg-white/[0.05] border border-white/10 hover:border-white/20 rounded-2xl p-4 transition flex flex-col justify-between">
+            <div class="bg-stone-900/70 border border-stone-700/60 hover:border-amber-400/30 rounded-xl p-5 transition flex flex-col justify-between">
               <div>
                 <div class="w-8 h-8 rounded-xl bg-emerald-400/20 border border-emerald-400/40 text-emerald-400 font-black text-sm flex items-center justify-center mb-3">3</div>
                 <h4 class="font-extrabold text-sm text-white">10ª Pizza Gratis</h4>
@@ -1201,7 +1341,7 @@
         </div>
 
         <!-- Bloque 3: Formulario Rápido y CTAs de Apple & Google Wallet -->
-        <div class="bg-gradient-to-b from-white/[0.08] to-white/[0.03] border border-white/15 rounded-3xl p-6 sm:p-7 shadow-xl">
+        <div class="bg-gradient-to-b from-stone-900/90 to-stone-900/50 border border-stone-700/70 rounded-2xl p-6 sm:p-8 shadow-xl">
           <div class="flex items-center justify-between mb-4">
             <div>
               <h3 class="font-display font-extrabold text-xl text-white">Consigue tu Pizza Pass personalizado</h3>
@@ -1216,20 +1356,20 @@
                 <label for="walletInputName" class="block text-xs font-bold text-cream/80 mb-1.5">Tu nombre y apellidos</label>
                 <div class="relative">
                   <input id="walletInputName" type="text" placeholder="Ej. Carlos García" value="Carlos García"
-                    class="w-full bg-coal/80 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-cream/40 focus:outline-none focus:border-amber-400 transition" />
+                    class="w-full bg-stone-950 border border-stone-700 rounded-lg px-4 py-3 text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-terracotta transition font-sans" />
                 </div>
               </div>
               <div>
                 <label for="walletInputPhone" class="block text-xs font-bold text-cream/80 mb-1.5">Teléfono / WhatsApp (para vincular tus sellos)</label>
                 <div class="relative">
                   <input id="walletInputPhone" type="tel" placeholder="Ej. 600 12 34 56" value="600 12 34 56"
-                    class="w-full bg-coal/80 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-cream/40 focus:outline-none focus:border-amber-400 transition" />
+                    class="w-full bg-stone-950 border border-stone-700 rounded-lg px-4 py-3 text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-terracotta transition font-sans" />
                 </div>
               </div>
             </div>
 
             <!-- Botón Generar -->
-            <button id="btnGeneratePass" type="submit" class="w-full bg-tomato hover:bg-tomato-dark text-white font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg transition active:scale-[0.98]">
+            <button id="btnGeneratePass" type="submit" class="w-full bg-terracotta hover:bg-terracotta-dark text-white font-sans font-semibold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg transition active:scale-[0.98]">
               <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
               <span>Generar mi Pase Digital</span>
             </button>
@@ -1304,7 +1444,7 @@
         </div>
 
         <!-- TARJETA DIGITAL (EL PASE MOCKUP) -->
-        <div id="digitalPassCard" class="w-full max-w-[390px] rounded-[30px] p-6 text-cream relative shadow-[0_25px_60px_rgba(0,0,0,0.85)] border-2 border-amber-500/30 overflow-hidden transition-all duration-300"
+        <div id="digitalPassCard" class="w-full max-w-[390px] rounded-2xl p-6 sm:p-7 text-cream relative shadow-[0_25px_60px_rgba(0,0,0,0.85)] border border-amber-500/40 overflow-hidden transition-all duration-300"
              style="background: linear-gradient(150deg, #241e1b 0%, #1a1715 45%, #12100f 100%);">
           
           <!-- Efecto de luz ambiental interior -->
@@ -1506,48 +1646,50 @@
 <div class="gingham" aria-hidden="true"></div>
 
 <!-- ================= EMBUDO DE RESEÑAS ================= -->
-<section id="opiniones" class="py-16 md:py-24 bg-tomato text-white relative overflow-hidden">
-  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(#fff 1px,transparent 1px);background-size:22px 22px"></div>
-  <div class="relative max-w-5xl mx-auto px-4 text-center reveal">
-    <div class="flex items-center justify-center gap-1.5 text-amber-300" aria-label="5 de 5 estrellas">
-      <svg class="w-8 h-8 fill-current drop-shadow" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <svg class="w-8 h-8 fill-current drop-shadow" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <svg class="w-8 h-8 fill-current drop-shadow" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <svg class="w-8 h-8 fill-current drop-shadow" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <svg class="w-8 h-8 fill-current drop-shadow" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+
+<!-- ================= EMBUDO DE RESEÑAS ================= -->
+<section id="opiniones" class="py-16 md:py-24 bg-terracotta text-white relative overflow-hidden">
+  <div class="relative max-w-4xl mx-auto px-4 text-center reveal">
+    <div class="flex items-center justify-center gap-1.5 text-amber-200" aria-label="5 de 5 estrellas">
+      <svg class="w-7 h-7 fill-current drop-shadow-xs" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <svg class="w-7 h-7 fill-current drop-shadow-xs" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <svg class="w-7 h-7 fill-current drop-shadow-xs" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <svg class="w-7 h-7 fill-current drop-shadow-xs" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <svg class="w-7 h-7 fill-current drop-shadow-xs" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     </div>
-    <h2 class="font-display font-extrabold text-3xl md:text-5xl mt-3 leading-tight">¿Te ha gustado la experiencia?<br class="hidden sm:block" /> Déjanos tu opinión en Google</h2>
-    <p class="mt-4 text-white/90 text-lg max-w-2xl mx-auto">Tu reseña ayuda a que más vecinos descubran nuestra pizzería y a nosotros nos ayuda a mejorar cada día. Son solo 30 segundos y nos haces un favor enorme.</p>
+    <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl mt-4 leading-tight">¿Te ha gustado la experiencia?<br class="hidden sm:block" /> Déjanos tu opinión en Google</h2>
+    <p class="mt-4 text-white/90 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">Tu reseña ayuda a que más vecinos descubran nuestra pizzería y a nosotros nos ayuda a mejorar cada día. Son solo 30 segundos y nos haces un favor enorme.</p>
 
     <!-- CAMBIAR: sustituye PLACE_ID por el ID real de tu ficha de Google (Place ID Finder) -->
     <a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener"
-       class="pulse-ring inline-flex items-center justify-center gap-3 mt-8 bg-white text-tomato-dark hover:bg-cream font-extrabold text-lg px-8 py-4 rounded-full shadow-xl transition active:scale-95">
-      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg>
-      Escribir mi reseña en Google
+       class="inline-flex items-center justify-center gap-3 mt-8 bg-white text-terracotta-dark hover:bg-parchment-light font-sans font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-lg transition active:scale-95">
+      <svg class="w-5 h-5 text-terracotta" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg>
+      <span>Escribir mi reseña en Google</span>
     </a>
 
     <ol class="mt-10 grid sm:grid-cols-3 gap-4 text-left max-w-3xl mx-auto">
-      <li class="bg-white/10 rounded-2xl p-5"><span class="font-script text-3xl">1</span><p class="font-bold mt-1">Pulsa el botón</p><p class="text-sm text-white/85">Se abre nuestra ficha de Google.</p></li>
-      <li class="bg-white/10 rounded-2xl p-5"><span class="font-script text-3xl">2</span><p class="font-bold mt-1">Elige tus estrellas</p><p class="text-sm text-white/85">Puntúa con total sinceridad.</p></li>
-      <li class="bg-white/10 rounded-2xl p-5"><span class="font-script text-3xl">3</span><p class="font-bold mt-1">Cuéntanos qué pediste</p><p class="text-sm text-white/85">Tu pizza favorita nos encanta leerla.</p></li>
+      <li class="bg-black/15 border border-white/10 rounded-xl p-5"><span class="font-serif italic text-2xl text-amber-200">1</span><p class="font-bold mt-1 text-sm font-sans">Pulsa el botón</p><p class="text-xs text-white/80 mt-1 font-light">Se abre nuestra ficha de Google.</p></li>
+      <li class="bg-black/15 border border-white/10 rounded-xl p-5"><span class="font-serif italic text-2xl text-amber-200">2</span><p class="font-bold mt-1 text-sm font-sans">Elige tus estrellas</p><p class="text-xs text-white/80 mt-1 font-light">Puntúa con total sinceridad.</p></li>
+      <li class="bg-black/15 border border-white/10 rounded-xl p-5"><span class="font-serif italic text-2xl text-amber-200">3</span><p class="font-bold mt-1 text-sm font-sans">Cuéntanos qué pediste</p><p class="text-xs text-white/80 mt-1 font-light">Tu pizza favorita nos encanta leerla.</p></li>
     </ol>
   </div>
 </section>
 
 <!-- ================= TESTIMONIOS ================= -->
-<section id="testimonios" class="py-16 md:py-20 gingham-soft">
-  <div class="max-w-6xl mx-auto px-4">
+<section id="testimonios" class="py-16 md:py-20 bg-flour border-b border-stone-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex items-end justify-between gap-4 flex-wrap">
       <div>
-        <p class="font-script text-2xl text-tomato">Lo que dicen de nosotros</p>
-        <h2 class="font-display font-extrabold text-3xl md:text-4xl">Opiniones de clientes</h2>
+        <span class="font-sans text-xs font-bold uppercase tracking-[0.25em] text-terracotta block mb-1">Lo que dicen de nosotros</span>
+        <h2 class="font-serif font-normal text-3xl md:text-4xl text-charcoal">Opiniones de clientes</h2>
       </div>
       <div id="revNav" class="hidden gap-2">
-        <button id="revPrev" class="w-11 h-11 rounded-full bg-coal text-white font-bold hover:bg-tomato transition flex items-center justify-center" aria-label="Opinión anterior">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        <button id="revPrev" class="w-10 h-10 rounded-full bg-white border border-stone-300 text-charcoal font-bold hover:bg-terracotta hover:text-white transition flex items-center justify-center shadow-2xs" aria-label="Opinión anterior">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <button id="revNext" class="w-11 h-11 rounded-full bg-coal text-white font-bold hover:bg-tomato transition flex items-center justify-center" aria-label="Opinión siguiente">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        <button id="revNext" class="w-10 h-10 rounded-full bg-white border border-stone-300 text-charcoal font-bold hover:bg-terracotta hover:text-white transition flex items-center justify-center shadow-2xs" aria-label="Opinión siguiente">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
     </div>
@@ -1556,51 +1698,55 @@
 </section>
 
 <!-- ================= HORARIOS Y UBICACIÓN ================= -->
-<section id="visitanos" class="py-16 md:py-24 bg-coal text-cream">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center reveal">
-      <p class="font-script text-2xl text-basil-light">Ven a vernos</p>
-      <h2 class="font-display font-black text-3xl md:text-5xl tracking-tight">Horaris i <span class="font-serif italic font-normal text-basil-dark">ubicació</span></h2>
+<section id="visitanos" class="py-16 md:py-24 bg-charcoal text-cream border-b border-stone-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center reveal max-w-xl mx-auto">
+      <span class="font-sans text-xs font-bold uppercase tracking-[0.25em] text-olive-light block mb-1">Ven a vernos</span>
+      <h2 class="font-serif font-normal text-3xl md:text-5xl tracking-tight text-parchment">Horaris i <span class="italic font-normal text-amber-200">ubicació</span></h2>
     </div>
-    <div class="mt-10 grid md:grid-cols-2 gap-6 reveal">
-      <div class="bg-coal-800 rounded-3xl p-6 sm:p-8 border border-white/10">
-        <div class="flex items-center justify-between gap-3 flex-wrap">
-          <h3 class="font-display font-bold text-2xl">Horario</h3>
-          <span id="openStatus" class="text-xs font-extrabold px-3 py-1.5 rounded-full bg-white/10">Comprobando…</span>
+    <div class="mt-10 grid md:grid-cols-2 gap-8 reveal items-stretch">
+      <div class="bg-charcoal-800 rounded-2xl p-6 sm:p-8 border border-stone-700/70 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <h3 class="font-serif font-bold text-2xl text-parchment">Horario</h3>
+            <span id="openStatus" class="text-xs font-sans font-semibold px-3 py-1.5 rounded-full bg-white/10">Comprobando…</span>
+          </div>
+          <!-- CAMBIAR: horarios reales (y el objeto SCHEMA del script, y el JSON-LD) -->
+          <ul id="hoursList" class="mt-5 divide-y divide-stone-700/60 font-sans text-sm">
+            <li data-day="1" class="flex justify-between py-3"><span>Lunes</span><span class="text-terracotta font-bold">Cerrado</span></li>
+            <li data-day="2" class="flex justify-between py-3 text-stone-300"><span>Martes</span><span>13:00–16:00 · 20:00–23:30</span></li>
+            <li data-day="3" class="flex justify-between py-3 text-stone-300"><span>Miércoles</span><span>13:00–16:00 · 20:00–23:30</span></li>
+            <li data-day="4" class="flex justify-between py-3 text-stone-300"><span>Jueves</span><span>13:00–16:00 · 20:00–23:30</span></li>
+            <li data-day="5" class="flex justify-between py-3 text-stone-300"><span>Viernes</span><span>13:00–16:00 · 20:00–00:00</span></li>
+            <li data-day="6" class="flex justify-between py-3 text-stone-300"><span>Sábado</span><span>13:00–16:00 · 20:00–00:00</span></li>
+            <li data-day="0" class="flex justify-between py-3 text-stone-300"><span>Domingo</span><span>13:00–16:00 · 20:00–23:30</span></li>
+          </ul>
+          <address class="mt-6 not-italic space-y-3 text-stone-300 text-sm font-sans">
+            <!-- CAMBIAR: dirección real -->
+            <p class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Calle Ejemplo, 12 · 00000 Tu Ciudad</span>
+            </p>
+            <p class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-olive shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+34600000000" class="underline underline-offset-4 hover:text-white transition">600 00 00 00</a>
+            </p>
+          </address>
         </div>
-        <!-- CAMBIAR: horarios reales (y el objeto SCHEMA del script, y el JSON-LD) -->
-        <ul id="hoursList" class="mt-5 divide-y divide-white/10">
-          <li data-day="1" class="flex justify-between py-3"><span>Lunes</span><span class="text-tomato font-bold">Cerrado</span></li>
-          <li data-day="2" class="flex justify-between py-3"><span>Martes</span><span>13:00–16:00 · 20:00–23:30</span></li>
-          <li data-day="3" class="flex justify-between py-3"><span>Miércoles</span><span>13:00–16:00 · 20:00–23:30</span></li>
-          <li data-day="4" class="flex justify-between py-3"><span>Jueves</span><span>13:00–16:00 · 20:00–23:30</span></li>
-          <li data-day="5" class="flex justify-between py-3"><span>Viernes</span><span>13:00–16:00 · 20:00–00:00</span></li>
-          <li data-day="6" class="flex justify-between py-3"><span>Sábado</span><span>13:00–16:00 · 20:00–00:00</span></li>
-          <li data-day="0" class="flex justify-between py-3"><span>Domingo</span><span>13:00–16:00 · 20:00–23:30</span></li>
-        </ul>
-        <address class="mt-6 not-italic space-y-3 text-cream/90">
-          <!-- CAMBIAR: dirección real -->
-          <p class="flex items-start gap-2.5">
-            <svg class="w-5 h-5 text-tomato shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Calle Ejemplo, 12 · 00000 Tu Ciudad</span>
-          </p>
-          <p class="flex items-center gap-2.5">
-            <svg class="w-5 h-5 text-basil shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+34600000000" class="underline underline-offset-4 hover:text-white transition">600 00 00 00</a>
-          </p>
-        </address>
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="https://www.google.com/maps?q=pizzeria" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 text-center bg-cream text-coal font-bold py-3 px-4 rounded-full hover:bg-white transition">
-            <svg class="w-5 h-5 text-tomato shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="https://www.google.com/maps?q=pizzeria" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 text-center bg-stone-800 hover:bg-stone-700 text-parchment font-sans font-medium py-3 px-4 rounded-full transition text-xs uppercase tracking-wider border border-stone-600">
+            <svg class="w-4 h-4 text-terracotta shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>Cómo llegar (Google Maps)</span>
           </a>
-          <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar%20mesa" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 text-center bg-basil text-white font-bold py-3 px-4 rounded-full hover:bg-basil-dark transition">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+          <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar%20mesa" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 text-center bg-olive hover:bg-olive-dark text-white font-sans font-medium py-3 px-4 rounded-full transition text-xs uppercase tracking-wider">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
             <span>Reservar por WhatsApp</span>
           </a>
         </div>
       </div>
-      <div class="rounded-3xl overflow-hidden border border-white/10 min-h-[340px] bg-coal-800">
+
+      <div class="rounded-2xl overflow-hidden border border-stone-700/70 min-h-[340px] bg-charcoal-800">
         <iframe title="Mapa de ubicación" class="w-full h-full min-h-[360px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=pizzeria&output=embed"></iframe>
       </div>
@@ -1609,25 +1755,29 @@
 </section>
 
 <!-- ================= FAQ ================= -->
-<section id="faq" class="py-16 md:py-20 bg-cream">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="font-display font-extrabold text-3xl md:text-4xl text-center">Preguntas frecuentes</h2>
-    <div class="mt-8 space-y-3">
-      <details class="bg-white rounded-2xl p-5 shadow-sm">
-        <summary class="flex items-center justify-between gap-3 font-bold">¿Dónde puedo comer pizza artesana?<svg class="chev w-5 h-5 shrink-0 text-coal/60 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <p class="mt-3 text-coal/80">En nuestra pizzería artesana de barrio. Encuentras la dirección y el mapa en la sección de horarios y ubicación.</p>
+<section id="faq" class="py-16 md:py-20 bg-flour">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-8">
+      <span class="font-sans text-xs font-bold uppercase tracking-[0.25em] text-stone-500 block mb-1">Dudas habituales</span>
+      <h2 class="font-serif font-normal text-3xl md:text-4xl text-center text-charcoal">Preguntas frecuentes</h2>
+    </div>
+    
+    <div class="space-y-3 font-sans">
+      <details class="bg-white rounded-xl p-5 border border-stone-200/80 shadow-2xs">
+        <summary class="flex items-center justify-between gap-3 font-medium text-charcoal">¿Dónde puedo comer pizza artesana?<svg class="chev w-5 h-5 shrink-0 text-stone-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="mt-3 text-stone-600 text-sm font-light leading-relaxed">En nuestra pizzería artesana de barrio. Encuentras la dirección y el mapa en la sección de horarios y ubicación.</p>
       </details>
-      <details class="bg-white rounded-2xl p-5 shadow-sm">
-        <summary class="flex items-center justify-between gap-3 font-bold">¿Cómo hago un pedido?<svg class="chev w-5 h-5 shrink-0 text-coal/60 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <p class="mt-3 text-coal/80">Escríbenos por WhatsApp con el botón «Pedir» de cada pizza o llámanos por teléfono. Indícanos tu nombre y cualquier alergia o intolerancia.</p>
+      <details class="bg-white rounded-xl p-5 border border-stone-200/80 shadow-2xs">
+        <summary class="flex items-center justify-between gap-3 font-medium text-charcoal">¿Cómo hago un pedido?<svg class="chev w-5 h-5 shrink-0 text-stone-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="mt-3 text-stone-600 text-sm font-light leading-relaxed">Escríbenos por WhatsApp con el botón «Pedir» de cada pizza o llámanos por teléfono. Indícanos tu nombre y cualquier alergia o intolerancia.</p>
       </details>
-      <details class="bg-white rounded-2xl p-5 shadow-sm">
-        <summary class="flex items-center justify-between gap-3 font-bold">¿Tenéis pizzas veganas?<svg class="chev w-5 h-5 shrink-0 text-coal/60 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <p class="mt-3 text-coal/80">Sí: Ortolana Vegana, Spinaci & Aglio Vegan y Pesto Verde & Pomodorini Vegan, elaboradas con mozzarella vegetal bio. Aun así, puedes indicarnos cualquier preferencia al hacer tu pedido.</p>
+      <details class="bg-white rounded-xl p-5 border border-stone-200/80 shadow-2xs">
+        <summary class="flex items-center justify-between gap-3 font-medium text-charcoal">¿Tenéis pizzas veganas?<svg class="chev w-5 h-5 shrink-0 text-stone-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="mt-3 text-stone-600 text-sm font-light leading-relaxed">Sí: Ortolana Vegana, Spinaci & Aglio Vegan y Pesto Verde & Pomodorini Vegan, elaboradas con mozzarella vegetal bio. Aun así, puedes indicarnos cualquier preferencia al hacer tu pedido.</p>
       </details>
-      <details class="bg-white rounded-2xl p-5 shadow-sm">
-        <summary class="flex items-center justify-between gap-3 font-bold">¿Qué alérgenos contienen vuestras pizzas?<svg class="chev w-5 h-5 shrink-0 text-coal/60 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <p class="mt-3 text-coal/80">Todas contienen gluten y, según la receta, lácteos, huevo, pescado, marisco, frutos secos o mostaza. Cada plato de la carta muestra sus alérgenos orientativos.</p>
+      <details class="bg-white rounded-xl p-5 border border-stone-200/80 shadow-2xs">
+        <summary class="flex items-center justify-between gap-3 font-medium text-charcoal">¿Qué alérgenos contienen vuestras pizzas?<svg class="chev w-5 h-5 shrink-0 text-stone-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <p class="mt-3 text-stone-600 text-sm font-light leading-relaxed">Todas contienen gluten y, según la receta, lácteos, huevo, pescado, marisco, frutos secos o mostaza. Cada plato de la carta muestra sus alérgenos orientativos.</p>
       </details>
     </div>
   </div>
@@ -1635,201 +1785,179 @@
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-coal-900 text-cream/80">
-  <div class="gingham" aria-hidden="true"></div>
-  <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8 text-center md:text-left">
+<footer class="bg-charcoal-950 text-parchment-light/80 border-t border-stone-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid md:grid-cols-3 gap-10 text-center md:text-left">
     <div>
-      <div class="flex items-center justify-center md:justify-start gap-3 mb-3">
-        <span class="w-12 h-12 rounded-full overflow-hidden bg-cream flex items-center justify-center ring-2 ring-cream/60 p-1">
+      <div class="flex items-center justify-center md:justify-start gap-3.5 mb-4">
+        <span class="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center ring-1 ring-stone-700 p-1">
           <img src="logo.svg" width="48" height="48" alt="Logo La Pizzería" class="w-full h-full object-contain" />
         </span>
         <div class="text-left">
-          <p class="font-display font-extrabold text-2xl text-cream leading-tight">La Pizzería</p>
-          <p class="text-[10px] tracking-[.25em] font-bold text-cream/70">PIZZA ARTESANA · DEMO</p>
+          <p class="font-serif font-bold text-2xl text-parchment leading-tight">La Pizzería</p>
+          <p class="text-[10px] tracking-[0.25em] font-sans font-bold text-stone-400 uppercase">PIZZA ARTESANA · DEMO</p>
         </div>
       </div>
-      <p class="mt-4 text-sm leading-relaxed">Plantilla web premium para pizzerías y restaurantes. Estructura optimizada para carta digital interactiva, alérgenos, fidelización nativa en Apple & Google Wallet y pedidos directos por WhatsApp.</p>
-      <div class="mt-3 flex items-center justify-center md:justify-start gap-2 text-xs font-bold text-amber-300">
-        <a href="#fidelidad" class="hover:underline flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Club Fidelidad Pizza Pass</a>
+      <p class="text-xs leading-relaxed text-stone-400 font-light">Plantilla web premium para pizzerías y restaurantes. Estructura optimizada para carta digital interactiva, alérgenos, fidelización nativa en Apple & Google Wallet y pedidos directos por WhatsApp.</p>
+      <div class="mt-4 flex items-center justify-center md:justify-start gap-2 text-xs font-sans font-medium text-amber-200">
+        <a href="#fidelidad" class="hover:underline flex items-center gap-1.5 bg-stone-900 border border-stone-700 px-3 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-olive-light"></span>Club Fidelidad Pizza Pass</a>
       </div>
     </div>
+
     <div>
-      <p class="font-bold text-cream mb-3">Síguenos</p>
-      <!-- CAMBIAR: URLs reales de redes -->
+      <p class="font-sans font-semibold text-sm uppercase tracking-wider text-parchment mb-4">Síguenos</p>
       <div class="flex gap-3 justify-center md:justify-start">
-        <a href="https://instagram.com" target="_blank" rel="noopener me" aria-label="Instagram" class="w-11 h-11 rounded-full bg-white/10 hover:bg-tomato flex items-center justify-center transition">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <a href="https://instagram.com" target="_blank" rel="noopener me" aria-label="Instagram" class="w-10 h-10 rounded-full bg-stone-900 hover:bg-terracotta border border-stone-800 flex items-center justify-center transition text-parchment">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener me" aria-label="Facebook" class="w-11 h-11 rounded-full bg-white/10 hover:bg-tomato flex items-center justify-center transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.3-1 1-1h2V2h-3c-3 0-4.5 1.8-4.5 4.4V8H7v3.5h2.5V22H14V11.5h2.8L17.5 8z"/></svg>
+        <a href="https://facebook.com" target="_blank" rel="noopener me" aria-label="Facebook" class="w-10 h-10 rounded-full bg-stone-900 hover:bg-terracotta border border-stone-800 flex items-center justify-center transition text-parchment">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.3-1 1-1h2V2h-3c-3 0-4.5 1.8-4.5 4.4V8H7v3.5h2.5V22H14V11.5h2.8L17.5 8z"/></svg>
         </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener me" aria-label="TikTok" class="w-11 h-11 rounded-full bg-white/10 hover:bg-tomato flex items-center justify-center transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 2h-3v13.2a2.8 2.8 0 11-2.8-2.8c.3 0 .6 0 .8.1V9.4a6 6 0 105.5 6V8.6a7 7 0 004 1.3V6.8a4 4 0 01-4.5-4.8z"/></svg>
+        <a href="https://tiktok.com" target="_blank" rel="noopener me" aria-label="TikTok" class="w-10 h-10 rounded-full bg-stone-900 hover:bg-terracotta border border-stone-800 flex items-center justify-center transition text-parchment">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 2h-3v13.2a2.8 2.8 0 11-2.8-2.8c.3 0 .6 0 .8.1V9.4a6 6 0 105.5 6V8.6a7 7 0 004 1.3V6.8a4 4 0 01-4.5-4.8z"/></svg>
         </a>
-        <a href="https://wa.me/34600000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-11 h-11 rounded-full bg-white/10 hover:bg-basil flex items-center justify-center transition">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+        <a href="https://wa.me/34600000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-stone-900 hover:bg-olive border border-stone-800 flex items-center justify-center transition text-parchment">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
         </a>
       </div>
     </div>
+
     <div>
-      <p class="font-bold text-cream mb-3">Aviso de alérgenos</p>
-      <p class="text-sm leading-relaxed">Nuestras pizzas contienen gluten, lácteos y, según la receta, huevo, pescado, marisco, frutos secos y mostaza. Pregúntanos por cualquier alergia o intolerancia antes de pedir.</p>
+      <p class="font-sans font-semibold text-sm uppercase tracking-wider text-parchment mb-4">Aviso de alérgenos</p>
+      <p class="text-xs leading-relaxed text-stone-400 font-light">Nuestras pizzas contienen gluten, lácteos y, según la receta, huevo, pescado, marisco, frutos secos y mostaza. Pregúntanos por cualquier alergia o intolerancia antes de pedir.</p>
     </div>
   </div>
-  <div class="border-t border-white/10 py-5 text-center text-xs text-cream/60 px-4">
+
+  <div class="border-t border-stone-800/80 py-5 text-center text-xs text-stone-500 font-sans px-4">
     © <span id="year">2026</span> La Pizzería (Plantilla Demo) · Todos los derechos reservados · Precios con IVA incluido
   </div>
 </footer>
 
 <!-- ================= BOTONES FLOTANTES DE CONVERSIÓN ================= -->
 <!-- Móvil: barra inferior persistente -->
-<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-coal border-t border-white/10 p-2 shadow-2xl" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-[#FFFCF6] border-t border-stone-200 p-2 shadow-2xl" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
   <!-- Si hay productos en el carrito: barra destacada -->
   <div id="mobileCartBar" class="hidden flex items-center justify-between gap-2">
-    <button id="mobileCartOpenBtn" type="button" class="flex-1 bg-basil hover:bg-basil-dark text-white font-extrabold py-3.5 px-4 rounded-full flex items-center justify-between shadow-lg active:scale-95 transition">
+    <button id="mobileCartOpenBtn" type="button" class="flex-1 bg-olive hover:bg-olive-dark text-white font-sans font-bold py-3.5 px-4 rounded-full flex items-center justify-between shadow-md active:scale-95 transition">
       <div class="flex items-center gap-2">
-        <span id="mobileCartBadge" class="w-6 h-6 rounded-full bg-white text-basil-dark text-xs flex items-center justify-center font-black">0</span>
-        <span class="text-sm">Ver mi pedido</span>
+        <span id="mobileCartBadge" class="w-6 h-6 rounded-full bg-white text-olive-dark text-xs flex items-center justify-center font-black">0</span>
+        <span class="text-xs uppercase tracking-wider">Ver mi pedido</span>
       </div>
-      <span id="mobileCartTotal" class="text-sm font-black">0,00€</span>
+      <span id="mobileCartTotal" class="text-sm font-bold font-serif">0,00€</span>
     </button>
   </div>
   <!-- Si el carrito está vacío: botones estándar -->
   <div id="mobileDefaultBar" class="grid grid-cols-2 gap-2">
-    <a href="#carta" class="flex items-center justify-center gap-2 bg-tomato text-white font-extrabold py-3.5 rounded-full active:scale-95 transition text-sm">
+    <a href="#carta" class="flex items-center justify-center gap-2 bg-terracotta text-white font-sans font-semibold py-3.5 rounded-full active:scale-95 transition text-xs uppercase tracking-wider">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16Z"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
       Ver carta
     </a>
-    <a href="tel:+34600000000" class="flex items-center justify-center gap-2 bg-cream text-coal font-extrabold py-3.5 rounded-full active:scale-95 transition text-sm">
-      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span>Llamar</span>
+    <a href="tel:+34600000000" class="flex items-center justify-center gap-2 bg-white text-charcoal border border-stone-300 font-sans font-semibold py-3.5 rounded-full active:scale-95 transition text-xs uppercase tracking-wider">
+      <svg class="w-4 h-4 shrink-0 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Llamar
     </a>
   </div>
 </div>
-<!-- Escritorio: botón flotante WhatsApp -->
-<a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"
-   class="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 bg-basil hover:bg-basil-dark text-white font-extrabold px-6 py-4 rounded-full shadow-2xl transition">
-  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
-  Pedir por WhatsApp
-</a>
 
-<!-- ================= CARRITO FLOTANTE Y DRAWER DE PEDIDO ================= -->
-<!-- Botón flotante del carrito (Desktop) -->
-<button id="cartPill" class="hidden fixed bottom-6 right-6 z-40 items-center gap-3 bg-basil hover:bg-basil-dark text-white font-extrabold px-6 py-4 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95" aria-label="Ver pedido">
+<!-- Desktop: Botón Flotante del Carrito -->
+<button id="cartPill" type="button" class="hidden fixed bottom-6 right-6 z-40 bg-charcoal hover:bg-black text-white font-sans font-medium py-3 px-5 rounded-full shadow-2xl items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95 border border-stone-700">
   <div class="relative">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-    <span id="cartCountBadge" class="absolute -top-2.5 -right-2.5 bg-tomato text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">0</span>
+    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <span id="cartCountBadge" class="absolute -top-2.5 -right-2.5 bg-terracotta text-white text-[10px] font-sans font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-charcoal">0</span>
   </div>
-  <span id="cartPillText">0 pizzas · 0,00€</span>
-  <span class="bg-white/20 text-white text-xs px-2.5 py-1 rounded-full ml-1">Ver pedido →</span>
+  <span id="cartPillText" class="text-xs tracking-wide">0 pizzas · 0,00€</span>
+  <span class="bg-white/15 text-white text-[11px] px-2.5 py-1 rounded-full ml-1 font-sans">Ver pedido →</span>
 </button>
 
 <!-- Slide-over Drawer del Carrito -->
-<div id="cartDrawerBackdrop" class="fixed inset-0 z-50 hidden bg-coal/75 backdrop-blur-sm transition-opacity" aria-hidden="true">
-  <div class="fixed inset-y-0 right-0 max-w-full flex">
-    <div id="cartDrawer" class="w-screen max-w-md bg-cream shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/20">
-      
-      <!-- Drawer Header -->
-      <div class="p-6 bg-coal text-cream flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-basil/20 text-basil-light flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </div>
-          <div>
-            <h3 class="font-display font-extrabold text-xl text-cream">Tu Pedido</h3>
-            <p id="drawerItemCount" class="text-xs text-cream/70">0 productos seleccionados</p>
-          </div>
-        </div>
-        <button id="cartDrawerClose" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-cream flex items-center justify-center transition" aria-label="Cerrar pedido">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+<div id="cartDrawerBackdrop" class="fixed inset-0 z-50 hidden bg-charcoal/70 backdrop-blur-xs transition-opacity duration-300">
+  <div id="cartDrawer" class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-flour shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out border-l border-stone-200">
+    <div class="p-5 bg-white border-b border-stone-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <div><h3 class="font-serif font-bold text-lg text-charcoal">Tu Pedido</h3><p id="drawerItemCount" class="text-xs text-stone-500 font-sans">0 productos seleccionados</p></div>
       </div>
-
-      <!-- Drawer Items List -->
-      <div id="cartDrawerItems" class="flex-1 overflow-y-auto p-6 space-y-4 noscroll">
-        <!-- Rendered dynamically -->
+      <button id="cartDrawerClose" type="button" class="text-stone-400 hover:text-charcoal p-1.5 rounded-full hover:bg-stone-100 transition" aria-label="Cerrar pedido">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    
+    <div id="cartDrawerItems" class="flex-1 overflow-y-auto p-4 space-y-3 noscroll"></div>
+    
+    <div class="p-5 bg-white border-t border-stone-200 space-y-4">
+      <div class="flex items-center justify-between text-base">
+        <span class="font-sans font-medium text-stone-600">Total a pagar:</span>
+        <span id="cartDrawerTotal" class="font-serif font-bold text-2xl text-terracotta">0,00€</span>
       </div>
-
-      <!-- Drawer Footer & Form -->
-      <div class="p-6 bg-white border-t border-coal/10 shadow-lg space-y-4">
-        <!-- Opciones de entrega -->
-        <div class="space-y-2">
-          <label class="text-xs font-bold text-coal/60 uppercase tracking-wider block">Modalidad</label>
-          <div class="grid grid-cols-2 gap-2 text-xs font-bold">
-            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-coal/15 cursor-pointer bg-cream has-[:checked]:border-basil has-[:checked]:bg-basil/10 has-[:checked]:text-basil-dark transition">
-              <input type="radio" name="orderType" value="Para recoger en local" checked class="hidden" />
-              <span>🛍️ Para recoger</span>
-            </label>
-            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-coal/15 cursor-pointer bg-cream has-[:checked]:border-basil has-[:checked]:bg-basil/10 has-[:checked]:text-basil-dark transition">
-              <input type="radio" name="orderType" value="A domicilio" class="hidden" />
-              <span>🛵 A domicilio</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Campos de cliente -->
-        <div class="grid grid-cols-1 gap-2.5">
-          <input id="cartCustomerName" type="text" placeholder="Tu nombre (opcional)" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-coal/15 text-sm focus:outline-none focus:border-tomato" />
-          <input id="cartCustomerNotes" type="text" placeholder="Alergias o notas (ej. hora de recogida, sin cebolla...)" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-coal/15 text-sm focus:outline-none focus:border-tomato" />
-        </div>
-
-        <!-- Total -->
-        <div class="flex items-center justify-between pt-2 border-t border-coal/10">
-          <span class="text-base font-bold text-coal/70">Total del pedido:</span>
-          <span id="cartDrawerTotal" class="font-display font-extrabold text-2xl text-tomato">0,00€</span>
-        </div>
-
-        <!-- Botón Enviar WhatsApp -->
-        <button id="sendCartWhatsAppBtn" class="w-full bg-basil hover:bg-basil-dark text-white font-extrabold py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-lg transition shadow-xl active:scale-95">
-          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
-          <span>Enviar pedido por WhatsApp</span>
-        </button>
-        <p class="text-[11px] text-center text-coal/50">Directo al restaurante · Sin comisiones ni intermediarios</p>
+      <div class="space-y-2">
+        <label for="cartCustomerName" class="block text-xs font-sans font-semibold text-stone-600">Tu nombre (opcional):</label>
+        <input id="cartCustomerName" type="text" placeholder="Ej. María Pérez" class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 text-xs sm:text-sm font-sans focus:outline-none focus:border-terracotta" />
       </div>
+      <div class="space-y-2">
+        <label class="block text-xs font-sans font-semibold text-stone-600">Tipo de pedido:</label>
+        <div class="grid grid-cols-2 gap-2 text-xs font-sans font-medium">
+          <label class="flex items-center gap-2 p-2 rounded-lg border border-stone-200 cursor-pointer hover:bg-stone-50">
+            <input type="radio" name="orderType" value="Para recoger" checked class="text-terracotta focus:ring-terracotta" />
+            <span>Para recoger</span>
+          </label>
+          <label class="flex items-center gap-2 p-2 rounded-lg border border-stone-200 cursor-pointer hover:bg-stone-50">
+            <input type="radio" name="orderType" value="A domicilio" class="text-terracotta focus:ring-terracotta" />
+            <span>A domicilio</span>
+          </label>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <label for="cartCustomerNotes" class="block text-xs font-sans font-semibold text-stone-600">Notas para cocina (alergias, hora, etc.):</label>
+        <textarea id="cartCustomerNotes" rows="2" placeholder="Ej. Sin cebolla, recoger sobre las 21:30" class="w-full px-3.5 py-2 rounded-lg border border-stone-300 text-xs sm:text-sm font-sans focus:outline-none focus:border-terracotta resize-none"></textarea>
+      </div>
+      <button id="sendCartWhatsAppBtn" type="button" class="w-full bg-olive hover:bg-olive-dark text-white font-sans font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm transition active:scale-95 text-xs sm:text-sm uppercase tracking-wider">
+        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+        <span>Enviar pedido por WhatsApp</span>
+      </button>
+      <p class="text-[11px] text-center text-stone-500 font-light">Directo al restaurante · Sin comisiones ni intermediarios</p>
     </div>
   </div>
 </div>
 
 <!-- ================= MODAL VISTA PREVIA ================= -->
-<div id="previewModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-coal/80 backdrop-blur-sm transition-opacity" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div id="modalBox" class="relative w-full max-w-lg bg-cream rounded-3xl overflow-hidden shadow-2xl border border-white/20 transform transition-all duration-300 scale-95 opacity-0 flex flex-col max-h-[90vh]">
-    <button id="modalClose" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-coal/80 hover:bg-coal text-white flex items-center justify-center shadow-lg transition active:scale-90" aria-label="Cerrar vista previa">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+<div id="previewModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-charcoal/80 backdrop-blur-sm transition-opacity" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div id="modalBox" class="relative w-full max-w-lg bg-flour rounded-2xl overflow-hidden shadow-2xl border border-stone-200 transform transition-all duration-300 scale-95 opacity-0 flex flex-col max-h-[90vh]">
+    <button id="modalClose" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-charcoal/80 hover:bg-charcoal text-white flex items-center justify-center shadow-md transition active:scale-90" aria-label="Cerrar vista previa">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
-    <div class="relative h-60 sm:h-72 w-full overflow-hidden bg-coal/10 shrink-0">
+    <div class="relative h-60 sm:h-72 w-full overflow-hidden bg-stone-100 shrink-0">
       <img id="modalImg" src="" alt="" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-coal/85 via-coal/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent"></div>
       <div id="modalBadges" class="absolute bottom-3 left-4 flex gap-2"></div>
     </div>
-    <div class="p-6 overflow-y-auto noscroll flex-1 flex flex-col">
+    <div class="p-6 overflow-y-auto noscroll flex-1 flex flex-col font-sans">
       <div class="flex items-start justify-between gap-4">
-        <h3 id="modalTitle" class="font-display font-extrabold text-2xl sm:text-3xl text-basil-dark"></h3>
-        <span id="modalPrice" class="font-extrabold text-2xl text-tomato shrink-0"></span>
+        <h3 id="modalTitle" class="font-serif font-bold text-2xl sm:text-3xl text-charcoal"></h3>
+        <span id="modalPrice" class="font-serif font-bold text-2xl text-terracotta shrink-0"></span>
       </div>
-      <p id="modalDesc" class="mt-3 text-base text-coal/85 leading-relaxed"></p>
-      <div id="modalTags" class="mt-4 flex flex-wrap gap-2 text-xs font-bold text-coal/70"></div>
-      <div class="mt-5 pt-4 border-t border-coal/10">
-        <p class="text-xs font-extrabold uppercase tracking-wider text-coal/50 mb-2.5">Alérgenos</p>
+      <p id="modalDesc" class="mt-3 text-sm sm:text-base text-stone-600 leading-relaxed font-light"></p>
+      <div id="modalTags" class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-stone-600"></div>
+      <div class="mt-5 pt-4 border-t border-stone-200/80">
+        <p class="text-[11px] font-sans font-bold uppercase tracking-widest text-stone-500 mb-2.5">Alérgenos</p>
         <div id="modalAllergens" class="flex flex-wrap gap-2"></div>
       </div>
-      <div class="mt-6 pt-4 border-t border-coal/10 flex flex-col gap-3">
+      <div class="mt-6 pt-4 border-t border-stone-200/80 flex flex-col gap-3">
         <div class="flex items-center gap-3">
-          <div class="flex items-center border-2 border-coal/15 rounded-full bg-white px-2 py-1 shrink-0">
-            <button id="modalQtyMinus" type="button" class="w-8 h-8 rounded-full hover:bg-cream text-coal font-bold flex items-center justify-center transition text-lg active:scale-90">−</button>
-            <span id="modalQtyVal" class="w-8 text-center font-extrabold text-base">1</span>
-            <button id="modalQtyPlus" type="button" class="w-8 h-8 rounded-full hover:bg-cream text-coal font-bold flex items-center justify-center transition text-lg active:scale-90">+</button>
+          <div class="flex items-center border border-stone-300 rounded-full bg-white px-2 py-1 shrink-0">
+            <button id="modalQtyMinus" type="button" class="w-8 h-8 rounded-full hover:bg-flour text-charcoal font-bold flex items-center justify-center transition text-base active:scale-90">−</button>
+            <span id="modalQtyVal" class="w-8 text-center font-bold text-sm">1</span>
+            <button id="modalQtyPlus" type="button" class="w-8 h-8 rounded-full hover:bg-flour text-charcoal font-bold flex items-center justify-center transition text-base active:scale-90">+</button>
           </div>
-          <button id="modalAddToCartBtn" type="button" class="flex-1 bg-tomato hover:bg-tomato-dark text-white font-extrabold py-3.5 px-6 rounded-full text-base transition shadow-md active:scale-95 flex items-center justify-center gap-2">
-            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <button id="modalAddToCartBtn" type="button" class="flex-1 bg-terracotta hover:bg-terracotta-dark text-white font-sans font-semibold py-3.5 px-6 rounded-full text-xs sm:text-sm uppercase tracking-wider transition shadow-sm active:scale-95 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             <span id="modalAddBtnText">Añadir al pedido</span>
           </button>
         </div>
         <div class="flex items-center justify-between gap-3 text-xs">
-          <a id="modalOrderBtn" href="#" target="_blank" rel="noopener" class="text-coal/70 hover:text-basil underline underline-offset-4 flex items-center gap-1 font-bold">
+          <a id="modalOrderBtn" href="#" target="_blank" rel="noopener" class="text-stone-600 hover:text-olive underline underline-offset-4 flex items-center gap-1 font-medium">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
             Pedir solo esta pizza por WhatsApp
           </a>
-          <button id="modalCloseBtn" type="button" class="text-coal/50 hover:text-coal font-bold">Cerrar</button>
+          <button id="modalCloseBtn" type="button" class="text-stone-500 hover:text-charcoal font-medium">Cerrar</button>
         </div>
       </div>
     </div>
@@ -1977,8 +2105,8 @@ let cat = 'todas', sub = 'todas';
 const grid = $('#menuGrid'), chips = $('#chips'), subchips = $('#subchips'), note = $('#catNote');
 const availableCats = CATS.filter(c => c.k==='todas' || MENU.some(i => i.cat===c.k)); // oculta categorías vacías
 
-const chipClass = on => 'shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-sm font-bold border-2 transition ' +
-  (on ? 'bg-tomato border-tomato text-white shadow' : 'bg-white border-coal/15 text-coal hover:border-tomato');
+const chipClass = on => 'shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-sans font-semibold tracking-wide border transition-all duration-200 ' +
+  (on ? 'bg-terracotta border-terracotta text-white shadow-sm' : 'bg-parchment-light border-stone-300/80 text-charcoal hover:border-terracotta/70 hover:bg-white');
 
 function renderChips(){
   chips.innerHTML = availableCats.map(c => `<button role="tab" aria-selected="${c.k===cat}" data-cat="${c.k}" class="${chipClass(c.k===cat)} inline-flex items-center gap-2">${c.icon ? getIcon(c.icon, 'w-4 h-4 shrink-0') : ''}<span>${c.l}</span></button>`).join('');
@@ -2164,34 +2292,34 @@ function renderMenu(){
   }
 
   grid.innerHTML = items.map(i => {
-    const al = allergensOf(i).map(a => `<span title="${a.t}" aria-label="${a.t}" class="w-6 h-6 rounded-full bg-coal/5 flex items-center justify-center text-coal/70 hover:text-tomato hover:bg-white transition shadow-xs">${getIcon(a.id, 'w-3.5 h-3.5')}</span>`).join('');
+    const al = allergensOf(i).map(a => `<span title="${a.t}" aria-label="${a.t}" class="w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 hover:text-terracotta hover:bg-white transition shadow-2xs border border-stone-200/60">${getIcon(a.id, 'w-3 h-3')}</span>`).join('');
     const inCartQty = CART[i.n] || 0;
     return `
-    <article data-item="${esc(i.n)}" class="card-in group cursor-pointer relative bg-cream rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-coal/10 flex flex-col hover:-translate-y-1">
-      <div class="relative h-44 sm:h-48 overflow-hidden bg-coal/10 shrink-0">
-        <img src="${i.img}" alt="${esc(i.n)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-gradient-to-t from-coal/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
-        <span class="absolute bottom-2.5 right-3 bg-coal/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity shadow">
+    <article data-item="${esc(i.n)}" class="card-in group cursor-pointer relative bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col hover:-translate-y-1">
+      <div class="relative h-48 sm:h-52 overflow-hidden bg-stone-100 shrink-0">
+        <img src="${i.img}" alt="${esc(i.n)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+        <span class="absolute bottom-3 right-3 bg-charcoal/85 backdrop-blur text-white text-[10px] font-sans font-medium px-2.5 py-1 rounded-full flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity shadow-sm">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
           Vista previa
         </span>
-        <span class="item-cart-badge ${inCartQty>0?'':'hidden'} absolute bottom-2.5 left-3 bg-basil text-white text-[11px] font-black px-2.5 py-1 rounded-full shadow-md">
+        <span class="item-cart-badge ${inCartQty>0?'':'hidden'} absolute bottom-3 left-3 bg-olive text-white text-[10px] font-sans font-bold px-2.5 py-1 rounded-full shadow-md">
           ${inCartQty} en pedido
         </span>
-        ${i.star ? `<span class="absolute top-3 left-3 bg-tomato text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('star', 'w-3 h-3 fill-white')} RECOMENDADA</span>` : ''}
-        ${i.vegan ? `<span class="absolute top-3 right-3 bg-basil text-white text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow">${getIcon('leaf', 'w-3 h-3')} VEGANA</span>` : ''}
+        ${i.star ? `<span class="absolute top-3 left-3 bg-terracotta text-white text-[9px] font-sans font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm">${getIcon('star', 'w-3 h-3 fill-white')} RECOMENDADA</span>` : ''}
+        ${i.vegan ? `<span class="absolute top-3 right-3 bg-olive text-white text-[9px] font-sans font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm">${getIcon('leaf', 'w-3 h-3')} VEGANA</span>` : ''}
       </div>
       <div class="p-5 flex flex-col flex-1">
         <div class="flex items-start justify-between gap-3">
-          <h3 class="font-display font-extrabold text-xl leading-tight text-basil-dark group-hover:text-tomato transition-colors">${esc(i.n)}</h3>
-          <span class="font-extrabold text-lg text-tomato whitespace-nowrap">${eur(i.p)}</span>
+          <h3 class="font-serif font-bold text-xl leading-snug text-charcoal group-hover:text-terracotta transition-colors">${esc(i.n)}</h3>
+          <span class="font-serif font-bold text-lg text-terracotta whitespace-nowrap tracking-tight">${eur(i.p)}</span>
         </div>
-        <p class="mt-2 text-sm text-coal/80 leading-relaxed flex-1 line-clamp-2">${esc(i.d)}</p>
-        <div class="mt-4 pt-3 border-t border-coal/10 flex items-center justify-between gap-2">
+        <p class="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed flex-1 line-clamp-2 font-light font-sans">${esc(i.d)}</p>
+        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
           <div class="flex gap-1.5 flex-wrap">${al}</div>
           <div class="flex items-center gap-1.5">
-            <button type="button" data-add="${esc(i.n)}" class="bg-basil hover:bg-basil-dark text-white text-xs font-bold px-3 py-2 rounded-full transition active:scale-90 flex items-center gap-1 shadow-sm" title="Añadir a tu pedido">
-              <span class="text-sm">+</span> Añadir
+            <button type="button" data-add="${esc(i.n)}" class="bg-olive hover:bg-olive-dark text-white text-xs font-sans font-medium px-3.5 py-1.5 rounded-full transition shadow-xs active:scale-95 flex items-center gap-1" title="Añadir a tu pedido">
+              <span class="text-sm font-bold leading-none">+</span> Añadir
             </button>
           </div>
         </div>
